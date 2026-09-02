@@ -141,7 +141,9 @@ const D={'United States':95,'India':62,'United Kingdom':48,'Germany':41,'Brazil'
   'Ghana':2,'Ecuador':2,'Algeria':2,'Mongolia':1,'Libya':1};
 const BIG={'United States':['US 95k',[0,0]],'India':['IN 62k',[0,4]],
   'United Kingdom':['UK 48k',[-26,-12]],'Germany':['DE 41k',[26,14]],'Brazil':['BR 39k',[0,0]]};
-fetch('https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/json/world.json')
+// echarts stopped bundling map GeoJSON from v5 onward, and the last version that
+// did (4.9.0) carries GHSA-fgmj-fm8m-jvvx; vendored locally instead of pinning it.
+fetch('../assets/geo/world.json')
   .then(r=>r.json()).then(geo=>{
     echarts.registerMap('mono-world',geo);
     const opt={
