@@ -1,0 +1,1268 @@
+[
+  {
+    "id": "G1",
+    "family": "glance",
+    "name": "Range Capsules",
+    "card_title": "Daily active range",
+    "card_anchor_id": "c1",
+    "data_shape": "one min-max range per day, daily series",
+    "occasion": "weekly report dashboard",
+    "reading_speed": "<10s",
+    "engine": "Chart.js",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L3",
+        "note": "range only"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "G1 and G3 still use Chart.js; a future pass may migrate them to ECharts for a single rendering stack."
+  },
+  {
+    "id": "G2",
+    "family": "glance",
+    "name": "Petal Rose",
+    "card_title": "How releases made us feel",
+    "card_anchor_id": "rose",
+    "data_shape": "single-variable categorical counts, up to 8 categories, roughly even split",
+    "occasion": "facade / cover",
+    "reading_speed": "<10s",
+    "engine": "ECharts (dark card)",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G13",
+        "note": "upgrade at two variables"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G3",
+    "family": "glance",
+    "name": "Chunky Bars",
+    "card_title": "Revenue by plan",
+    "card_anchor_id": "c3",
+    "data_shape": "small-category ranking comparison (up to 6)",
+    "occasion": "weekly report dashboard",
+    "reading_speed": "<10s",
+    "engine": "Chart.js",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L2"
+      },
+      {
+        "id": "L15",
+        "note": "multi-select percentages"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G4",
+    "family": "glance",
+    "name": "Dot Waffle",
+    "card_title": "Where sign-ups come from",
+    "card_anchor_id": "waffle",
+    "data_shape": "100% composition (share of a whole)",
+    "occasion": "general purpose, default replacement for a pie chart",
+    "reading_speed": "<10s",
+    "engine": "hand-written SVG",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L14"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G5",
+    "family": "glance",
+    "name": "Pictorial Bar",
+    "card_title": "Trees planted, year by year",
+    "card_anchor_id": "forest",
+    "data_shape": "year-by-year count (one symbol = a fixed quantity)",
+    "occasion": "external-facing story page",
+    "reading_speed": "<10s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G6",
+    "family": "glance",
+    "name": "Circular Graph (small)",
+    "card_title": "Who works with whom",
+    "card_anchor_id": "circular",
+    "data_shape": "network, up to 12 nodes",
+    "occasion": "quick illustration",
+    "reading_speed": "<10s",
+    "engine": "ECharts (dark card)",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Preview version of the big B1 template; use B1 when there are more nodes."
+  },
+  {
+    "id": "G7",
+    "family": "glance",
+    "name": "Tree LR",
+    "card_title": "Everything the platform ships",
+    "card_anchor_id": "tree",
+    "data_shape": "hierarchy (2-3 levels)",
+    "occasion": "product catalog / architecture page",
+    "reading_speed": "~30s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G8",
+    "family": "glance",
+    "name": "Rainfall Dual Area",
+    "card_title": "Campaigns rain down, sign-ups flow",
+    "card_anchor_id": "rainfall",
+    "data_shape": "two-series cause and effect (spend vs. output)",
+    "occasion": "growth retrospective",
+    "reading_speed": "~30s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G9",
+    "family": "glance",
+    "name": "Scatter Morph",
+    "card_title": "One dataset, three views",
+    "card_anchor_id": "morph",
+    "data_shape": "same entity set, three dimensions cycling through",
+    "occasion": "short video / live demo",
+    "reading_speed": "animated",
+    "engine": "ECharts universalTransition",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G10",
+    "family": "glance",
+    "name": "Diverging Bar",
+    "card_title": "Where we gained, where we bled",
+    "card_anchor_id": "negbar",
+    "data_shape": "signed (positive/negative) categorical values",
+    "occasion": "weekly report dashboard",
+    "reading_speed": "<10s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Equalizer and Meridian Dots were removed from the catalog; this is the surviving signed-value chart."
+  },
+  {
+    "id": "G11",
+    "family": "glance",
+    "name": "Force Graph (small)",
+    "card_title": "Integrations, pulled into orbit",
+    "card_anchor_id": "force",
+    "data_shape": "hub-and-satellite network, up to 15 nodes",
+    "occasion": "quick illustration, draggable",
+    "reading_speed": "<10s",
+    "engine": "ECharts (dark card)",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L6",
+        "note": "static poster version"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "Preview version of the big B2 template."
+  },
+  {
+    "id": "G12",
+    "family": "glance",
+    "name": "Stagger Wave",
+    "card_title": "Fifty markets, one wave",
+    "card_anchor_id": "wave",
+    "data_shape": "multi-category distribution (30-60 bars)",
+    "occasion": "short-video entrance",
+    "reading_speed": "animated",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G13",
+    "family": "glance",
+    "name": "Big Slice (Custom Pie)",
+    "card_title": "Big slice, deep engagement",
+    "card_anchor_id": "custompie",
+    "data_shape": "double encoding: share of whole (angle) x intensity (radius)",
+    "occasion": "product analysis",
+    "reading_speed": "~30s",
+    "engine": "ECharts custom series",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G2",
+        "note": "downgrade at one variable"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G14",
+    "family": "glance",
+    "name": "Single Axis",
+    "card_title": "Support load, day by day",
+    "card_anchor_id": "singleaxis",
+    "data_shape": "weekday x hour x volume (punch-card data)",
+    "occasion": "support/ops weekly report",
+    "reading_speed": "~30s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Punch Card was removed from the catalog; this is the sole surviving version of that data shape."
+  },
+  {
+    "id": "G15",
+    "family": "glance",
+    "name": "Jitter Strip",
+    "card_title": "Response times, spread out",
+    "card_anchor_id": "jitter",
+    "data_shape": "grouped distribution, record-by-record (a few hundred points)",
+    "occasion": "SRE / ticket analysis",
+    "reading_speed": "~30s",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G16",
+    "family": "glance",
+    "name": "Bar Race",
+    "card_title": "Eight products race for revenue",
+    "card_anchor_id": "race",
+    "data_shape": "ranking evolving over time",
+    "occasion": "short video",
+    "reading_speed": "animated",
+    "engine": "ECharts realtimeSort",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G17",
+    "family": "glance",
+    "name": "Dynamic Stream",
+    "card_title": "Concurrent users, streaming",
+    "card_anchor_id": "stream",
+    "data_shape": "real-time scrolling series",
+    "occasion": "livestream / big screen",
+    "reading_speed": "animated",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "G18",
+    "family": "glance",
+    "name": "Draw-in + Counter",
+    "card_title": "H1 revenue, drawn in one stroke",
+    "card_anchor_id": "stroke",
+    "data_shape": "cumulative growth (one line + one big number)",
+    "occasion": "short video / presentation opener",
+    "reading_speed": "animated",
+    "engine": "ECharts",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Release Rings was removed from the catalog."
+  },
+  {
+    "id": "G19",
+    "family": "glance",
+    "name": "Violin",
+    "card_title": "How fast each plan gets an answer",
+    "card_anchor_id": "violin",
+    "data_shape": "grouped continuous-distribution density outline + median",
+    "occasion": "dashboard / analysis readout",
+    "reading_speed": "<10s",
+    "engine": "SVG",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "F15"
+      },
+      {
+        "id": "L19"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G20",
+    "family": "glance",
+    "name": "Matrix Heat (Glance)",
+    "card_title": "Adoption runs hot on the new versions",
+    "card_anchor_id": "gheat",
+    "data_shape": "two discrete dimensions x value, up to 60 cells, each cell read directly",
+    "occasion": "dashboard / product analysis",
+    "reading_speed": "<10s",
+    "engine": "SVG",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "L16",
+        "note": "close-read version"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G21",
+    "family": "glance",
+    "name": "Rank Strip",
+    "card_title": "Flows climbs to the top",
+    "card_anchor_id": "rankstrip",
+    "data_shape": "multi-entity ranking over discrete time, print-friendly",
+    "occasion": "reporting / billing retrospective",
+    "reading_speed": "<10s",
+    "engine": "SVG",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G16",
+        "note": "animated presentation version"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "G22",
+    "family": "glance",
+    "name": "Aggregate Sankey",
+    "card_title": "Channels pour into plans",
+    "card_anchor_id": "sankey",
+    "data_shape": "two-sided aggregate flow, band width = quantity, no per-path lookup required",
+    "occasion": "attribution / conversion analysis",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/glance-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "B3",
+        "note": "needs per-path lookup"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L1",
+    "family": "lupi",
+    "name": "Launch Fan",
+    "card_title": "Twelve features, fanned out",
+    "card_anchor_id": "fan",
+    "data_shape": "multiple entities, each with a birth time and current scale",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "L2",
+    "family": "lupi",
+    "name": "Dot Cascade",
+    "card_title": "What breaks, stacked and ranked",
+    "card_anchor_id": "cascade",
+    "data_shape": "ranking comparison, countable units (a unit chart)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG (dark card)",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G3",
+        "note": "Chunky Bars"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L3",
+    "family": "lupi",
+    "name": "Barcode Lollipop",
+    "card_title": "Ninety days as a barcode",
+    "card_anchor_id": "barcode",
+    "data_shape": "one reading per day, daily series (roughly 90 days)",
+    "occasion": "annual report / story page (with a text column)",
+    "reading_speed": "~30s",
+    "engine": "SVG (full width)",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G1",
+        "note": "Range Capsules"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L4",
+    "family": "lupi",
+    "name": "Arc Matrix",
+    "card_title": "Eight products land in twelve cities",
+    "card_anchor_id": "arcmatrix",
+    "data_shape": "category x category + value, small data (up to 100 cells)",
+    "occasion": "lightweight matrix",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L9",
+        "note": "use this for thinner data; Almanac is the heavier version"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L5",
+    "family": "lupi",
+    "name": "Radial Convergence",
+    "card_title": "48 requests pull toward five themes",
+    "card_anchor_id": "converge",
+    "data_shape": "many-to-one attribution without losing detail (up to 60 records)",
+    "occasion": "poster / cover",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L12",
+        "note": "two alternates offered for the same data shape"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L6",
+    "family": "lupi",
+    "name": "Cluster Field",
+    "card_title": "The contributor field",
+    "card_anchor_id": "clusters",
+    "data_shape": "hub-and-satellite network, poster version",
+    "occasion": "poster / cover (read the shape, not the numbers)",
+    "reading_speed": "~30s",
+    "engine": "SVG (full width)",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "B2",
+        "note": "use the big force template when interaction / lookup is needed"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L7",
+    "family": "lupi",
+    "name": "Brand Spectrum",
+    "card_title": "Where the brand sits",
+    "card_anchor_id": "spectrum",
+    "data_shape": "bipolar scale (both ends are valid positions) + competitor comparison",
+    "occasion": "brand research report",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Equalizer was removed; this is the only surviving scale chart."
+  },
+  {
+    "id": "L8",
+    "family": "lupi",
+    "name": "Dotty Matrix",
+    "card_title": "Four squads, stacked in space",
+    "card_anchor_id": "dotty",
+    "data_shape": "multiple groups x grid x value, evenly stacked",
+    "occasion": "cover / poster (strongly decorative)",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G14",
+        "note": "the flattened version is easier to read numbers from"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L9",
+    "family": "lupi",
+    "name": "Bubble Almanac",
+    "card_title": "Eight years of tickets, one almanac",
+    "card_anchor_id": "almanac",
+    "data_shape": "category x year + value + status, wide span (hand-drawn blob shapes)",
+    "occasion": "annual report (with marginalia / milestones)",
+    "reading_speed": ">30s",
+    "engine": "SVG (full width)",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L4",
+        "note": "lighter-weight version"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L10",
+    "family": "lupi",
+    "name": "Radial Patchwork",
+    "card_title": "A quarter of deploys, overlaid",
+    "card_anchor_id": "patchwork",
+    "data_shape": "overlaid events: time-of-day (angle) x magnitude (radius), opacity = density",
+    "occasion": "annual report / story page",
+    "reading_speed": ">30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Polar Line was removed; this is the only surviving 24-hour distribution chart."
+  },
+  {
+    "id": "L11",
+    "family": "lupi",
+    "name": "Trend Lineage",
+    "card_title": "Features rise, fall, come back",
+    "card_anchor_id": "lineage",
+    "data_shape": "event-sequence life history (launch / rebuild / dormant / alive)",
+    "occasion": "product retrospective",
+    "reading_speed": ">30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "L12",
+    "family": "lupi",
+    "name": "Type Colonnade",
+    "card_title": "Forty-four repos, ten owners",
+    "card_anchor_id": "colonnade",
+    "data_shape": "many-to-one attribution + a full itemized list (up to 50 records)",
+    "occasion": "governance / audit report",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L5",
+        "note": "two alternates offered for the same data shape"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L13",
+    "family": "lupi",
+    "name": "Hourglass Stream",
+    "card_title": "The funnel, poured",
+    "card_anchor_id": "hourglass",
+    "data_shape": "staged decreasing counts (a funnel)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "L14",
+    "family": "lupi",
+    "name": "Hundred Field",
+    "card_title": "A hundred of us, four minds",
+    "card_anchor_id": "hundredfield",
+    "data_shape": "100% composition (share of whole), up to 6 small-data categories",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G4",
+        "note": "Dot Waffle"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L15",
+    "family": "lupi",
+    "name": "Ballot Tally",
+    "card_title": "What they fear, tick by tick",
+    "card_anchor_id": "ballottally",
+    "data_shape": "multi-select-question percentages (each item independent, 0-100), up to 6 items",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G3",
+        "note": "Chunky Bars"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L16",
+    "family": "lupi",
+    "name": "Matrix Heat",
+    "card_title": "Which features get used together",
+    "card_anchor_id": "matheat",
+    "data_shape": "two discrete dimensions x value, up to 100 cells, keeps matrix structure and highlight cells",
+    "occasion": "annual report / product analysis",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G20",
+        "note": "quick-read version"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L17",
+    "family": "lupi",
+    "name": "Calendar Heat",
+    "card_title": "A year of deploys, day by day",
+    "card_anchor_id": "calheat",
+    "data_shape": "a full year of dates x count, 52 weeks x 7 days",
+    "occasion": "annual report / ops retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG (full width)",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "F10",
+        "note": "weekday x hour instead of full year"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "No primary-tier chart encodes a full year of daily data; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
+  },
+  {
+    "id": "L18",
+    "family": "lupi",
+    "name": "Beeswarm",
+    "card_title": "A hundred and twenty deals, swarming",
+    "card_anchor_id": "beeswarm",
+    "data_shape": "single-variable record-by-record stacked distribution, roughly 40-180 points",
+    "occasion": "sales / research appendix figure",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G15"
+      },
+      {
+        "id": "G19"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L19",
+    "family": "lupi",
+    "name": "Ridgeline",
+    "card_title": "Five pipelines, five tempos",
+    "card_anchor_id": "ridge",
+    "data_shape": "3-8 groups of continuous-distribution density shapes, compared",
+    "occasion": "annual report / research report",
+    "reading_speed": ">30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G19",
+        "note": "quick read with fewer groups"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "L20",
+    "family": "lupi",
+    "name": "Parallel Coordinates",
+    "card_title": "Twelve products, four dimensions",
+    "card_anchor_id": "parallel",
+    "data_shape": "same entity set across 3-6 continuous dimensions, one line per entity",
+    "occasion": "product-portfolio / research report",
+    "reading_speed": ">30s",
+    "engine": "SVG",
+    "gallery_file": "templates/lupi-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G9",
+        "note": "animated carousel presentation"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "No primary-tier chart encodes 3-6 continuous dimensions per entity; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
+  },
+  {
+    "id": "F1",
+    "family": "basics",
+    "name": "Rung Bars",
+    "card_title": "Revenue by plan, rung by rung",
+    "card_anchor_id": "rungs",
+    "data_shape": "small-category comparison (up to 8), countable units",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "B1",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G3",
+        "note": "Chunky Bars"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F2",
+    "family": "basics",
+    "name": "Hairline Line",
+    "card_title": "Thirty days of sign-ups",
+    "card_anchor_id": "dayline",
+    "data_shape": "daily series (up to 30 days, day-by-day reading)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "B2",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G1",
+        "note": "Range Capsules"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F3",
+    "family": "basics",
+    "name": "Hairline Area",
+    "card_title": "Concurrent users, filled with days",
+    "card_anchor_id": "hairarea",
+    "data_shape": "daily series (30-60 days, read for shape)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "B3",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L3",
+        "note": "Barcode Lollipop"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F4",
+    "family": "basics",
+    "name": "Tick Donut",
+    "card_title": "Where the traffic comes from",
+    "card_anchor_id": "tickdonut",
+    "data_shape": "100% composition (up to 6 segments)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "B4",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G4"
+      },
+      {
+        "id": "L14"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F5",
+    "family": "basics",
+    "name": "Tick Rows",
+    "card_title": "Six teams, shipped and counted",
+    "card_anchor_id": "tickrows",
+    "data_shape": "horizontal ranking comparison, countable units (up to 8 rows)",
+    "occasion": "annual report / story page",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C1",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "L2",
+        "note": "Dot Cascade"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F6",
+    "family": "basics",
+    "name": "Paired Rungs",
+    "card_title": "This year against last, plan by plan",
+    "card_anchor_id": "pairrungs",
+    "data_shape": "grouped comparison (2 series per category, e.g. this year vs. last)",
+    "occasion": "annual report / retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C2",
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "F7",
+    "family": "basics",
+    "name": "Stacked Rungs",
+    "card_title": "Where each region's revenue sits",
+    "card_anchor_id": "stackrungs",
+    "data_shape": "stacked composition (up to 4 categories x up to 3 segments)",
+    "occasion": "annual report / retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C3",
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "F8",
+    "family": "basics",
+    "name": "Plumb Scatter",
+    "card_title": "Price against satisfaction, twelve products",
+    "card_anchor_id": "plumb",
+    "data_shape": "two-dimensional scatter (up to 20 points)",
+    "occasion": "product analysis",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C4",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G15",
+        "note": "for distribution reading"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F9",
+    "family": "basics",
+    "name": "Rung Waterfall",
+    "card_title": "From gross to net, step by step",
+    "card_anchor_id": "fall",
+    "data_shape": "waterfall / step-by-step increase-decrease breakdown (up to 6 steps)",
+    "occasion": "finance / retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C5",
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream"
+  },
+  {
+    "id": "F10",
+    "family": "basics",
+    "name": "Dot Heat",
+    "card_title": "When support gets loud",
+    "card_anchor_id": "dotheat",
+    "data_shape": "weekday x hour x volume (small heatmap)",
+    "occasion": "support / ops",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C6",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G14",
+        "note": "Single Axis"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F11",
+    "family": "basics",
+    "name": "Tick Gauge",
+    "card_title": "How far to the quarter's goal",
+    "card_anchor_id": "gauge",
+    "data_shape": "single-value progress (0-100%)",
+    "occasion": "presentation opener",
+    "reading_speed": "<10s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C7",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G18",
+        "note": "Draw-in + Counter"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F12",
+    "family": "basics",
+    "name": "Dumbbell Queue",
+    "card_title": "Onboarding, before and after the redesign",
+    "card_anchor_id": "dumbbell",
+    "data_shape": "category-level before/after comparison (up to 6 categories, beads = real units)",
+    "occasion": "annual report / retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C8",
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "The Lupi slot for two-point trend comparisons, replacing the removed Slope Beads."
+  },
+  {
+    "id": "F13",
+    "family": "basics",
+    "name": "Nested Treemap",
+    "card_title": "Where the work went",
+    "card_anchor_id": "treemap",
+    "data_shape": "two-level hierarchy + positive weights, rectangle area = value",
+    "occasion": "budget / product portfolio / space allocation",
+    "reading_speed": "~30s",
+    "engine": "ECharts (SVG renderer)",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": "C9",
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G7",
+        "note": "when only the hierarchy matters, not the share"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F14",
+    "family": "basics",
+    "name": "Rung Histogram",
+    "card_title": "Most tickets resolve within six hours",
+    "card_anchor_id": "histo",
+    "data_shape": "single-variable binned frequency, bins have business meaning and countable units",
+    "occasion": "support / ops analysis",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G19"
+      },
+      {
+        "id": "F15",
+        "note": "Tick Box"
+      }
+    ],
+    "origin": "upstream"
+  },
+  {
+    "id": "F15",
+    "family": "basics",
+    "name": "Tick Box",
+    "card_title": "Reply times, boxed by plan",
+    "card_anchor_id": "boxplot",
+    "data_shape": "grouped five-number summary + outliers, raw distribution can be summarized",
+    "occasion": "support / experiment analysis",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G19"
+      },
+      {
+        "id": "F14",
+        "note": "Rung Histogram"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "No primary-tier chart encodes a five-number summary; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
+  },
+  {
+    "id": "F16",
+    "family": "basics",
+    "name": "Stream Ribbon",
+    "card_title": "Three products trade the same river",
+    "card_anchor_id": "stream",
+    "data_shape": "2-5 series of composition changing over continuous time, while still showing the total",
+    "occasion": "product / traffic retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG (full width)",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "F7",
+        "note": "static-category alternative"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "No primary-tier chart shows composition-over-time while preserving total; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
+  },
+  {
+    "id": "F17",
+    "family": "basics",
+    "name": "Candlestick",
+    "card_title": "Six weeks of the token, candle by candle",
+    "card_anchor_id": "candle",
+    "data_shape": "OHLC four-value time series, hollow = up, filled = down",
+    "occasion": "market / price retrospective",
+    "reading_speed": "~30s",
+    "engine": "SVG",
+    "gallery_file": "templates/basics-gallery.html",
+    "legacy_anchor": null,
+    "tier": "backup",
+    "siblings": [
+      {
+        "id": "G1",
+        "note": "when only a range is available"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "No primary-tier chart encodes OHLC data; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
+  },
+  {
+    "id": "M1",
+    "family": "maps",
+    "name": "US Choropleth",
+    "card_title": "Sign-ups across the states",
+    "card_anchor_id": "mapus",
+    "data_shape": "US state-level regions + non-negative values, lightness = value",
+    "occasion": "US market / operations report",
+    "reading_speed": "~30s",
+    "engine": "ECharts + GeoJSON",
+    "gallery_file": "templates/maps-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Only recall on explicit user request; state area does not represent value."
+  },
+  {
+    "id": "M2",
+    "family": "maps",
+    "name": "World Choropleth",
+    "card_title": "Where the users are",
+    "card_anchor_id": "mapworld",
+    "data_shape": "world country-level regions + non-negative values, lightness = value",
+    "occasion": "global market / operations report",
+    "reading_speed": "~30s",
+    "engine": "ECharts + GeoJSON",
+    "gallery_file": "templates/maps-gallery.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [],
+    "origin": "upstream",
+    "notes": "Only recall on explicit user request; not for point locations or paths."
+  },
+  {
+    "id": "B1",
+    "family": "interactive",
+    "name": "Circular Network (Big)",
+    "card_title": null,
+    "card_anchor_id": null,
+    "data_shape": "network, 60-node circular chord ribbon",
+    "occasion": "poster-scale relationship data with more than 15 nodes",
+    "reading_speed": "interactive",
+    "engine": "ECharts",
+    "gallery_file": "templates/big-circular.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G6",
+        "note": "small preview version"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "Hover to focus adjacency, click to replay. One chart per file, full-page canvas."
+  },
+  {
+    "id": "B2",
+    "family": "interactive",
+    "name": "Force Galaxy (Big)",
+    "card_title": null,
+    "card_anchor_id": null,
+    "data_shape": "network, 180-node force-directed galaxy",
+    "occasion": "large networks that need node-by-node lookup",
+    "reading_speed": "interactive",
+    "engine": "ECharts",
+    "gallery_file": "templates/big-force.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G11",
+        "note": "small preview version"
+      },
+      {
+        "id": "L6",
+        "note": "static poster version"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "Drag with spring-back, hover to focus. One chart per file, full-page canvas."
+  },
+  {
+    "id": "B3",
+    "family": "interactive",
+    "name": "Thread Triptych (Big)",
+    "card_title": null,
+    "card_anchor_id": null,
+    "data_shape": "three-stage paths, 100+ threads",
+    "occasion": "multi-stage flow data that needs per-path lookup",
+    "reading_speed": "interactive",
+    "engine": "hand-written SVG/Canvas",
+    "gallery_file": "templates/big-threads.html",
+    "legacy_anchor": null,
+    "tier": "primary",
+    "siblings": [
+      {
+        "id": "G22",
+        "note": "aggregate-only alternative"
+      }
+    ],
+    "origin": "upstream",
+    "notes": "Hover a single thread or a whole bundle, click to pin, status bar shows the reading. One chart per file, full-page canvas."
+  }
+]
