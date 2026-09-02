@@ -1,304 +1,306 @@
-# Lieflat Charts
+# Navi Chart
 
-中文 | [English](README.en.md)
+English | [中文](README.zh.md)
 
-[![Lieflat Charts：以统一的字体、留白、线条和动效建立自己的视觉语法的数据可视化 skill](docs/assets/readme-hero-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts)
+[![Navi Chart: a data visualization skill with its own visual language](docs/assets/readme-hero-en.png)](https://github.com/linm1/lieflat-charts)
 
-Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化与报告生成 skill，可供 moxt、Claude Code、Codex 及其他兼容 `SKILL.md` 的 AI agent 使用。本 skill 在 [moxt.ai](https://moxt.ai) 制作，默认把数据做成有编辑感的图表；只有用户明确要求报告、年报、月报、白皮书、海报或 brief 时，才从 12 套中英文整页模板生成可发布的 HTML 报告。
+Navi Chart is an Agent Skills-compatible data visualization and report-generation skill for Claude Code, Codex, and other AI agents that support `SKILL.md`. It is a fork of [`lieflat-charts`](https://github.com/larashero3-dotcom/lieflat-charts), originally created at [moxt.ai](https://moxt.ai) — see [`PROVENANCE.md`](PROVENANCE.md) for exactly what this fork changes and why, and [`docs/design-language/RESEARCH.md`](docs/design-language/RESEARCH.md) for the evidence-based research behind those decisions. By default it produces polished charts; it switches to one of 12 full-page templates, each available in Chinese and English, only when the user explicitly asks for a report, annual report, monthly report, white paper, poster, brief, or similar narrative deliverable.
 
-它以统一的字体、留白、线条和动效建立自己的视觉语法，包括以下几种视觉风格：
+Its visual language is built around consistent typography, spacing, line work, and motion. It includes three main chart families:
 
-- **Lupi（编辑叙事型）**：用细线、点阵、逐条记录和大量留白展开数据，强调真实单位、细节和旁注，适合论文、长文、年报与需要慢慢阅读的数据故事。
-- **Glance（快速判断型）**：用粗柱、大数字、色块和清晰排序提前聚合信息，让读者几秒内看懂高低、变化和异常，适合周报、汇报与 dashboard。
-- **Basics（基础编辑型）**：保留柱状图、折线图、环形图等熟悉轮廓，再用可数刻度、发丝线和编辑排版增加质感，适合结构简单或数据量较少的内容。
+- **Lupi Editorial**: fine lines, dot fields, record-level detail, annotations, and generous whitespace for papers, long-form articles, annual reports, and slow-reading data stories.
+- **Glance**: bold bars, large numbers, blocks, and clear ranking for reports, dashboards, and situations where readers need the answer in seconds.
+- **Lupi Basics**: familiar bar, line, area, donut, and scatter silhouettes rebuilt with countable units, hairlines, and editorial typography.
 
-此外还提供网络、路径和多段流向等独立交互大图。每张图都尽量保留数据的真实单位，同时让标题、旁注、来源和页面结构参与表达。
+The skill also includes standalone interactive visualizations for networks, paths, and dense multi-segment flows. Each chart aims to preserve honest data units while treating headlines, annotations, sources, and page structure as part of the visualization.
 
-Mono 黑白灰是稳定的保底方案，同时也有彩色模式，目前支持青瓷蓝、椰林绿和编辑部红三种彩色色系，方便适配各种场景的数据可视化。Agent 会根据数据结构和使用场景，在 Mono、青瓷蓝、椰林绿或编辑部红之间自动选择；适配关系不明确时使用 Mono。用户明确提供品牌色或色值时，也可以建立一套 custom 色板。同一份 HTML 或同一组图只使用一种色彩系统，生成后仍可继续调色，同时保持图型结构、比例、对比度和数据契约。
+Mono is the reliable fallback, but color does not require an explicit user request. The agent can choose automatically between Mono, Porcelain, Palm, and Wire based on the data structure and publishing context; when the fit is unclear, it returns to Mono. When users provide brand colors or exact values, the skill can build one custom palette. One HTML file or chart set uses one color system only while preserving structure, contrast, and data meaning.
+
+## Growing the catalog in plain language
+
+The catalog isn't frozen at its current chart types. Describe a chart shape in conversation — a reference image, or just "I need something like X but for Y" — and the agent finds the nearest existing chart type and either builds a one-off translation from it, or, once that shape proves reusable, promotes it into the catalog with `npm run new-chart`. A promotion is scaffolded from its nearest sibling's real structure (never a blank template) and has to pass the same validation every native chart type passes before it's accepted — so the catalog can grow from real usage without diluting the visual grammar that makes 64 different chart types still feel like one family. The full mechanism, including the exact command, lives in [`SKILL.md`](SKILL.md) §6.2.
 
 ## Preview
 
-以下是几类模板的实际预览。
+Representative templates from each chart family.
 
 ### Lupi Editorial
 
-细读、逐记录、编辑感。精选 20 张编辑叙事型模板中的代表图型。
+Detailed, record-level, and editorial. Selected examples from 20 narrative templates.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-lupi-01.png" alt="Lupi 编辑型预览一" width="100%"></td>
-    <td width="50%"><img src="docs/assets/preview-lupi-02.png" alt="Lupi 编辑型预览二" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-lupi-01.png" alt="Lupi Editorial preview one" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-lupi-02.png" alt="Lupi Editorial preview two" width="100%"></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-lupi-03.png" alt="Lupi 编辑型预览三" width="100%"></td></tr>
+  <tr><td colspan="2"><img src="docs/assets/preview-lupi-03.png" alt="Lupi Editorial preview three" width="100%"></td></tr>
 </table>
 
 ### Glance
 
-快读、聚合、结论先行。精选 22 张快速判断型模板中的代表图型。
+Fast reading, pre-aggregated information, and conclusion-first composition. Selected examples from 22 Glance templates.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-glance-01.png" alt="Glance 快读型预览一" width="100%"></td>
-    <td width="50%"><img src="docs/assets/preview-glance-02.png" alt="Glance 快读型预览二" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-glance-01.png" alt="Glance preview one" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-glance-02.png" alt="Glance preview two" width="100%"></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-glance-03.png" alt="Glance 快读型预览三" width="100%"></td></tr>
+  <tr><td colspan="2"><img src="docs/assets/preview-glance-03.png" alt="Glance preview three" width="100%"></td></tr>
 </table>
 
-动态预览：
+Motion preview:
 
-<p align="center"><img src="docs/assets/glance-motion.gif" alt="Glance 动态预览" width="82%"></p>
+<p align="center"><img src="docs/assets/glance-motion.gif" alt="Glance motion preview" width="82%"></p>
 
-更多动态预览：
+More motion examples:
 
 <table>
   <tr>
-    <td width="33%"><img src="docs/assets/glance-wave-motion.gif" alt="Fifty markets 动态预览" width="100%"><br><strong>Fifty markets</strong></td>
-    <td width="33%"><img src="docs/assets/glance-race-motion.gif" alt="Eight products race 动态预览" width="100%"><br><strong>Eight products race</strong></td>
-    <td width="33%"><img src="docs/assets/glance-stroke-motion.gif" alt="H1 revenue 动态预览" width="100%"><br><strong>H1 revenue</strong></td>
+    <td width="33%"><img src="docs/assets/glance-wave-motion.gif" alt="Fifty markets motion preview" width="100%"><br><strong>Fifty markets</strong></td>
+    <td width="33%"><img src="docs/assets/glance-race-motion.gif" alt="Eight products race motion preview" width="100%"><br><strong>Eight products race</strong></td>
+    <td width="33%"><img src="docs/assets/glance-stroke-motion.gif" alt="H1 revenue motion preview" width="100%"><br><strong>H1 revenue</strong></td>
   </tr>
 </table>
 
 ### Lupi Basics
 
-常见图型与可数单位的结合。17 张模板覆盖柱、线、面积、环形、散点、矩形树图、直方图、箱线图、K 线等基础数据形状。
+Familiar chart forms built from countable visual units. Selected examples from 17 foundational templates.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-basics-01.png" alt="Lupi 基础型预览一" width="100%"></td>
-    <td width="50%"><img src="docs/assets/preview-basics-02.png" alt="Lupi 基础型预览二" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-basics-01.png" alt="Lupi Basics preview one" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-basics-02.png" alt="Lupi Basics preview two" width="100%"></td>
   </tr>
 </table>
 
 ### Interactive
 
-用于网络、路径与高密度关系数据。
+For networks, paths, and high-density relationship data.
 
-动态预览：
+Motion preview:
 
-<p align="center"><img src="docs/assets/interactive-motion.gif" alt="Interactive 动态预览" width="82%"></p>
+<p align="center"><img src="docs/assets/interactive-motion.gif" alt="Interactive visualization preview" width="82%"></p>
 
-[打开 Force Graph 模板体验拖拽与缩放](https://larashero3-dotcom.github.io/lieflat-charts/templates/big-force.html)
+[Open the Force Graph template to try dragging and zooming](https://larashero3-dotcom.github.io/lieflat-charts/templates/big-force.html)
 
-## 增加了彩色模式
+## Color Mode
 
-图表可以根据数据结构和使用场景自动选择 Mono 或一套彩色预设，不要求用户先说“要彩色”。有序单序列可使用青瓷蓝，少量无序类目可使用椰林绿，需要一个受控视线落点时可使用编辑部红；适配关系不明确时回到 Mono。用户明确给出品牌色或色值时，可以建立一套 custom 色板。同一份 HTML 或同一组图只使用一种色彩系统；调整时需重新检查对比度、视觉主次和颜色所表达的数据含义。
+The skill can automatically choose Mono or one color preset from the data structure and publishing context; users do not need to request color first. Porcelain suits ordered or single-series data, Palm suits a small number of unordered categories, and Wire suits a restrained composition with one focal point. When the fit is unclear, the skill returns to Mono. Users who provide brand colors or exact values can use one custom palette. Each HTML file or chart set still locks one color system, with contrast, hierarchy, and data meaning checked after every change.
 
-#### Porcelain · 青瓷蓝
+#### Porcelain
 
-单色相明度阶，适合有序数据和单序列。
+A single-hue blue scale for ordered data and single-series charts.
 
-<p align="center"><img src="docs/assets/color-porcelain-motion.gif" alt="青瓷蓝 Barcode Lollipop 动态预览" width="100%"></p>
+<p align="center"><img src="docs/assets/color-porcelain-motion.gif" alt="Porcelain Barcode Lollipop motion preview" width="100%"></p>
 
-<p align="center"><img src="docs/assets/color-porcelain-almanac-motion.gif" alt="青瓷蓝 Eight Years of Tickets, One Almanac 动态预览" width="100%"></p>
-
-<table>
-  <tr>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="青瓷蓝 Basics 彩色图表预览" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-glance.png" alt="青瓷蓝 Glance 彩色图表预览" width="100%"><br><strong>Glance</strong></td>
-  </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-color-porcelain.png" alt="青瓷蓝 Lupi 彩色图表预览" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
-</table>
-
-#### Palm · 椰林绿
-
-低饱和绿黄色系，用色相区分少量无序类目。
-
-<p align="center"><img src="docs/assets/color-palm-wave-motion.gif" alt="椰林绿 Fifty Markets, One Wave 动态预览" width="100%"></p>
-
-<p align="center"><img src="docs/assets/color-palm-support-motion.gif" alt="椰林绿 Support Load, Day by Day 动态预览" width="100%"></p>
+<p align="center"><img src="docs/assets/color-porcelain-almanac-motion.gif" alt="Porcelain Eight Years of Tickets, One Almanac motion preview" width="100%"></p>
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-palm-basics.png" alt="椰林绿 Basics 彩色图表预览" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-palm-glance.png" alt="椰林绿 Glance 彩色图表预览" width="100%"><br><strong>Glance</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="Porcelain Basics color preview" width="100%"><br><strong>Basics</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-porcelain-glance.png" alt="Porcelain Glance color preview" width="100%"><br><strong>Glance</strong></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-color-palm.png" alt="椰林绿 Lupi 彩色图表预览" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
+  <tr><td colspan="2"><img src="docs/assets/preview-color-porcelain.png" alt="Porcelain Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
 
-#### Wire · 编辑部红
+#### Palm
 
-黑灰阶加一个荧光橙视线落点。
+A low-saturation green and yellow family for a small number of unordered categories.
 
-<p align="center"><img src="docs/assets/color-wire-patchwork-motion.gif" alt="编辑部红 A Quarter of Deploys, Overlaid 动态预览" width="100%"></p>
+<p align="center"><img src="docs/assets/color-palm-wave-motion.gif" alt="Palm Fifty Markets, One Wave motion preview" width="100%"></p>
 
-<p align="center"><img src="docs/assets/color-wire-hourglass-motion.gif" alt="编辑部红 The Funnel, Poured 动态预览" width="100%"></p>
+<p align="center"><img src="docs/assets/color-palm-support-motion.gif" alt="Palm Support Load, Day by Day motion preview" width="100%"></p>
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-wire-basics.png" alt="编辑部红 Basics 彩色图表预览" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-wire-glance.png" alt="编辑部红 Glance 彩色图表预览" width="100%"><br><strong>Glance</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-palm-basics.png" alt="Palm Basics color preview" width="100%"><br><strong>Basics</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-palm-glance.png" alt="Palm Glance color preview" width="100%"><br><strong>Glance</strong></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-color-wire.png" alt="编辑部红 Lupi 彩色图表预览" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
+  <tr><td colspan="2"><img src="docs/assets/preview-color-palm.png" alt="Palm Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
 
-## 最新更新
+#### Wire
 
-### 增加了报告模式
+A black and gray palette with one fluorescent orange focal point.
 
-现在可以在单张图表之外，直接从 12 套整页报告模板生成 HTML 报告。每套模板都提供中文版和英文版，覆盖调研报告、研究简报、业务数据报告、财报与金融经济分析、产品记录、dashboard、海报，以及运动、旅行和年度生活数据记录等从工作到个人的需求。模板名称代表版式性格，不是使用场景的限制；同一套模板可以根据数据结构迁移到不同类型的报告。
+<p align="center"><img src="docs/assets/color-wire-patchwork-motion.gif" alt="Wire A Quarter of Deploys, Overlaid motion preview" width="100%"></p>
+
+<p align="center"><img src="docs/assets/color-wire-hourglass-motion.gif" alt="Wire The Funnel, Poured motion preview" width="100%"></p>
 
 <table>
   <tr>
-    <td width="25%"><img src="docs/assets/reports/report-03.png" alt="报告模板 03 年度数据报告 / 年度海报" width="100%"><br><strong>R03 · 年度数据报告 / 年度海报</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-09.png" alt="报告模板 09 业务数据 / 财务经营 Dashboard" width="100%"><br><strong>R09 · 业务数据 / 财务经营 Dashboard</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-12.png" alt="报告模板 12 周期数据快报 / 监控摘要" width="100%"><br><strong>R12 · 周期数据快报 / 监控摘要</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-08.png" alt="报告模板 08 人群与社会经济数据一页" width="100%"><br><strong>R08 · 人群 / 社会经济数据一页</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-wire-basics.png" alt="Wire Basics color preview" width="100%"><br><strong>Basics</strong></td>
+    <td width="50%"><img src="docs/assets/preview-color-wire-glance.png" alt="Wire Glance color preview" width="100%"><br><strong>Glance</strong></td>
+  </tr>
+  <tr><td colspan="2"><img src="docs/assets/preview-color-wire.png" alt="Wire Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
+</table>
+
+## Report Mode
+
+Alongside individual charts, the skill can generate complete HTML reports. The 12 full-page templates are available in Chinese and English for research reports, research briefs, business data reports, financial and economic analysis, product records, dashboards, posters, and personal datasets such as sports, travel, and yearly life logs. Template names describe the layout's character, not a hard use-case restriction; the same layout can move across report types when the information structure fits.
+
+<table>
+  <tr>
+    <td width="25%"><img src="docs/assets/reports/en/report-03.png" alt="Report Template 03 Annual Data Report / Poster" width="100%"><br><strong>R03 · Annual Data Report / Poster</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-09.png" alt="Report Template 09 Business Data / Financial Dashboard" width="100%"><br><strong>R09 · Business Data / Financial Dashboard</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-12.png" alt="Report Template 12 Periodic Data Brief / Monitoring Summary" width="100%"><br><strong>R12 · Periodic Data Brief / Monitoring Summary</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-08.png" alt="Report Template 08 Population / Socioeconomic One-Pager" width="100%"><br><strong>R08 · Population / Socioeconomic One-Pager</strong></td>
   </tr>
   <tr>
-    <td width="25%"><img src="docs/assets/reports/report-01.png" alt="报告模板 01 调研报告 / 研究一页" width="100%"><br><strong>R01 · 调研报告 / 研究一页</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-05.png" alt="报告模板 05 项目 / 产品影响力故事" width="100%"><br><strong>R05 · 项目 / 产品影响力故事</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-10.png" alt="报告模板 10 个人数据 / 运动 / 旅行记录" width="100%"><br><strong>R10 · 个人数据 / 运动 / 旅行记录</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-07.png" alt="报告模板 07 调研 / 市场数据拼贴海报" width="100%"><br><strong>R07 · 调研 / 市场数据拼贴海报</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-01.png" alt="Report Template 01 Research Report / One-Pager" width="100%"><br><strong>R01 · Research Report / One-Pager</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-05.png" alt="Report Template 05 Project / Product Impact Story" width="100%"><br><strong>R05 · Project / Product Impact Story</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-10.png" alt="Report Template 10 Personal Data / Sports / Travel Record" width="100%"><br><strong>R10 · Personal Data / Sports / Travel Record</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-07.png" alt="Report Template 07 Research / Market Data Collage Poster" width="100%"><br><strong>R07 · Research / Market Data Collage Poster</strong></td>
   </tr>
   <tr>
-    <td width="25%"><img src="docs/assets/reports/report-02.png" alt="报告模板 02 年度复盘 / 业绩回顾" width="100%"><br><strong>R02 · 年度复盘 / 业绩回顾</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-11.png" alt="报告模板 11 研究 / 金融经济简报卡" width="100%"><br><strong>R11 · 研究 / 金融经济简报卡</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-04.png" alt="报告模板 04 月度业务 / 财务经营报告" width="100%"><br><strong>R04 · 月度业务 / 财务经营报告</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-06.png" alt="报告模板 06 长周期产品 / 业务年鉴" width="100%"><br><strong>R06 · 长周期产品 / 业务年鉴</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-02.png" alt="Report Template 02 Annual Review / Performance Recap" width="100%"><br><strong>R02 · Annual Review / Performance Recap</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-11.png" alt="Report Template 11 Research / Financial Brief Card" width="100%"><br><strong>R11 · Research / Financial Brief Card</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-04.png" alt="Report Template 04 Monthly Business / Financial Report" width="100%"><br><strong>R04 · Monthly Business / Financial Report</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-06.png" alt="Report Template 06 Long-Cycle Product / Business Almanac" width="100%"><br><strong>R06 · Long-Cycle Product / Business Almanac</strong></td>
   </tr>
 </table>
 
-## 零门槛快速使用
+## Quick Start
 
-### 推荐在 Moxt 中使用
-
-[![在 Moxt 中使用 Lieflat Charts](docs/assets/moxt-quick-start-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts)
-
-Lieflat Charts 在 [Moxt](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts) 中完成设计、测试和持续迭代。它的设计规则、模板结构与文件工作流，都是围绕 Moxt 的 Agent 协作方式反复打磨的。
-
-因此，在 Moxt 中使用时，Agent 能更顺畅地读取完整的设计规范、理解 Lieflat Charts 的视觉语言、调用对应模板，并在同一个工作区中持续预览和修改结果，更稳定地执行这套设计。
-
-| Lieflat Charts 的工作环节 | 普通的一问一答方式 | 在 Moxt 中 |
-|---|---|---|
-| 理解设计语言 | 需要从 Skill 文件重新建立理解 | Skill 已在相同的 Agent 工作环境中完成设计和验证 |
-| 读取规则、模板和数据 | 通常需要反复上传文件或提供路径 | 规则、模板、数据和成品可以保留在同一个工作区 |
-| 多轮选择和修改图表 | 更换对话后可能需要重新说明背景 | Agent 可以沿用工作区中的文件和上下文继续修改 |
-| 生成最终结果 | 结果可能停留在对话或临时目录中 | HTML 成品可以和数据、模板一起留在工作区继续完善 |
-
-Lieflat Charts 仍然可以安装到其他支持 Agent Skills 的工具中；Moxt 是它的原生制作环境，也是目前更完整、步骤更短的推荐使用方式。
-
-### 安装到其他 Agent
-
-一条命令安装：
+### Install
 
 ```bash
-npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts
+npx skills add https://github.com/linm1/lieflat-charts --skill navi-chart
 ```
 
-也可以直接把这段话发给有 shell 权限的 AI Agent：
+You can also send the following instruction to an AI agent with shell access:
 
 ```text
-帮我安装 lieflat-charts。请把 https://github.com/larashero3-dotcom/lieflat-charts
-克隆到 ~/.claude/skills/lieflat-charts，安装完成后检查 SKILL.md、templates/、
-catalog.md 和 mono-tokens.js 是否存在。
+Install navi-chart. Clone https://github.com/linm1/lieflat-charts
+to ~/.claude/skills/navi-chart, then verify that SKILL.md, templates/,
+catalog.md, and mono-tokens.js are present.
 ```
 
-使用 Codex 时，将安装路径换成 `~/.codex/skills/lieflat-charts`。
+For Codex, replace the installation path with `~/.codex/skills/navi-chart`.
 
-已经安装过的话，用这段话更新：
+To update an existing installation:
 
 ```text
-帮我更新 lieflat-charts。请进入 ~/.claude/skills/lieflat-charts 执行 git pull，
-然后告诉我当前最新 commit。
+Update navi-chart. Enter ~/.claude/skills/navi-chart, run git pull,
+and report the latest commit.
 ```
 
-安装后直接对 Agent 说：
+After installation, ask your agent:
 
 ```text
-把这份调研数据做成适合公众号长文的 5 张中文版图表。
-默认先比较 Lupi Editorial 和 Lupi Basics 候选；两组都不适配时，再使用 Glance。
+Turn this research dataset into five charts for a long-form article.
+Compare Lupi Editorial and Lupi Basics first. Use Glance only if neither group fits.
 ```
 
-也可以试这些请求：
+More prompt examples:
 
 ```text
-帮我用 lieflat charts 给这些数据做个彩色风格的图表。
-```
-
-```text
-读这篇论文，找出最值得讲的几个数据结论，做成一页完整的 HTML 图表。
+Use navi-chart to turn this dataset into a color chart.
 ```
 
 ```text
-这是一份周报数据，要求 10 秒内看懂排名、变化和异常。
+Read this paper, identify the strongest data findings, and build a complete HTML chart page.
 ```
 
 ```text
-把这个 CSV 做成一张适合放进汇报里的 Glance 图表。
+This is weekly reporting data. Make the ranking, changes, and anomalies readable within ten seconds.
 ```
 
 ```text
-用 Lupi 风格重新设计这组数据，保留每条真实记录，并加入必要的旁注。
+Turn this CSV into a Glance chart suitable for a presentation.
 ```
 
 ```text
-用青瓷蓝预设重做这张图，用明度深浅表示数值大小，不改变原图的结构。
+Redesign this dataset in the Lupi style, preserving every real record and adding useful annotations.
 ```
 
-图数由独立结论决定：单个问题通常 1 张，两个到三个结论 2–3 张，完整文章或论文 4–6 张，单页默认最多 6 张。用户明确指定数量时会遵守，但不会为了凑数重复表达同一个结论。
+```text
+Rebuild this chart with the Porcelain preset. Use lightness to represent value without changing the structure.
+```
+
+The number of charts follows the number of independent findings: one chart for one question, two or three charts for two or three findings, and four to six charts for a complete article or paper. A single page defaults to no more than six charts, and repeated conclusions are removed rather than added to meet a quota.
 
 ## Templates
 
-| 类型 | 数量 | 适合什么 | 实现 |
-|---|---:|---|---|
-| **Lupi Editorial** | 15 | 年报、论文、公众号、海报、作品集；读者愿意停下来细看 | 手写 SVG |
-| **Lupi Basics** | 13 | 柱、折线、面积、环形、散点、瀑布、热力、进度、矩形树图等基础数据形状 | 手写 SVG / ECharts |
-| **Glance** | 18 | 周报、dashboard、监控、汇报；需要快速排序和比较 | Chart.js / ECharts |
-| **Interactive** | 3 | 网络、路径、多段流向和高密度关系数据 | ECharts / SVG |
-| **Color Presets** | 3 套 / 15 个样张 | 需要颜色区分数据维度，或为 Mono 加一个受控视线落点 | 基于原模板换肤 |
-| **Report Templates** | 12 套 / 中英双版 | 调研、年报、月报、仪表盘、海报、简报和个人记录等完整整页报告 | 单文件 HTML |
+<!-- GENERATED:chart-family-table:start -->
+| Family | Count |
+| --- | ---: |
+| Glance | 22 |
+| Lupi Editorial | 20 |
+| Lupi Basics | 17 |
+| Maps | 2 |
+| Interactive | 3 |
+| **Total** | **64** |
+<!-- GENERATED:chart-family-table:end -->
+
+| Family | Best for | Implementation |
+|---|---|---|
+| **Lupi Editorial** | Annual reports, papers, long-form articles, posters, portfolios, and readers willing to inspect detail | Handwritten SVG |
+| **Lupi Basics** | Bars, lines, areas, donuts, scatterplots, waterfalls, heatmaps, progress, treemaps, and other foundational data shapes | Handwritten SVG / ECharts |
+| **Glance** | Weekly reports, dashboards, monitoring, and presentations that require fast comparison | Chart.js / ECharts |
+| **Maps** | US or world choropleths, only on explicit request | ECharts + GeoJSON |
+| **Interactive** | Networks, paths, multi-segment flows, and high-density relationship data | ECharts / SVG |
+
+Color presets add 3 families (Porcelain, Palm, Wire) across 18 re-skinned samples, for distinguishing real data dimensions or adding one controlled focal point to monochrome charts. Report templates add 12 full-page layouts, each in two languages, for research, annual, monthly, dashboard, poster, brief, and notebook-style deliverables — all as single-file HTML.
 
 ### Lupi Editorial
 
-把一个点、一根线或一条旁注尽量对应到真实数据单位。它不急着把数据聚合成一个结论，而是把原材料摊开，让读者看到结构、分布和例外。视觉上使用发丝线、留白、账本式导轨、旁注和低对比灰阶，阅读时间通常在 30 秒以上。
+Each point, line, and annotation should map to a real unit whenever possible. Lupi Editorial does not rush to aggregate the evidence into a single number. It lays out records, distributions, structures, and exceptions through hairlines, whitespace, ledger-like guides, annotations, and low-contrast value scales.
 
 ### Lupi Basics
 
-保留常见图表的剪影，但把它们放进 Lupi 的编辑语法里：一格可以是一个百分点，一根 tick 可以是一个人，一条 hairline 可以是一天，Treemap 的一块面积可以对应一个真实权重。它适合数据不多、但仍然希望画面有密度和可读单位的场景。
+Lupi Basics retains familiar chart silhouettes while rebuilding them inside the same editorial language. A cell can represent one percentage point, a tick can represent one person, a hairline can represent one day, and a treemap rectangle can represent one honest weight. It is suited to smaller datasets that still need density and countable visual units.
 
 ### Glance
 
-提前聚合、加粗主要形状，把关键排序和变化放到第一眼。它不是“低配版 Lupi”，而是另一种阅读速度：读者不需要展开每条记录，也能在几秒内知道谁更高、哪里变化最大、哪个指标需要关注。
+Glance pre-aggregates information, strengthens the main forms, and places the key ranking or change in the first visual pass. It is not a simplified Lupi mode. It serves a different reading speed: readers can identify what is higher, what changed most, and what needs attention within seconds.
 
 ### Interactive
 
-用于普通静态图承载不了的关系数据。通过 hover、聚焦、拖拽、固定路径和状态栏，把“看起来很复杂”的网络变成可以逐条查询的图。交互只服务于真实记录，不给纯装饰元素添加假的行为。
+Interactive templates handle relationship data that ordinary static charts cannot carry. Hover, focus, dragging, pinned paths, and status readouts turn complex networks into records that can be queried one by one. Interaction is reserved for real data, not decorative elements.
 
 ## Design
 
-所有体系共享一套 Mono 视觉语法：纸灰与炭黑两极，加上中间灰阶；明度承担层级，位置、长度、密度和结构承担数据编码。三套彩色预设提供稳定的配色起点；用户明确给出品牌色时，也可以建立角色完整、对比度合格的 custom 色板。继续调色时，仍需保证视觉主次和数据含义清楚。创新不在于再发明一种孤立图型，而在于把图型选择、编辑排版、浏览器交互和整页叙事放进同一个可复用的 skill。
+Every family shares the same core visual language: paper gray and charcoal at the extremes, a controlled grayscale ladder between them, and data encoded through lightness, position, length, density, and structure. The three color presets provide stable starting points. Explicit brand colors can also become one role-based custom palette. When users refine the palette, contrast, hierarchy, and data meaning still need to remain clear.
 
-因此，Lieflat Charts 和过去直接做 charts 的差别，不只是“换了颜色”：
+Navi Chart differs from a conventional chart generator in more than color:
 
-- 先判断数据契约，再选图型，而不是先挑一个库内模板
-- 每张图先承担一个独立结论，再组成整页，而不是把所有字段都画上去
-- 把真实数据单位作为视觉原子，不用装饰性噪声伪造密度
-- 把标题、旁注、来源、留白和动效视为图表的一部分
-- 用 Lupi 和 Glance 表达两种阅读速度，而不是把静态图和交互图当成唯一分类
+- It identifies the data contract before choosing a chart.
+- Each chart carries one independent conclusion before charts are assembled into a page.
+- Real data units become visual atoms instead of using decorative noise to imitate density.
+- Headlines, annotations, sources, spacing, and motion are treated as part of the chart.
+- Lupi and Glance represent different reading speeds, not simply static versus interactive output.
+- The catalog can grow from a natural-language description of a new chart need, through a validated promotion path rather than ad hoc invention — see "Growing the catalog in plain language" above.
 
 ## Structure
 
 ```text
 .
-├── README.md                # 中文项目说明
-├── README.en.md             # English project guide
-├── SKILL.md                 # Agent 使用的工作流与规则
-├── catalog.md               # 49 个图型的数据契约索引
-├── report-catalog.md        # 12 套整页报告模板的场景索引
-├── mono-tokens.js           # 共享视觉 token
-├── color-presets.js         # 三套内置彩色预设
-├── templates/               # Lupi、Basics、Glance、交互与报告模板
-│   ├── color/               # 彩色换肤样张
-│   └── reports/             # 12 套报告模板，每套中英文双版
-├── examples/                # 真实公开数据案例
-├── docs/assets/             # README 模板截图与动态预览
-└── scripts/validate.mjs     # 发布前检查
+├── README.md                # English project guide (primary)
+├── README.zh.md             # Chinese project guide
+├── SKILL.md                 # Agent workflow and design rules
+├── PROVENANCE.md            # What this fork changes vs. upstream, and why
+├── catalog.md                # Data-contract index for 64 chart types (generated from catalog/charts.json)
+├── report-catalog.md         # Scenario index for 12 report templates (generated from catalog/reports.json)
+├── catalog/                  # Machine-readable chart/report catalog, schemas, and generated token snapshot
+├── mono-tokens.js           # Shared monochrome design tokens
+├── color-presets.js         # Three built-in color presets
+├── templates/               # Lupi, Basics, Glance, interactive, and report templates
+│   ├── color/               # Color-restyled samples
+│   └── reports/             # 12 report templates, each in Chinese and English
+├── assets/geo/               # Vendored map GeoJSON (see docs/design-language/UNKNOWNS.md U2)
+├── examples/                # Examples based on public datasets
+├── docs/
+│   ├── assets/               # README screenshots and motion previews
+│   ├── adr/                  # Architecture decision records for this fork
+│   └── design-language/      # RESEARCH.md, PRINCIPLES.md — the evidence base for SKILL.md's rules
+└── scripts/                   # validate.ts, new-chart.ts, generate-catalog-docs.ts, build-tokens.ts
 ```
 
-直接打开 `templates/` 下的 HTML 文件即可查看 gallery；打开 `templates/reports/index.html` 可浏览报告模板并进入中英文版本。报告模式先从 `report-catalog.md` 选整页骨架，再为各图表槽位复用 `catalog.md` 中的真实图型。Lupi 和 Basics 主要使用原生 SVG，F13 Treemap 使用 ECharts；Glance、Circular、Force 以及报告模板 R11/R12 通过 CDN 加载 Chart.js 或 ECharts，需要联网才能完整显示。
+Open the HTML files under `templates/` directly to inspect the galleries. Open `templates/reports/index.html` to browse the report templates and their Chinese/English variants. Report mode chooses a full-page skeleton from `report-catalog.md`, then reuses the real chart implementations indexed in `catalog.md` for each chart slot. Lupi and Basics mainly use native SVG, while F13 Treemap uses ECharts. Glance, Circular, Force, and report templates R11/R12 also load Chart.js or ECharts from a CDN and require an internet connection unless those dependencies are inlined.
 
 ## License
 
-本项目使用 [PolyForm Noncommercial License 1.0.0](LICENSE)。允许学习、修改、分享和非商业使用；商业使用需要另行取得许可。
+This project is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE) — the same terms as upstream; see [ADR-0001](docs/adr/0001-license-and-provenance.md) for why this fork doesn't relicense. Learning, modification, sharing, and noncommercial use are allowed. Commercial use requires separate permission.
 
-Chart.js、Apache ECharts 和 Inter 字体遵循各自的原始许可证，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+Chart.js, Apache ECharts, and the Inter typeface remain subject to their original licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
