@@ -1,0 +1,30 @@
+{
+  "name": "navi-chart",
+  "version": "0.1.0",
+  "description": "Navi Chart — a sustainable, English-first data-visualization Agent Skill. Turns data into honest, editorial HTML charts and reports, and can be extended in natural language through a typed catalog and generator pipeline.",
+  "private": true,
+  "type": "module",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build:tokens",
+    "build:tokens": "tsx scripts/build-tokens.ts",
+    "catalog:generate": "tsx scripts/generate-catalog-docs.ts",
+    "catalog:check": "tsx scripts/generate-catalog-docs.ts --check",
+    "new-chart": "tsx scripts/new-chart.ts",
+    "validate": "tsx scripts/validate.ts",
+    "smoke": "tsx scripts/smoke-new-charts.ts",
+    "verify": "npm run build && npm run catalog:check && npm run validate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "esbuild": "^0.28.2",
+    "playwright-core": "^1.62.1",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3"
+  }
+}
