@@ -1,10 +1,10 @@
 # Navi Chart
 
-English | [中文](README.zh.md)
+English | [繁體中文（台灣）](README.zh.md)
 
 [![Navi Chart: a data visualization skill with its own visual language](docs/assets/readme-hero-en.png)](https://github.com/linm1/lieflat-charts)
 
-Navi Chart is an Agent Skills-compatible data visualization and report-generation skill for Claude Code, Codex, and other AI agents that support `SKILL.md`. It is a fork of [`lieflat-charts`](https://github.com/larashero3-dotcom/lieflat-charts), originally created at [moxt.ai](https://moxt.ai) — see [`PROVENANCE.md`](PROVENANCE.md) for exactly what this fork changes and why, and [`docs/design-language/RESEARCH.md`](docs/design-language/RESEARCH.md) for the evidence-based research behind those decisions. By default it produces polished charts; it switches to one of 12 full-page templates, each available in Chinese and English, only when the user explicitly asks for a report, annual report, monthly report, white paper, poster, brief, or similar narrative deliverable.
+Navi Chart is an Agent Skills-compatible data visualization and report-generation skill for Claude Code, Codex, and other AI agents that support `SKILL.md`. It is a fork of [`lieflat-charts`](https://github.com/larashero3-dotcom/lieflat-charts), originally created at [moxt.ai](https://moxt.ai) — see [`PROVENANCE.md`](PROVENANCE.md) for exactly what this fork changes and why, and [`docs/design-language/RESEARCH.md`](docs/design-language/RESEARCH.md) for the evidence-based research behind those decisions. By default it produces polished charts; it switches to one of 12 full-page templates, each available in Taiwan Traditional Chinese and English, only when the user explicitly asks for a report, annual report, monthly report, white paper, poster, brief, or similar narrative deliverable.
 
 Its visual language is built around consistent typography, spacing, line work, and motion. It includes three main chart families:
 

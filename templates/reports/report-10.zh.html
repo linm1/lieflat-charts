@@ -1,43 +1,43 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>东京五日手记 — Lieflat 报告模板 · 椰林慢刊</title>
+<title>東京五日手記 — Lieflat 報告範本 · 椰林慢刊</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   /* ═══════════════════════════════════════════════════════════════
-     LIEFLAT 报告模板 10 · 旅行手记（椰林慢刊）
-     场景：个人旅行/生活复盘一页（博客年终、旅行记录、生活数据随笔）
-     排版参考：图9 "Tales of San Francisco"（Gregory Wood）——粗压缩
-               衬线刊头 + 左侧色阶签、编号方块节标题、故事与统计混排的
-               三栏节奏、行间小图表 —— 只学排版和字体。
-     色板正本 = color-presets.js 的 PALM 一套（暖纸 + 深绿 + 琥珀，
-     气质最接近原图的米纸黑墨）。
-     图表正本 = lieflat gallery：
-       图A  F5  tick rows   · basics-gallery.html（开销）
-       图B  F1  rung bars   · basics-gallery.html（咖啡馆访问）
-       图C  F4  tick donut  · basics-gallery.html（饮品构成）
-       图D  F1  rung bars   · basics-gallery.html（餐食类型）
-       表格为纯排字，不占图额度。
-     彩色加墨（INK_BOOST）：发丝 ×1.8，透明度地板 .85。
-     数据说明：全部为虚构演示数据，仅用于验证版式。
+     LIEFLAT 報告範本 10 · 旅行手記（椰林慢刊）
+     場景：個人旅行／生活回顧一頁（部落格年終、旅行記錄、生活資料隨筆）
+     排版參考：圖9 "Tales of San Francisco"（Gregory Wood）——粗壓縮
+               襯線刊頭 + 左側色階籤、編號方塊節標題、故事與統計混排的
+               三欄節奏、行間小圖表 —— 只學排版和字型。
+     色盤正本 = color-presets.js 的 PALM 一套（暖紙 + 深綠 + 琥珀，
+     氣質最接近原圖的米紙黑墨）。
+     圖表正本 = lieflat gallery：
+       圖A  F5  tick rows   · basics-gallery.html（開銷）
+       圖B  F1  rung bars   · basics-gallery.html（咖啡館造訪）
+       圖C  F4  tick donut  · basics-gallery.html（飲品構成）
+       圖D  F1  rung bars   · basics-gallery.html（餐食型別）
+       表格為純排字，不佔圖額度。
+     彩色加墨（INK_BOOST）：髮絲 ×1.8，透明度地板 .85。
+     資料說明：全部為虛構示範資料，僅用於驗證版型。
      ═══════════════════════════════════════════════════════════════ */
   :root{
     --bg:#F0EFEB; --txt:#58402E;
     --mut:rgba(88,64,46,.60); --lab:rgba(88,64,46,.72);
     --faint:rgba(88,64,46,.40); --quiet:rgba(88,64,46,.15); --grid:rgba(88,64,46,.16);
     --data:#43593B; --data2:#77835A; --hero:#D4A017; --faintdata:#ACAD79; --wheat:#F2D17E;
-    --slab:'Roboto Slab','Noto Serif SC',serif;
+    --slab:'Roboto Slab','Noto Serif TC',serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--txt);font-family:'Inter','Noto Sans SC',sans-serif;
+  body{background:var(--bg);color:var(--txt);font-family:'Inter','Noto Sans TC',sans-serif;
     -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums lining-nums;
     display:flex;justify-content:center;padding:64px 28px}
   .sheet{width:980px;max-width:980px}
 
-  /* ── 刊头：色阶签 + 粗衬线大题（学图9）── */
+  /* ── 刊頭：色階籤 + 粗襯線大題（學圖9）── */
   .mast{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:end}
   .chips{display:flex;flex-direction:column;gap:4px;padding-bottom:8px}
   .chips span{width:16px;height:16px}
@@ -53,7 +53,7 @@
 
   .hr{border-top:1px solid var(--quiet);margin:40px 0 0}
 
-  /* ── 编号节（学图9 的黑方块编号）── */
+  /* ── 編號節（學圖9 的黑方塊編號）── */
   .row{display:grid;gap:36px;margin-top:38px}
   .r3{grid-template-columns:1fr 1fr 1fr}
   .r21{grid-template-columns:1fr 1.4fr 1fr}
@@ -71,10 +71,10 @@
   .subttl{font-size:10px;font-weight:700;color:var(--mut);margin-bottom:6px}
 
   .fig svg{width:100%;height:auto;display:block}
-  svg text{font-family:'Inter','Noto Sans SC',sans-serif}
+  svg text{font-family:'Inter','Noto Sans TC',sans-serif}
   .srcline{font-size:8.5px;font-weight:600;letter-spacing:.1em;color:var(--faint);margin-top:6px}
 
-  /* ── 数字小表（学图9 的行程表）── */
+  /* ── 數字小表（學圖9 的行程表）── */
   table.log{width:100%;border-collapse:collapse}
   table.log th{font-size:8.5px;font-weight:700;letter-spacing:.12em;color:var(--mut);
     text-align:right;padding:0 0 7px;border-bottom:1px solid var(--txt)}
@@ -114,7 +114,7 @@
 <body>
 <div class="sheet">
 
-  <!-- ══ 刊头 ══ -->
+  <!-- ══ 刊頭 ══ -->
   <div class="mast">
     <div class="chips">
       <span style="background:var(--wheat)"></span>
@@ -123,114 +123,114 @@
       <span style="background:var(--data)"></span>
     </div>
     <div>
-      <div class="kicker">手记 · TALES OF</div>
-      <h1>东京五日</h1>
+      <div class="kicker">手記 · TALES OF</div>
+      <h1>東京五日</h1>
       <div class="rule"></div>
     </div>
   </div>
 
-  <p class="lede">第四次去这座我最喜欢的城市，2026 年 5 月 31 日到 6 月 4 日。
-    这页手记用人类最好的两样东西记录这趟旅行：<b>故事，和统计</b>。（数字为演示数据）</p>
+  <p class="lede">第四次去這座我最喜歡的城市，2026 年 5 月 31 日到 6 月 4 日。
+    這頁手記用人類最好的兩樣東西記錄這趟旅行：<b>故事，和統計</b>。（數字為示範資料）</p>
 
   <div class="hr"></div>
 
-  <!-- ══ 第一排：主食 / 人物 / 开销 ══ -->
+  <!-- ══ 第一排：主食 / 人物 / 開銷 ══ -->
   <div class="row r3">
     <div class="sec">
       <h2><span class="n">1</span>主食</h2>
-      <p>到日本不吃一碗深夜拉面等于没来。五天吃了三家，最好的一碗在
-        <b>中目黑的一家无名小店</b>——凌晨一点，柜台六个座位，
-        豚骨汤浓到挂勺。配一瓶波子汽水，我肯定还会回去。</p>
+      <p>到日本不吃一碗深夜拉麵等於沒來。五天吃了三家，最好的一碗在
+        <b>中目黑的一家無名小店</b>——凌晨一點，櫃檯六個座位，
+        豚骨湯濃到掛勺。配一瓶波子汽水，我肯定還會回去。</p>
     </div>
     <div class="sec">
       <h2><span class="n">2</span>人物</h2>
-      <p>旅途中第一次见面的人，多半希望能成为很久的朋友。
-        这群可爱的人包括（但不限于）以下几位：</p>
-      <div class="names">阿彻 · 小野 · YUKI · 陈舟 · 佐藤 · LEON</div>
+      <p>旅途中第一次見面的人，多半希望能成為很久的朋友。
+        這群可愛的人包括（但不限於）以下幾位：</p>
+      <div class="names">阿徹 · 小野 · YUKI · 陳舟 · 佐藤 · LEON</div>
     </div>
     <div class="sec">
-      <h2><span class="n">3</span>开销</h2>
-      <!-- 图A · F5 tick rows：一格 = ¥2,000 -->
+      <h2><span class="n">3</span>開銷</h2>
+      <!-- 圖A · F5 tick rows：一格 = ¥2,000 -->
       <div class="fig"><svg id="spend" viewBox="0 0 260 180" preserveAspectRatio="xMidYMid meet"></svg></div>
-      <div class="srcline">TICK ROWS · 一格 = ¥2,000 · 琥珀 = 最大项</div>
+      <div class="srcline">TICK ROWS · 一格 = ¥2,000 · 琥珀 = 最大項</div>
     </div>
   </div>
 
   <div class="hr"></div>
 
-  <!-- ══ 第二排：咖啡因（三联，学图9 ALCOHOL 节）══ -->
+  <!-- ══ 第二排：咖啡因（三聯，學圖9 ALCOHOL 節）══ -->
   <div class="row r21">
     <div class="sec">
       <h2><span class="n">4</span>咖啡因</h2>
-      <div class="subttl">咖啡馆访问分布</div>
-      <!-- 图B · F1 rung bars：一档 = 一次到访 -->
+      <div class="subttl">咖啡館造訪分布</div>
+      <!-- 圖B · F1 rung bars：一檔 = 一次到訪 -->
       <div class="fig"><svg id="cafes" viewBox="0 0 260 190" preserveAspectRatio="xMidYMid meet"></svg></div>
-      <div class="srcline">RUNG BARS · 一档 = 一次到访</div>
+      <div class="srcline">RUNG BARS · 一檔 = 一次到訪</div>
     </div>
     <div class="sec">
-      <h2 style="visibility:hidden"><span class="n">·</span>占位</h2>
-      <div class="subttl">五天喝了什么（杯）</div>
-      <!-- 图C · F4 tick donut：一格 = 一杯 -->
+      <h2 style="visibility:hidden"><span class="n">·</span>佔位</h2>
+      <div class="subttl">五天喝了什麼（杯）</div>
+      <!-- 圖C · F4 tick donut：一格 = 一杯 -->
       <div class="fig"><svg id="drinks" viewBox="0 0 300 210" preserveAspectRatio="xMidYMid meet"></svg></div>
       <div class="srcline">TICK DONUT · 一格 = 一杯 · 共 23 杯</div>
     </div>
     <div class="sec">
-      <h2 style="visibility:hidden"><span class="n">·</span>占位</h2>
+      <h2 style="visibility:hidden"><span class="n">·</span>佔位</h2>
       <div class="subttl">本趟最佳一杯</div>
       <div class="drink">
-        <div class="nm">富谷 · 手冲肯尼亚</div>
-        在第一次当众讲完日语之后，朋友们把我拖去了 FUGLEN。
-        大多数沉重的夜晚过后，第一杯总是被记得最清楚——这杯也不例外。
-        <div class="tag">浅烘 · 果酸 · ¥750</div>
+        <div class="nm">富谷 · 手衝肯亞</div>
+        在第一次當眾講完日語之後，朋友們把我拖去了 FUGLEN。
+        大多數沉重的夜晚過後，第一杯總是被記得最清楚——這杯也不例外。
+        <div class="tag">淺烘 · 果酸 · ¥750</div>
       </div>
     </div>
   </div>
 
   <div class="hr"></div>
 
-  <!-- ══ 第三排：神保町（文）/ 移动（表）══ -->
+  <!-- ══ 第三排：神保町（文）/ 移動（表）══ -->
   <div class="row r2">
     <div class="sec">
       <h2><span class="n">5</span>神保町</h2>
-      <p>骑车穿过旧书街再折回来的路上，满脑子都是这条街装下的书的数量。
-        雾一样的旧纸味让人晕，但抬头或低头之间，那种<b>轻微的眩晕感</b>
-        混着傍晚的横风，让我在陌生的巷子里骑得格外清醒。</p>
-      <p>回程时天放晴了，一场典型的东京落日把潮湿阴沉的下午整个擦掉。
-        一切又都对了；一条美丽、高度技术化的现代街道。
-        我从来没在一条街上有过如此矛盾的体验。</p>
+      <p>騎車穿過舊書街再折回來的路上，滿腦子都是這條街裝下的書的數量。
+        霧一樣的舊紙味讓人暈，但抬頭或低頭之間，那種<b>輕微的眩暈感</b>
+        混著傍晚的橫風，讓我在陌生的巷子裡騎得格外清醒。</p>
+      <p>回程時天放晴了，一場典型的東京落日把潮溼陰沉的下午整個擦掉。
+        一切又都對了；一條美麗、高度技術化的現代街道。
+        我從來沒在一條街上有過如此矛盾的體驗。</p>
     </div>
     <div class="sec">
-      <h2><span class="n">6</span>移动</h2>
+      <h2><span class="n">6</span>移動</h2>
       <table class="log">
-        <tr><th>日</th><th>步行 KM</th><th>地铁 KM</th><th>出租 KM</th></tr>
-        <tr><td>周日</td><td>8.2</td><td>—</td><td>15.8</td></tr>
-        <tr><td>周一</td><td>12.4</td><td>17.9</td><td>—</td></tr>
-        <tr><td>周二</td><td class="hot">16.3</td><td>6.1</td><td>—</td></tr>
-        <tr><td>周三</td><td>9.2</td><td>22.4</td><td>1.7</td></tr>
-        <tr><td>周四</td><td>5.8</td><td>—</td><td>16.1</td></tr>
-        <tr class="total"><td>合计</td><td>51.9</td><td>46.4</td><td>33.6</td></tr>
+        <tr><th>日</th><th>步行 KM</th><th>地鐵 KM</th><th>出租 KM</th></tr>
+        <tr><td>週日</td><td>8.2</td><td>—</td><td>15.8</td></tr>
+        <tr><td>週一</td><td>12.4</td><td>17.9</td><td>—</td></tr>
+        <tr><td>週二</td><td class="hot">16.3</td><td>6.1</td><td>—</td></tr>
+        <tr><td>週三</td><td>9.2</td><td>22.4</td><td>1.7</td></tr>
+        <tr><td>週四</td><td>5.8</td><td>—</td><td>16.1</td></tr>
+        <tr class="total"><td>合計</td><td>51.9</td><td>46.4</td><td>33.6</td></tr>
       </table>
-      <div class="srcline" style="margin-top:8px">纯排字表格 · 不占图额度 · 琥珀 = 单日步行峰值</div>
+      <div class="srcline" style="margin-top:8px">純排字表格 · 不佔圖額度 · 琥珀 = 單日步行峰值</div>
     </div>
   </div>
 
   <div class="hr"></div>
 
-  <!-- ══ 第四排：天台（文）/ 食物（图）══ -->
+  <!-- ══ 第四排：天台（文）/ 食物（圖）══ -->
   <div class="row r2">
     <div class="sec">
       <h2><span class="n">7</span>天台</h2>
-      <p>住处的天台能看到代代木公园的树冠后面沉下去的太阳。
-        最后一晚，我揣着两瓶自动贩卖机的柚子气泡水爬上梯子，
-        看着白天一点点死掉。<b>这样安静的时刻放到电影里会很无聊</b>，
-        幸好我没有试图拍下来。</p>
+      <p>住處的天台能看到代代木公園的樹冠後面沉下去的太陽。
+        最後一晚，我揣著兩瓶自動販賣機的柚子氣泡水爬上梯子，
+        看著白天一點點死掉。<b>這樣安靜的時刻放到電影裡會很無聊</b>，
+        幸好我沒有試圖拍下來。</p>
     </div>
     <div class="sec">
       <h2><span class="n">8</span>食物</h2>
-      <div class="subttl">餐馆类型分布（次）</div>
-      <!-- 图D · F1 rung bars：一档 = 一次 -->
+      <div class="subttl">餐館型別分佈（次）</div>
+      <!-- 圖D · F1 rung bars：一檔 = 一次 -->
       <div class="fig"><svg id="food" viewBox="0 0 300 170" preserveAspectRatio="xMidYMid meet"></svg></div>
-      <div class="srcline">RUNG BARS · 一档 = 一顿</div>
+      <div class="srcline">RUNG BARS · 一檔 = 一頓</div>
     </div>
   </div>
 
@@ -240,25 +240,25 @@
   <div class="row" style="grid-template-columns:1fr 1fr">
     <div class="sec">
       <h2><span class="n">9</span>心事</h2>
-      <p>这是我第四次来东京，每一次我都对愿意听的人说同一句话：
-        「总有一天我要在这座城市住一年。」对我来说，这里是
-        好吃的食物、松弛的街道和一种<b>克制的热闹</b>的完美混合物。</p>
+      <p>這是我第四次來東京，每一次我都對願意聽的人說同一句話：
+        「總有一天我要在這座城市住一年。」對我來說，這裡是
+        好吃的食物、鬆弛的街道和一種<b>剋制的熱鬧</b>的完美混合物。</p>
     </div>
     <div class="sec">
-      <h2 style="visibility:hidden"><span class="n">·</span>占位</h2>
-      <p>这趟在滨松町的夜风里，我又把这句话对自己说了一遍。
-        也许三十岁的后半段就该发生在这里。<b>让我们看看。</b></p>
+      <h2 style="visibility:hidden"><span class="n">·</span>佔位</h2>
+      <p>這趟在濱松町的夜風裡，我又把這句話對自己說了一遍。
+        也許三十歲的後半段就該發生在這裡。<b>讓我們看看。</b></p>
     </div>
   </div>
 
   <div class="foot">
-    <span>东京五日手记 · 2026 年 6 月</span>
-    <span>故事 + 统计 · 演示数据 · LIEFLAT CHARTS</span>
+    <span>東京五日手記 · 2026 年 6 月</span>
+    <span>故事 + 統計 · 示範資料 · LIEFLAT CHARTS</span>
   </div>
 </div>
 
 <script>
-/* ── mono-tokens 内联（几何/工具函数与正本一致）── */
+/* ── mono-tokens 內聯（幾何/工具函式與正本一致）── */
 const NS='http://www.w3.org/2000/svg';
 const el=(p,t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);p.appendChild(n);return n};
 const txt=(p,a,s)=>{const n=el(p,'text',a);n.textContent=s;return n};
@@ -279,10 +279,10 @@ const BG='#F0EFEB',TXT='#58402E',MUT='rgba(88,64,46,.60)',LAB='rgba(88,64,46,.72
 const DATA='#43593B',DATA2='#77835A',HERO='#D4A017',FAINTDATA='#ACAD79';
 const CAT4=['#43593B','#77835A','#ACAD79','#F2D17E'];
 
-/* ════ 图A · F5 tick rows（开销）════
-   一格 = ¥2,000。琥珀只给最大项。加墨 1.6 / 地板 .85。 */
+/* ════ 圖A · F5 tick rows（開銷）════
+   一格 = ¥2,000。琥珀只給最大項。加墨 1.6 / 地板 .85。 */
 (()=>{
-const D=[['餐食',16],['住宿',13],['书和唱片',7],['交通',5],['杂物',3]];
+const D=[['餐食',16],['住宿',13],['書和唱片',7],['交通',5],['雜物',3]];
 obsReveal('spend',s=>{
   const y0=i=>26+i*30,X0=64,PX=8.4;
   D.forEach(([name,v],i)=>{
@@ -300,19 +300,19 @@ obsReveal('spend',s=>{
     }
     const lab=txt(s,{x:X0+v*PX+8,y:y+3,'font-size':9.5,'font-weight':800,
       fill:hero?HERO:DATA,class:'fade',style:`animation-delay:${.4+i*.08}s`},
-      '¥'+(v*2/10).toFixed(1)+'万');
+      '¥'+(v*2/10).toFixed(1)+'萬');
     tip(lab,`${name} —— ¥${(v*2000).toLocaleString()}`);
   });
   txt(s,{x:130,y:172,'font-size':7,'font-weight':600,fill:FAINT,'text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:.9s'},
-    '一格 = ¥2,000 · 每五格一个圆点');
+    '一格 = ¥2,000 · 每五格一個圓點');
 });
 })();
 
-/* ════ 图B · F1 rung bars（咖啡馆访问）════
-   一档 = 一次到访。琥珀给去得最多的那家。 */
+/* ════ 圖B · F1 rung bars（咖啡館造訪）════
+   一檔 = 一次到訪。琥珀給去得最多的那家。 */
 (()=>{
-const D=[['FUGLEN',5],['蓝瓶',2],['琥珀咖啡',2],['便利店',7]];
+const D=[['FUGLEN',5],['藍瓶',2],['琥珀咖啡',2],['便利店',7]];
 obsReveal('cafes',s=>{
   const x0=i=>44+i*60,base=142,step=9.5,HW=15;
   D.forEach(([name,v],i)=>{
@@ -333,14 +333,14 @@ obsReveal('cafes',s=>{
   el(s,'line',{x1:16,y1:base+4,x2:244,y2:base+4,stroke:GRID,'stroke-width':.8,class:'fade'});
   txt(s,{x:130,y:180,'font-size':7,'font-weight':600,fill:FAINT,'text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:.9s'},
-    '一档 = 一次到访 · 便利店赢了');
+    '一檔 = 一次到訪 · 便利店贏了');
 });
 })();
 
-/* ════ 图C · F4 tick donut（饮品构成）════
-   一格 = 一杯，共 23 杯。PALM CAT 分段。加墨 1.8 / 引线 1.3。 */
+/* ════ 圖C · F4 tick donut（飲品構成）════
+   一格 = 一杯，共 23 杯。PALM CAT 分段。加墨 1.8 / 引線 1.3。 */
 (()=>{
-const D=[['手冲',9,CAT4[0]],['拿铁',6,CAT4[1]],['罐装',5,CAT4[2]],['抹茶',3,'#D4A017']];
+const D=[['手衝',9,CAT4[0]],['拿鐵',6,CAT4[1]],['罐裝',5,CAT4[2]],['抹茶',3,'#D4A017']];
 obsReveal('drinks',s=>{
   const cx=150,cy=100,R0=46,TOT=23;
   let k0=0;
@@ -368,14 +368,14 @@ obsReveal('drinks',s=>{
     'letter-spacing':'.08em',class:'fade',style:'animation-delay:.9s'},'杯 · 五天');
   txt(s,{x:150,y:202,'font-size':7,'font-weight':600,fill:FAINT,'text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:1.1s'},
-    '一格 = 一杯 · 顺时针从十二点读');
+    '一格 = 一杯 · 順時針從十二點讀');
 });
 })();
 
-/* ════ 图D · F1 rung bars（餐馆类型）════
-   一档 = 一顿。琥珀给次数最多的类型。 */
+/* ════ 圖D · F1 rung bars（餐館型別）════
+   一檔 = 一頓。琥珀給次數最多的型別。 */
 (()=>{
-const D=[['拉面',4],['居酒屋',3],['早餐店',3],['咖喱',2],['寿司',2],['其他',3]];
+const D=[['拉麵',4],['居酒屋',3],['早餐店',3],['咖哩',2],['壽司',2],['其他',3]];
 obsReveal('food',s=>{
   const x0=i=>36+i*46,base=124,step=13,HW=12;
   D.forEach(([name,v],i)=>{
@@ -389,23 +389,23 @@ obsReveal('food',s=>{
     const num=txt(s,{x,y:topY-8,'font-size':10,'font-weight':800,
       fill:hero?HERO:DATA,'text-anchor':'middle',
       class:'fade',style:`animation-delay:${.4+i*.08}s`},v);
-    tip(num,`${name} —— ${v} 顿`);
+    tip(num,`${name} —— ${v} 頓`);
     txt(s,{x,y:base+14,'font-size':7.5,'font-weight':700,fill:MUT,'text-anchor':'middle',
       class:'fade',style:`animation-delay:${i*.08}s`},name);
   });
   el(s,'line',{x1:12,y1:base+4,x2:288,y2:base+4,stroke:GRID,'stroke-width':.8,class:'fade'});
   txt(s,{x:150,y:160,'font-size':7,'font-weight':600,fill:FAINT,'text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:.9s'},
-    '一档 = 一顿 · 拉面 4 顿，没有遗憾');
+    '一檔 = 一頓 · 拉麵 4 頓，沒有遺憾');
 });
 })();
 
 </script>
 <script>
-/* ── fit-width：视口比版心窄时整页等比缩小，不重排 ──
-   报告是一张版面，不是响应式网页。窄屏塌成单栏会得到一个
-   设计时不存在的版式；等比缩小则保留构图，跟 PDF 的「适合宽度」一致。
-   机制同模板 11。 */
+/* ── fit-width：視口比版心窄時整頁等比縮小，不重排 ──
+   報告是一張版面，不是響應式網頁。窄螢幕塌成單欄會得到一個
+   設計時不存在的版型；等比縮小則保留構圖，跟 PDF 的「適合寬度」一致。
+   機制同範本 11。 */
 (()=>{
   const sheet=document.querySelector('.sheet');
   const W=980;

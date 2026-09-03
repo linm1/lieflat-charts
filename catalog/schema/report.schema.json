@@ -29,7 +29,7 @@
     "zh_title": {
       "type": "string",
       "minLength": 1,
-      "description": "The established Chinese display name, preserved per docs/design-language/UNKNOWNS.md U3 so a Chinese-language delivery doesn't lose it."
+      "description": "The established Taiwan Traditional Chinese display name, preserved per docs/design-language/UNKNOWNS.md U3 so a Chinese-language delivery doesn't lose it."
     },
     "common_types": {
       "type": "array",
@@ -54,7 +54,7 @@
     },
     "gallery_file_zh": {
       "type": "string",
-      "description": "templates/reports/report-NN.zh.html"
+      "description": "Taiwan Traditional Chinese template: templates/reports/report-NN.zh.html (lang=zh-Hant-TW)"
     },
     "gallery_file_en": {
       "type": "string",

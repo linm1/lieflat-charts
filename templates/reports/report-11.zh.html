@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hant-TW">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,27 +9,27 @@
   <script src="https://cdn.jsdelivr.net/npm/echarts@6/dist/echarts.min.js"></script>
   <style>
     /* ═══════════════════════════════════════════════════════════════
-       LIEFLAT 报告模板 11 · 研究简报卡（灰阶定尺）
-       场景：600×1000 定宽定高卡片，专为截图发社媒设计——单一决定性
-             结论 + 两张证据图 + 一条 takeaway，读者三秒扫完，不响应式
-             重排，只整卡等比缩放（见页尾 fit() 脚本）。
-       依赖说明：这是模板库里第二张挂 CDN 依赖的模板（第一张见模板 12）。
-             库里其余模板都是纯 SVG，离线可开；这张卡的两张图来自
-             Chart.js 和 ECharts，脚本标签原样照抄模板 12 / glance-
-             gallery.html，没有联网时图表区会是空白。
-       图表正本 = templates/glance-gallery.html：
-         图A  G3  Chunky Bars       （Chart.js，柱顶大字 + 按名次染色）
-         图B  G18 Draw-in + Counter （ECharts，一笔画折线 + 计数器）
-       色板正本：只用文件已有 :root 变量（纸灰/炭黑/中间灰阶），
-         不新增色值；面积渐变直接照抄 gallery 里 INK 的 rgba 写法。
-       动效：沿用 gallery 的 obsReveal（滚入播 + 点击重播），新增
-         prefers-reduced-motion 降级——原文件没有任何动画代码，现在
-         挂了两张动态图，降级开关补齐，降级时两张图直接给终态。
-       数据说明：全部为虚构演示数据，仅用于验证版式。
+       LIEFLAT 報告範本 11 · 研究簡報卡（灰階定尺）
+       場景：600×1000 定寬定高卡片，專為截圖發社群媒體設計——單一決定性
+             結論 + 兩張證據圖 + 一條 takeaway，讀者三秒掃完，不響應式
+             重排，只整卡等比縮放（見頁尾 fit() 指令碼）。
+       依賴說明：這是範本庫裡第二張掛 CDN 依賴的範本（第一張見範本 12）。
+             庫裡其餘範本都是純 SVG，離線可開；這張卡的兩張圖來自
+             Chart.js 和 ECharts，指令碼標籤原樣照抄範本 12 / glance-
+             gallery.html，沒有聯網時圖表區會是空白。
+       圖表正本 = templates/glance-gallery.html：
+         圖A  G3  Chunky Bars       （Chart.js，柱頂大字 + 按名次染色）
+         圖B  G18 Draw-in + Counter （ECharts，一筆畫折線 + 計數器）
+       色盤正本：只用檔案已有 :root 變數（紙灰/炭黑/中間灰階），
+         不新增色值；面積漸變直接照抄 gallery 裡 INK 的 rgba 寫法。
+       動效：沿用 gallery 的 obsReveal（滾入播 + 點選重播），新增
+         prefers-reduced-motion 降級——原檔案沒有任何動畫程式碼，現在
+         掛了兩張動態圖，降級開關補齊，降級時兩張圖直接給終態。
+       資料說明：全部為虛構示範資料，僅用於驗證版型。
        ═══════════════════════════════════════════════════════════════ */
     :root{--paper:#F0EFEB;--ink:#1C1C1A;--muted:#8F8E88;--faint:#C6C5BF;--grid:#DEDDD6;--soft:#D8D7D1;--dark:#1C1C1A;--scale:1}
     *{box-sizing:border-box;margin:0;padding:0} html,body{min-height:100%;background:#272725}
-    body{display:flex;justify-content:center;padding:24px;font-family:Inter,"PingFang SC","Noto Sans SC",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+    body{display:flex;justify-content:center;padding:24px;font-family:Inter,"PingFang TC","Noto Sans TC",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
     .stage{width:600px;height:1000px}.report{width:600px;height:1000px;overflow:hidden;background:var(--paper);transform:scale(var(--scale));transform-origin:top left}
     .inner{height:100%;padding:30px 34px 24px;display:grid;grid-template-rows:auto auto 164px 1fr auto;gap:18px}
     .mast{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:10px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}.mast strong{letter-spacing:0;font-size:15px}
@@ -46,18 +46,18 @@
 </head>
 <body><div class="stage" id="stage"><main class="report"><div class="inner">
   <header class="mast"><strong>Lieflat Charts / Mono</strong><span>Research brief · 01</span></header>
-  <section><h1>休假不足，正在变成一种工作习惯</h1><p class="dek">一页看懂：人们为什么有假不休，以及长时间不离开工作会发生什么。</p><p class="meta"><b>2026 SAMPLE</b><br>1,200 人 · 四个市场<br>演示版</p></section>
-  <section class="hero"><div class="hero-stat"><strong>68%</strong><span>受访者至少推迟过一次原定休假</span></div><div class="hero-copy"><h2>真正的障碍不是“没有假”，而是工作永远看起来比休息更紧急。</h2><p>当休假需要反复协调、交接和解释，员工更容易把它推迟到“忙完这阵”。</p><div class="labels"><span>availability</span><span>guilt</span><span>handover</span></div></div></section>
-  <section class="content"><div class="panel"><div class="panel-title"><h3>平均未使用休假天数</h3><span>G3 · Chunky bars</span></div><div class="chart-wrap"><canvas id="leaveChart"></canvas></div><p class="note">假期余额不等于休息能力。未使用天数最高的群体，也最常报告“离开后工作会失控”。</p></div><div class="panel"><div class="panel-title"><h3>四个阻力信号</h3><span>G18 · Draw-in</span></div><div class="signals"><div class="signal"><b>42%</b><span>休假时仍频繁查看工作消息</span></div><div class="signal"><b>37%</b><span>担心休假影响他人评价</span></div><div class="signal"><b>31%</b><span>因为交接成本而缩短假期</span></div><div class="signal"><b>26%</b><span>过去一年未连续休满五天</span></div></div><div class="trend"><div class="trend-head"><span>离上次完整休假越久，疲惫感越高</span><span class="fatigue-count"><b id="fatigueCount">0</b><small>/100</small></span></div><div class="trend-chart" id="stroke"></div></div></div></section>
-  <section class="takeaway"><div class="takeaway-label">One-page takeaway</div><p>休假政策只解决“有没有”，团队习惯决定“敢不敢休”。真正有效的改善，是让交接和离线成为默认流程。</p></section>
-  <footer class="footer"><span><span class="demo">演示数据，不代表真实调查结果。</span><br>用于验证 Lieflat Charts 一页研究简报模板。<br>图表挂 Chart.js / ECharts，离线打开为空白。</span><span>MONO / PAPER GREY<br>RESEARCH BRIEF</span></footer>
+  <section><h1>休假不足，正在變成一種工作習慣</h1><p class="dek">一頁看懂：人們為什麼有假不休，以及長時間不離開工作會發生什麼。</p><p class="meta"><b>2026 SAMPLE</b><br>1,200 人 · 四個市場<br>示範版</p></section>
+  <section class="hero"><div class="hero-stat"><strong>68%</strong><span>受訪者至少推遲過一次原定休假</span></div><div class="hero-copy"><h2>真正的障礙不是「沒有假」，而是工作永遠看起來比休息更緊急。</h2><p>當休假需要反覆協調、交接和解釋，員工更容易把它推遲到「忙完這陣」。</p><div class="labels"><span>availability</span><span>guilt</span><span>handover</span></div></div></section>
+  <section class="content"><div class="panel"><div class="panel-title"><h3>平均未使用休假天數</h3><span>G3 · Chunky bars</span></div><div class="chart-wrap"><canvas id="leaveChart"></canvas></div><p class="note">假期餘額不等於休息能力。未使用天數最高的群體，也最常報告「離開後工作會失控」。</p></div><div class="panel"><div class="panel-title"><h3>四個阻力訊號</h3><span>G18 · Draw-in</span></div><div class="signals"><div class="signal"><b>42%</b><span>休假時仍頻繁檢視工作訊息</span></div><div class="signal"><b>37%</b><span>擔心休假影響他人評價</span></div><div class="signal"><b>31%</b><span>因為交接成本而縮短假期</span></div><div class="signal"><b>26%</b><span>過去一年未連續休滿五天</span></div></div><div class="trend"><div class="trend-head"><span>離上次完整休假越久，疲憊感越高</span><span class="fatigue-count"><b id="fatigueCount">0</b><small>/100</small></span></div><div class="trend-chart" id="stroke"></div></div></div></section>
+  <section class="takeaway"><div class="takeaway-label">One-page takeaway</div><p>休假政策只解決「有沒有」，團隊習慣決定「敢不敢休」。真正有效的改善，是讓交接和離線成為預設流程。</p></section>
+  <footer class="footer"><span><span class="demo">示範資料，不代表真實調查結果。</span><br>用於驗證 Lieflat Charts 一頁研究簡報範本。<br>圖表掛 Chart.js / ECharts，離線開啟為空白。</span><span>MONO / PAPER GREY<br>RESEARCH BRIEF</span></footer>
 </div></main></div><script>
-/* ── PALETTE：直接照抄 templates/glance-gallery.html 顶部同名常量，不新增色值 ── */
+/* ── PALETTE：直接照抄 templates/glance-gallery.html 頂部同名常量，不新增色值 ── */
 const INK='#1C1C1A',PAPER='#F0EFEB',MUTED='#8F8E88',GRID='#DEDDD6',FAINT='#C6C5BF';
 const DPR=window.devicePixelRatio||1;
 const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ── 统一 reveal 机制（滚入播 + 点击重播，逐字照抄 gallery 的 obsReveal/cReveal/eReveal） ── */
+/* ── 統一 reveal 機制（滾入播 + 點選重播，逐字照抄 gallery 的 obsReveal/cReveal/eReveal） ── */
 const timers={};
 const obsReveal=(id,fn)=>{
   const el=document.getElementById(id);
@@ -81,7 +81,7 @@ const cReveal=(id,mkCfg)=>obsReveal(id,el=>{
 });
 
 Chart.defaults.color=MUTED;
-Chart.defaults.font.family='Inter,"PingFang SC","Noto Sans SC",Arial,sans-serif';
+Chart.defaults.font.family='Inter,"PingFang TC","Noto Sans TC",Arial,sans-serif';
 Chart.defaults.font.size=10.5;
 Chart.defaults.borderColor=GRID;
 Chart.defaults.devicePixelRatio=DPR;
@@ -93,11 +93,11 @@ Chart.defaults.plugins.tooltip.padding=12;
 Chart.defaults.plugins.tooltip.cornerRadius=12;
 Chart.defaults.plugins.tooltip.displayColors=false;
 
-/* ════ 图A · G3 Chunky Bars（移植自 glance-gallery.html "Revenue by plan"） ════
-   柱端胶囊圆角 + 分段延迟入场 + 柱顶大字插件全部照搬，只把
-   $K 的取值方式换成天数，颜色按名次二值分配（前两高=INK，后两低=FAINT）。 */
+/* ════ 圖A · G3 Chunky Bars（移植自 glance-gallery.html "Revenue by plan"） ════
+   柱端膠囊圓角 + 分段延遲入場 + 柱頂大字外掛全部照搬，只把
+   $K 的取值方式換成天數，顏色按名次二值分配（前兩高=INK，後兩低=FAINT）。 */
 (()=>{
-const LABELS=['中国','美国','法国','日本'];
+const LABELS=['中國','美國','法國','日本'];
 const VALUES=[7,11,8,5];
 const rankOf=a=>{const r=[...a].map((v,i)=>[v,i]).sort((x,y)=>y[0]-x[0]).map(d=>d[1]);return i=>r.indexOf(i)};
 const rk=rankOf(VALUES);
@@ -121,7 +121,7 @@ cReveal('leaveChart',()=>({
     afterDatasetsDraw(chart){
       const {ctx}=chart;
       chart.getDatasetMeta(0).data.forEach((bar,i)=>{
-        ctx.save();ctx.font='700 13px Inter,"PingFang SC",sans-serif';ctx.fillStyle=INK;ctx.textAlign='center';
+        ctx.save();ctx.font='700 13px Inter,"PingFang TC",sans-serif';ctx.fillStyle=INK;ctx.textAlign='center';
         ctx.fillText(chart.data.datasets[0].data[i],bar.x,bar.y-10);ctx.restore();
       });
     },
@@ -129,9 +129,9 @@ cReveal('leaveChart',()=>({
 }));
 })();
 
-/* ════ 图B · G18 Draw-in + Counter（移植自 glance-gallery.html "H1 revenue, drawn in one stroke"） ════
-   一笔画折线 + 渐变面积 + performance.now() 计数器全部照搬，只把
-   累计营收换成疲惫指数，累计终值就是计数器要数到的那个数。 */
+/* ════ 圖B · G18 Draw-in + Counter（移植自 glance-gallery.html "H1 revenue, drawn in one stroke"） ════
+   一筆畫折線 + 漸變面積 + performance.now() 計數器全部照搬，只把
+   累計營收換成疲憊指數，累計終值就是計數器要數到的那個數。 */
 (()=>{
 const DAYS=Array.from({length:91},(_,i)=>String(i));
 const FATIGUE=DAYS.map(d=>Math.round(6+90*Math.pow(Number(d)/90,1.35)));

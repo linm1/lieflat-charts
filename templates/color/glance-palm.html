@@ -43,9 +43,9 @@
 </head>
 <body>
 <div class="pagehead">
-    <h1>Glance 系（快读）· 22 张 × PALM</h1>
-  <p><span class="chip" style="background:#43593B"></span><span class="chip" style="background:#F2D17E"></span><span class="chip" style="background:#77835A"></span><span class="chip" style="background:#ACAD79"></span><span class="chip" style="background:#58402E"></span> &nbsp;椰林 · 绿黄六色板：麦黄 → 橄榄 → 浅苔 → 苔绿 → 中绿 → 深绿。深绿当主墨、琥珀当主角、浓咖当文字；暗卡上强调改麦黄（最宽波幅 / 直播灯 / 集成中枢）——深绿在浓咖底上读不出。</p>
-  <p style="margin-top:7px">颜色在每张图里都编码一个维度，不是全图一个墨色：分类型（5 个来源 / 4 条产品线 / 5 个工作日 / 10 支小队 / 12 个集成）各走一个分类位，序数型（8 年营收排名 / 50 个市场 / 4 档优先级 / 树木年份 / 面板停留时长 / 情绪票数）走 5 档梯，深色卡换纸色梯、末档落在强调色。几何、动画、数据与 glance-gallery 逐节点一致；结构线仍是文字色的透明档，不引入新色相。滚入播动画，点击重播。</p>
+    <h1>Glance 系（快讀）· 22 張 × PALM</h1>
+  <p><span class="chip" style="background:#43593B"></span><span class="chip" style="background:#F2D17E"></span><span class="chip" style="background:#77835A"></span><span class="chip" style="background:#ACAD79"></span><span class="chip" style="background:#58402E"></span> &nbsp;椰林 · 綠黃六色盤：麥黃 → 橄欖 → 淺苔 → 苔綠 → 中綠 → 深綠。深綠當主墨、琥珀當主角、濃咖當文字；暗卡上強調改麥黃（最寬波幅 / 直播燈 / 整合中樞）——深綠在濃咖底上讀不出。</p>
+  <p style="margin-top:7px">顏色在每張圖裡都編碼一個維度，不是全圖一個墨色：分型別（5 個來源 / 4 條產品線 / 5 個工作日 / 10 支小隊 / 12 個整合）各走一個分類位，序數型（8 年營收排名 / 50 個市場 / 4 檔優先順序 / 樹木年份 / 面板停留時長 / 情緒票數）走 5 檔梯，深色卡換紙色梯、末檔落在強調色。幾何、動畫、資料與 glance-gallery 逐節點一致；結構線仍是文字色的透明檔，不引入新色相。滑入播放動畫，點選重播。</p>
 </div>
 <div class="grid2">
 
@@ -184,7 +184,7 @@
 
   <!-- G19 · violin -->
   <div class="card">
-    <span class="badge">GLANCE 分布型 · 小提琴</span>
+    <span class="badge">GLANCE 分佈型 · 小提琴</span>
     <h2>How fast each plan gets an answer</h2>
     <div class="sub">hours to first reply · silhouette = where tickets pile up · paper tick = median</div>
     <svg id="violin" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -193,7 +193,7 @@
 
   <!-- G20 · matrix heat -->
   <div class="card">
-    <span class="badge">GLANCE 热力型 · 通用矩阵</span>
+    <span class="badge">GLANCE 熱力型 · 通用矩陣</span>
     <h2>Adoption runs hot on the new versions</h2>
     <div class="sub">5 versions × 6 features · shade = % of accounts using it · every cell carries its number</div>
     <svg id="gheat" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -220,19 +220,19 @@
 
 </div>
 <script>
-// ── PALM 角色 token（结构灰一律为文字色的透明档，不引入新色相）──
+// ── PALM 角色 token（結構灰一律為文字色的透明檔，不引入新色相）──
 const BG='#F0EFEB',DARK='#58402E',TXT='#58402E';
 const MUT='rgba(88,64,46,.60)',LAB='rgba(88,64,46,.72)',FAINT='rgba(88,64,46,.40)',QUIET='rgba(88,64,46,.15)',GRID='rgba(88,64,46,.16)';
 const DATA='#43593B',DATA2='#58402E',HERO='#D4A017';
-const HERODK='#F2D17E';                      // 深色卡上的强调色（HERO 在深底上可能读不出）
-const FAINTDATA='#ACAD79';                 // 静音数据档：周末 / 非主序列
-const DMID='rgba(240,239,235,.62)',DQ='rgba(240,239,235,.24)';   // 深色卡上的浅墨 / 静音档
-const SER=['#43593B','#D4A017','#77835A','#F2D17E','#ACAD79','#58402E'];   // 分类位：一图之内每个系列 / 每类 / 每行一个色
-const RAMP=['#F2D17E','#ACAD79','#929960','#77835A','#43593B'];   // 5 档序数梯（浅→重）：排名 / 票量 / 峰值 / 停留时长
-const DRAMP4=['#F2D17E','#ACAD79','rgba(240,239,235,.55)','rgba(240,239,235,.26)'];   // 深色卡上的 4 档序数梯（浅→深）
-const HEROMODE=false; // 主角模式：分类位的头号项也整体走 HERO
+const HERODK='#F2D17E';                      // 深色卡上的強調色（HERO 在深底上可能讀不出）
+const FAINTDATA='#ACAD79';                 // 靜音資料檔：週末 / 非主序列
+const DMID='rgba(240,239,235,.62)',DQ='rgba(240,239,235,.24)';   // 深色卡上的淺墨 / 靜音檔
+const SER=['#43593B','#D4A017','#77835A','#F2D17E','#ACAD79','#58402E'];   // 分類位：一圖之內每個系列 / 每類 / 每行一個色
+const RAMP=['#F2D17E','#ACAD79','#929960','#77835A','#43593B'];   // 5 檔序數梯（淺→重）：排名 / 票量 / 峰值 / 停留時長
+const DRAMP4=['#F2D17E','#ACAD79','rgba(240,239,235,.55)','rgba(240,239,235,.26)'];   // 深色卡上的 4 檔序數梯（淺→深）
+const HEROMODE=false; // 主角模式：分類位的頭號項也整體走 HERO
 
-// ── 别名与派生：深色卡的线全是卡底向纸色的插值，不引入新色相 ──
+// ── 別名與派生：深色卡的線全是卡底向紙色的插值，不引入新色相 ──
 const INK=TXT,PAPER=BG,MUTED=MUT;
 const rgb=h=>[0,2,4].map(i=>parseInt(h.slice(1).substr(i,2),16));
 const alpha=(h,a)=>h[0]==='#'?'rgba('+rgb(h).join(',')+','+a+')':h;
@@ -240,10 +240,10 @@ const mix=(a,b,t)=>'#'+rgb(a).map((v,i)=>Math.round(v+(rgb(b)[i]-v)*t).toString(
 const lum=h=>{const [r,g,b]=rgb(h).map(v=>v/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));
   return .2126*r+.7152*g+.0722*b};
 const ratio=(a,b)=>{const l=[lum(a),lum(b)].sort((p,q)=>q-p);return (l[0]+.05)/(l[1]+.05)};
-const readable=c=>c[0]!=='#'?BG:(ratio(c,DARK)>=ratio(c,BG)?DARK:BG); // 深色卡上落在色块里的字
+const readable=c=>c[0]!=='#'?BG:(ratio(c,DARK)>=ratio(c,BG)?DARK:BG); // 深色卡上落在色塊裡的字
 const DLINE=mix(DARK,BG,.20),DLINE2=mix(DARK,BG,.13),DSHELL=mix(DARK,BG,.09);
 const hi=c=>HEROMODE?HERO:c;
-// 名次 → 序数梯。末档（WIRE 的红）只发给第 1 名，其余摊在前四档上
+// 名次 → 序數梯。末檔（WIRE 的紅）只發給第 1 名，其餘攤在前四檔上
 const rampAt=(i,n)=>i===0?RAMP[4]
   :RAMP[Math.max(0,Math.min(3,3-Math.round((i-1)/Math.max(1,n-2)*3)))];
 const rankOf=a=>{const r=[...a].map((v,i)=>[v,i]).sort((x,y)=>y[0]-x[0]).map(d=>d[1]);
@@ -318,7 +318,7 @@ const EMO=[
 ];
 const MAXV=12;
 const petal=v=>{const t=v/MAXV;return t>.8?DRAMP4[0]:t>.6?DRAMP4[1]:t>.35?DRAMP4[2]:DRAMP4[3]};
-// 标签固定落在环宽中段，只有票数够多的花瓣才铺到那儿；没铺到的按卡底配字色
+// 標籤固定落在環寬中段，只有票數夠多的花瓣才鋪到那兒；沒鋪到的按卡底配字色
 const onPetal=v=>v/MAXV>.6;
 eReveal('rose',{
   animationDuration:1100,animationEasing:'quarticOut',
@@ -978,9 +978,9 @@ const tip=(n,s)=>{const t=document.createElementNS(NS,'title');t.textContent=s;n
 const rnd=(i,k)=>Math.abs(((i*73856093)^(k*19349663))%1000)/1000;
 
 // ════ G19 · violin ════
-// 小提琴：提前聚合的密度剪影，Glance 世界观（beeswarm 的姊妹）。
-// 四个 plan 各一把琴，宽度 = 该时长的工单密度（KDE），
-// 明度按中位数快慢排：越快越黑。纸色横档 = 中位数。
+// 小提琴：提前聚合的密度剪影，Glance 世界觀（beeswarm 的姊妹）。
+// 四個 plan 各一把琴，寬度 = 該時長的工單密度（KDE），
+// 明度按中位數快慢排：越快越黑。紙色橫檔 = 中位數。
 (()=>{
 const G=[['ENT',1.6,.8],['PRO',3.4,1.6],['STARTER',6.2,2.6],['FREE',9.5,4.2]];
 const M=64;
@@ -1044,8 +1044,8 @@ obsReveal('violin',s=>{
 })();
 
 // ════ G20 · matrix heat ════
-// 矩阵热力的 Glance 皮：粗笔画版本。大圆角色块、每格标数、3 秒读出
-// 「新版本跑得黑」的对角线。和 P1 Lupi 皮同数据形状，读者时间不同。
+// 矩陣熱力的 Glance 皮：粗筆畫版本。大圓角色塊、每格標數、3 秒讀出
+// 「新版本跑得黑」的對角線。和 P1 Lupi 皮同資料形狀，讀者時間不同。
 (()=>{
 const FEAT=['EDITOR','BOARDS','DOCS','CHAT','FLOWS','VAULT'];
 const VER=['v2.0','v1.9','v1.8','v1.7','v1.6'];
@@ -1077,10 +1077,10 @@ obsReveal('gheat',s=>{
 })();
 
 // ════ G21 · rank strip ════
-// 排名随时间变的静态版，第二稿。第一稿是泳道 bump——灰线 X 交叉，
-// 和 slope 同一种丑（catalog 实测三连败那条），废弃。
-// 这版不画线：一行一个产品，一格一个季度，明度 = 名次（#1 最黑）。
-// 攀升者的行自己从浅变黑，故事读行内渐变，不读交叉。
+// 排名隨時間變的靜態版，第二稿。第一稿是泳道 bump——灰線 X 交叉，
+// 和 slope 同一種醜（catalog 實測三連敗那條），廢棄。
+// 這版不畫線：一行一個產品，一格一個季度，明度 = 名次（#1 最黑）。
+// 攀升者的行自己從淺變黑，故事讀行內漸變，不讀交叉。
 (()=>{
 const RANKS=[['Flows',[5,3,2,1,1,1]],['Editor',[1,1,1,2,2,2]],['Boards',[2,2,3,3,3,4]],
   ['Vault',[4,5,5,4,4,3]],['Docs',[3,4,4,5,5,5]]];
@@ -1120,13 +1120,13 @@ obsReveal('rankstrip',s=>{
 })();
 
 // ════ G22 · aggregate sankey ════
-// B3 Threads 是逐条丝线（每线一条记录）；这张是聚合版——
-// 缎带宽度∝账号数。左渠道右套餐，缎带按渠道明度分。
-// 交叉处必须读得清，缎带走 .5 透明度（同 convergence 连线的处理）。
+// B3 Threads 是逐條絲線（每線一條記錄）；這張是聚合版——
+// 緞帶寬度∝帳號數。左管道右方案，緞帶按管道明度分。
+// 交叉處必須讀得清，緞帶走 .5 透明度（同 convergence 連線的處理）。
 (()=>{
 const SRC=[['SEARCH',[20,10,4]],['REFERRAL',[12,9,6]],['SOCIAL',[12,4,2]],['PAID',[6,3,3]],['OTHER',[5,2,2]]];
 const DST=['FREE','PRO','TEAM'];
-// 渠道是类目：一渠道一色，走 lupi-palm 的 SER 分类位（含琥珀、麦黄）
+// 管道是類目：一管道一色，走 lupi-palm 的 SER 分類位（含琥珀、麥黃）
 const SH=['#43593B','#D4A017','#77835A','#F2D17E','#ACAD79'];
 obsReveal('sankey',s=>{
   const XL=104,XR=298,Y0=34,SC=1.9,GAPL=8,GAPR=22,MID=(XL+XR)/2;

@@ -227,7 +227,7 @@ for (const chart of charts) {
 // ---------------------------------------------------------------------------
 
 try {
-  execFileSync('npx', ['tsx', 'scripts/generate-catalog-docs.ts', '--check'], {
+  execFileSync(process.execPath, [path.join(root, 'node_modules', 'tsx', 'dist', 'cli.mjs'), 'scripts/generate-catalog-docs.ts', '--check'], {
     cwd: root,
     stdio: 'pipe',
   });
@@ -365,6 +365,21 @@ function lineNumber(source: string, index: number): number {
 
 for (const file of htmlFiles) {
   const source = fs.readFileSync(file, 'utf8');
+  const normalized = rel(file).replaceAll('\\', '/');
+  const isTaiwanChinesePage = normalized.endsWith('.zh.html')
+    || normalized === 'templates/reports/index.html'
+    || normalized === 'templates/maps-gallery.html'
+    || /^templates\/color\/(?:basics|lupi|maps)-/.test(normalized)
+    || normalized === 'examples/reports/r04-financial-report.zh.html';
+  if (isTaiwanChinesePage && !source.includes('<html lang="zh-Hant-TW">')) {
+    fail(`${normalized} must declare lang="zh-Hant-TW"`);
+  }
+  if (isTaiwanChinesePage && /(?:Noto (?:Sans|Serif) SC|PingFang SC|Songti SC)/.test(source)) {
+    fail(`${normalized} must use Traditional Chinese font fallbacks (TC), not SC fonts`);
+  }
+  if (/<html[^>]*\blang=["'](?:zh|zh-Hans|zh-CN)["']/i.test(source)) {
+    fail(`${normalized} uses an ambiguous or Simplified Chinese lang tag`);
+  }
   const scriptPattern = /<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi;
   let match: RegExpExecArray | null;
   let scriptIndex = 0;
@@ -410,6 +425,7 @@ collectText(root);
 for (const file of textFiles) {
   const source = fs.readFileSync(file, 'utf8');
   const relative = rel(file);
+  const normalizedRelative = relative.replaceAll('\\', '/');
   const executableSource = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
 
   for (const match of executableSource.matchAll(/Math\.random\s*\(/g)) {
@@ -428,7 +444,7 @@ for (const file of textFiles) {
         fail(`${relative}:${lineNumber(source, match.index)} color ${match[0]} is not part of the ${paletteName} preset`);
       }
     }
-  } else if (relative !== 'color-presets.js' && !relative.startsWith('templates/reports/')) {
+  } else if (normalizedRelative !== 'color-presets.js' && !normalizedRelative.startsWith('templates/reports/')) {
     for (const match of source.matchAll(/#[0-9a-fA-F]{6}\b/g)) {
       const hex = match[0];
       const channels = [

@@ -191,8 +191,8 @@ function generateReportsMd(reports: ReportEntry[]): string {
       'limits — the same layout can carry financial/economic, research, business, product, or personal-record content.'
   );
   lines.push(
-    '> Each template ships two independent language versions: `templates/reports/report-NN.zh.html` and ' +
-      '`templates/reports/report-NN.en.html`.'
+    '> Each template ships two independent language versions: Taiwan Traditional Chinese (`lang=zh-Hant-TW`, ' +
+      '`templates/reports/report-NN.zh.html`) and English (`templates/reports/report-NN.en.html`).'
   );
   lines.push('> A visual index is at `templates/reports/index.html`; static previews are under `docs/assets/reports/`.');
   lines.push(
@@ -211,7 +211,7 @@ function generateReportsMd(reports: ReportEntry[]): string {
 
   lines.push('## Template index');
   lines.push('');
-  lines.push(row(['#', 'Name (EN / 中文)', 'Common report types / transferable scenarios', 'Canvas', 'Density', 'Color system', 'Dependencies']));
+  lines.push(row(['#', 'Name (EN / 繁體中文（台灣）)', 'Common report types / transferable scenarios', 'Canvas', 'Density', 'Color system', 'Dependencies']));
   lines.push(row(['---', '---', '---', '---:', '---', '---', '---']));
   for (const r of reports) {
     lines.push(row([r.id, `${r.name} / ${r.zh_title}`, r.common_types.join(', '), r.page_width, r.density, r.color_system, r.dependencies]));
@@ -224,7 +224,7 @@ function generateReportsMd(reports: ReportEntry[]): string {
   lines.push('- **Business data report / dashboard:** R04, R09, R12.');
   lines.push(
     '- **Financial / economic report:** R02, R03, R04, R09, R11, R12. See the financial worked example at ' +
-      '`examples/reports/r04-financial-report.zh.html`.'
+      '`examples/reports/r04-financial-report.zh.html` (Taiwan Traditional Chinese).'
   );
   lines.push('- **Product record / project retrospective:** R02, R05, R06, R12.');
   lines.push('- **Personal data record:** R03, R05, R06, R10, R12 — fitness, travel, and annual lifestyle data all fit.');
