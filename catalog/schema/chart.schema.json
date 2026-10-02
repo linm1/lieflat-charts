@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://navi-chart.local/schema/chart.schema.json",
+  "title": "Navi Chart catalog entry",
+  "description": "One chart type in the Navi Chart catalog. See docs/adr/0002-catalog-as-data.md for why this is the source of truth, and docs/design-language/PRINCIPLES.md rule 1 for the reuse-before-invention rule this schema exists to enforce.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "family",
+    "name",
+    "card_title",
+    "data_shape",
+    "occasion",
+    "reading_speed",
+    "engine",
+    "gallery_file",
+    "legacy_anchor",
+    "tier",
+    "siblings",
+    "origin"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{1,2}[0-9]{1,2}$",
+      "description": "Canonical chart id, e.g. 'L1', 'F13', 'G22', 'M1', 'B1'."
+    },
+    "family": {
+      "type": "string",
+      "enum": ["glance", "lupi", "basics", "maps", "interactive"]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The catalog display name, e.g. 'Range Capsules'."
+    },
+    "card_title": {
+      "type": ["string", "null"],
+      "description": "The in-card <h2> conclusion-style headline used to locate the <div class=\"card\"> block in the gallery file (RESEARCH.md §1's retrieval method). Null only for whole-page interactive templates that have no single card."
+    },
+    "card_anchor_id": {
+      "type": ["string", "null"],
+      "description": "The chart mark's DOM id attribute inside its card (e.g. 'rungs', 'dayline') — a more reliable machine anchor than the card title for scripted lookups. Null if not applicable/unknown."
+    },
+    "data_shape": {
+      "type": "string",
+      "minLength": 1,
+      "description": "English description of the data contract this chart honestly encodes. This is the selection primary key per SKILL.md step 1."
+    },
+    "occasion": {
+      "type": "string",
+      "minLength": 1,
+      "description": "English description of the intended use context."
+    },
+    "reading_speed": {
+      "type": "string",
+      "enum": ["<10s", "~30s", ">30s", "animated", "interactive"]
+    },
+    "engine": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Rendering engine, e.g. 'SVG', 'Chart.js', 'ECharts', 'ECharts + GeoJSON'."
+    },
+    "gallery_file": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Path under templates/ (or templates/color/ for a palette variant) that holds the real implementation."
+    },
+    "legacy_anchor": {
+      "type": ["string", "null"],
+      "description": "The historical B1/C1-style HTML comment shorthand still present in some gallery files from before a family was renamed (RESEARCH.md §7). Null if the entry never had one."
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["primary", "backup"],
+      "description": "primary = default candidate pool (L1-L15, F1-F13, and all Glance/Maps/interactive entries participate in their own family's default pool). backup = only used after primary is checked and rejected for cause, or the entry is one of the five documented shape-specific exceptions (F15, F16, F17, L17, L20) that skip that comparison. See PRINCIPLES.md rule 1 and SKILL.md hard rule 3."
+    },
+    "siblings": {
+      "type": "array",
+      "description": "Same-topic alternates used to compare data contracts and recall candidates during selection. Does not imply both should be generated, and does not override the tier/default-order rules.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "note": { "type": "string", "description": "Optional qualifier, e.g. 'range only', 'upgrade at two variables'." }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text footnote carried from the source catalog (e.g. an engine caveat, a removed-sibling explanation)."
+    },
+    "origin": {
+      "type": "string",
+      "enum": ["upstream", "extension"],
+      "description": "'upstream' for the 64 entries this fork inherited; 'extension' for anything scaffolded later via `npm run new-chart` (ADR-0005). New PRINCIPLES.md §8 accessible-name checks in scripts/validate.ts apply only to 'extension' entries — see docs/design-language/UNKNOWNS.md U1 for why the upstream set isn't retrofitted yet."
+    }
+  }
+}

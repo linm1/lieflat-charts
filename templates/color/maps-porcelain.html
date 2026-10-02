@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -39,7 +39,7 @@
 <body>
 <div class="pagehead">
   <h1>Maps M1–M2 × PORCELAIN</h1>
-  <p>青瓷蓝地图换肤样张。明度表示区域数值；仅在用户明确要求地图时使用。</p>
+  <p>青瓷藍地圖換膚樣張。明度表示區域數值；僅在使用者明確要求地圖時使用。</p>
 </div>
 <div class="grid2">
   <!-- M1 · US Choropleth -->
@@ -72,14 +72,14 @@ const obsReveal=(id,fn)=>{
 };
 
 // ════ M1 · US choropleth ════
-// 真轮廓地图：ECharts registerMap + GeoJSON（ECharts 官方示例数据，jsdelivr）。
-// 阿拉斯加/夏威夷/波多黎各用 registerMap 第三参 specialAreas 收进左下角
-// （官方 USA 示例同款，零额外依赖；d3 albersUsa 投影方案在部分环境渲染空白，弃用）。
-// Mono 化三件事：piecewise 五档灰阶 visualMap（明度即数据）、
-// 纸色描边当州界发丝、无数据州留 rgba(8,31,92,.10)（沉默可见）。
-// 面积失真的坦白：州的大小是地理，不是数值（蒙大拿大 ≠ 蒙大拿多）。
-// ⚠️ 如果换成中国地图：数据源必须含台湾省 + 南海诸岛 + 九段线
-// （用 DataV GeoAtlas 100000_full 或其完整镜像），发布前核对当期审图号。
+// 真輪廓地圖：ECharts registerMap + GeoJSON（ECharts 官方範例資料，jsdelivr）。
+// 阿拉斯加/夏威夷/波多黎各用 registerMap 第三參 specialAreas 收進左下角
+// （官方 USA 範例同款，零額外依賴；d3 albersUsa 投影方案在部分環境渲染空白，棄用）。
+// Mono 化三件事：piecewise 五檔灰階 visualMap（明度即資料）、
+// 紙色描邊當州界髮絲、無資料州留 rgba(8,31,92,.10)（沉默可見）。
+// 面積失真的坦白：州的大小是地理，不是數值（蒙大拿大 ≠ 蒙大拿多）。
+// ⚠️ 如果換成中國地圖：資料來源必須含臺灣省 + 南海諸島 + 九段線
+// （用 DataV GeoAtlas 100000_full 或其完整映象），發布前核對當期審圖號。
 const MAP_LEGEND={
   itemWidth:11,itemHeight:11,itemSymbol:'rect',
   textStyle:{fontFamily:'Inter',fontSize:9,color:'#7096D1'},
@@ -128,8 +128,8 @@ fetch('https://cdn.jsdelivr.net/gh/apache/echarts-examples@gh-pages/public/data/
 })();
 
 // ════ M2 · World choropleth ════
-// 世界真轮廓版。同一套 Mono 化规则；用 boundingCoords 裁掉南极，
-// 关键市场（≥39k）直接把数值标在版图上。
+// 世界真輪廓版。同一套 Mono 化規則；用 boundingCoords 裁掉南極，
+// 關鍵市場（≥39k）直接把數值標在版圖上。
 (()=>{
 const D={'United States':95,'India':62,'United Kingdom':48,'Germany':41,'Brazil':39,'Canada':34,
   'France':30,'Australia':28,'China':26,'Japan':26,'Korea':21,'Spain':19,'Italy':17,'Singapore':16,
@@ -141,7 +141,9 @@ const D={'United States':95,'India':62,'United Kingdom':48,'Germany':41,'Brazil'
   'Ghana':2,'Ecuador':2,'Algeria':2,'Mongolia':1,'Libya':1};
 const BIG={'United States':['US 95k',[0,0]],'India':['IN 62k',[0,4]],
   'United Kingdom':['UK 48k',[-26,-12]],'Germany':['DE 41k',[26,14]],'Brazil':['BR 39k',[0,0]]};
-fetch('https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/json/world.json')
+// echarts stopped bundling map GeoJSON from v5 onward, and the last version that
+// did (4.9.0) carries GHSA-fgmj-fm8m-jvvx; vendored locally instead of pinning it.
+fetch('../../assets/geo/world.json')
   .then(r=>r.json()).then(geo=>{
     echarts.registerMap('mono-world',geo);
     const opt={

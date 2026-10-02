@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Lieflat Charts — Lupi Gallery · 19 张参考实现</title>
+<title>Lieflat Charts — Lupi Gallery · 19 張參考實作</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -52,8 +52,8 @@
 <body>
 <div class="pagehead">
 
-  <h1>Lupi 系（细读）· 19 张参考实现</h1>
-  <p>发丝线 · 逐记录 · 30 秒阅读。</p>
+  <h1>Lupi 系（細讀）· 19 張參考實作</h1>
+  <p>髮絲線 · 逐記錄 · 30 秒閱讀。</p>
 </div>
 <div class="grid2">
 
@@ -181,7 +181,7 @@
 
   <!-- 14 · hundred field -->
   <div class="card">
-    <span class="badge pair">小数据 · 单位分解</span>
+    <span class="badge pair">小資料 · 單位分解</span>
     <h2>A hundred of us, four minds</h2>
     <div class="sub">one dot = one person in a hundred · four attitude clusters, sized by share · 2026 survey</div>
     <svg id="hundredfield" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -190,7 +190,7 @@
 
   <!-- 15 · ballot tally -->
   <div class="card">
-    <span class="badge pair">小数据 · 单位分解</span>
+    <span class="badge pair">小資料 · 單位分解</span>
     <h2>What they fear, tick by tick</h2>
     <div class="sub">one tick = one respondent in a hundred · inked = picked it · they could pick several</div>
     <svg id="ballottally" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -200,7 +200,7 @@
 
   <!-- L16 · matrix heat -->
   <div class="card">
-    <span class="badge">LUPI 编辑型 · 矩阵热力</span>
+    <span class="badge">LUPI 編輯型 · 矩陣熱力</span>
     <h2>Which features get used together</h2>
     <div class="sub">8 × 8 co-usage · shade = share of accounts using both · dashed square = strongest pair</div>
     <svg id="matheat" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -209,7 +209,7 @@
 
   <!-- L17 · calendar heat -->
   <div class="card wide">
-    <span class="badge">LUPI 编辑型 · 日历热力</span>
+    <span class="badge">LUPI 編輯型 · 日曆熱力</span>
     <h2>A year of deploys, day by day</h2>
     <div class="sub">52 weeks × 7 days · dot area = deploys that day · tiny dot = a quiet day · dashed ring = the busiest day of 2025</div>
     <svg id="calheat" viewBox="0 0 840 232" preserveAspectRatio="xMidYMid meet" style="max-height:260px"></svg>
@@ -218,7 +218,7 @@
 
   <!-- L19 · ridgeline -->
   <div class="card">
-    <span class="badge">LUPI 编辑型 · RIDGELINE</span>
+    <span class="badge">LUPI 編輯型 · RIDGELINE</span>
     <h2>Five pipelines, five tempos</h2>
     <div class="sub">each crest = one pipeline's completion-time shape · the area is made of hairlines · dot = the peak</div>
     <svg id="ridge" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -227,7 +227,7 @@
 
   <!-- L20 · parallel coordinates -->
   <div class="card">
-    <span class="badge">LUPI 编辑型 · 平行坐标</span>
+    <span class="badge">LUPI 編輯型 · 平行座標</span>
     <h2>Twelve products, four dimensions</h2>
     <div class="sub">one hairline = one product across price · satisfaction · retention · growth · ink = the one that wins everywhere</div>
     <svg id="parallel" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -857,7 +857,7 @@ obsReveal('hourglass',s=>{
 
 // ════ 14 · hundred field ════
 // small data, unit-decomposed: four shares of 100% become 100 people.
-// phyllotaxis discs (golden angle) so每簇自带肌理; share is countable, not just readable.
+// phyllotaxis discs (golden angle) so每簇自帶肌理; share is countable, not just readable.
 (()=>{
 const SEG=[['CHARGED',41,INK],['TORN',35,'#55554F'],['ADRIFT',12,'#8F8E88'],['AVERSE',12,'#B0AFA9']];
 const POS=[[132,140],[276,116],[186,252],[322,238]];
@@ -935,16 +935,16 @@ const tip=(n,s)=>{const t=document.createElementNS(NS,'title');t.textContent=s;n
 const rnd=(i,k)=>Math.abs(((i*73856093)^(k*19349663))%1000)/1000;
 
 // ════ L16 · matrix heat ════
-// 通用矩阵热力：任意 分类×分类×连续值。明度即数据——五档灰阶方块，
-// 越黑越高。对角线不参与（自己×自己），零格留一粒小点（沉默可见）。
-// 最强的一对上虚线框 + 标数。区别于 F10 dot heat：这里编码用明度不用面积，
-// 值是占比/强度而不是可数件数。
+// 通用矩陣熱力：任意 分類×分類×連續值。明度即資料——五檔灰階方塊，
+// 越黑越高。對角線不參與（自己×自己），零格留一粒小點（沉默可見）。
+// 最強的一對上虛線框 + 標數。區別於 F10 dot heat：這裡編碼用明度不用面積，
+// 值是佔比/強度而不是可數件數。
 (()=>{
 const FEAT=['EDITOR','BOARDS','DOCS','CHAT','FLOWS','VAULT','PAGES','SYNC'];
 const v=(i,j)=>{
   if(i===j)return -1;
   const a=Math.min(i,j),b=Math.max(i,j);
-  const pop=(8-a)/8*(8-b)/8;                       // 头部功能重合度高
+  const pop=(8-a)/8*(8-b)/8;                       // 頭部功能重合度高
   const raw=pop*62*(0.35+rnd(a*8+b+1,a+b+3)*.9);
   return Math.round(raw);
 };
@@ -991,16 +991,16 @@ obsReveal('matheat',s=>{
 })();
 
 // ════ L17 · calendar heat ════
-// 日历热力：GitHub 贡献墙的 Lupi 皮。一格一天，52 周 × 7 天，
-// 点面积 = 当天量（sqrt 换算），静默日一粒小点。月份写在上檐，
-// 峰值日虚线圈 + 旁注引线。逐记录世界观：一年 365 天每天都在场。
+// 日曆熱力：GitHub 貢獻牆的 Lupi 皮。一格一天，52 週 × 7 天，
+// 點面積 = 當天量（sqrt 換算），靜默日一粒小點。月份寫在上簷，
+// 峰值日虛線圈 + 旁註引線。逐記錄世界觀：一年 365 天每天都在場。
 (()=>{
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const DAY=['MON','WED','FRI','SUN'];
 const val=(w,d)=>{
   const wd=d<5;
-  const season=1+.55*Math.sin((w-8)/9);            // 春秋两个发布季
-  if(!wd)return rnd(w*7+d+1,3)>.82?1:0;            // 周末基本静默
+  const season=1+.55*Math.sin((w-8)/9);            // 春秋兩個發布季
+  if(!wd)return rnd(w*7+d+1,3)>.82?1:0;            // 週末基本靜默
   const raw=season*(2.5+rnd(w*7+d+1,d+2)*9)*(rnd(w+1,d+5)>.12?1:0);
   return Math.round(raw);
 };
@@ -1044,9 +1044,9 @@ obsReveal('calheat',s=>{
 })();
 
 // ════ L19 · ridgeline ════
-// 多组分布的 Lupi 皮：每行一条完成时长的密度山脊，面积由竖发丝组成
-// （F3 hairline area 的语法），行与行轻微重叠，后排画在前、前排糊上
-// 纸色 slab 遮挡（dotty matrix 的手法）。峰值点标中心时长。
+// 多組分佈的 Lupi 皮：每行一條完成時長的密度山脊，面積由豎髮絲組成
+// （F3 hairline area 的語法），行與行輕微重疊，後排畫在前、前排糊上
+// 紙色 slab 遮擋（dotty matrix 的手法）。峰值點標中心時長。
 (()=>{
 const ROWS=[['MOBILE',3.2,1.3],['DESKTOP',5.1,1.9],['API',7.4,2.3],['IMPORTS',10.8,3.2],['BATCH',15.2,4]];
 obsReveal('ridge',s=>{
@@ -1096,9 +1096,9 @@ obsReveal('ridge',s=>{
 })();
 
 // ════ L20 · parallel coordinates ════
-// 多维记录对比的 Lupi 皮：一条发丝线 = 一个产品走过四根轴。
-// 线束的形状就是数据结构（哪两维相关、谁全线领先）。
-// 全线最优的上墨标名，其余发丝退后。轴顶名、轴脚 min/max。
+// 多維記錄對比的 Lupi 皮：一條髮絲線 = 一個產品走過四根軸。
+// 線束的形狀就是資料結構（哪兩維相關、誰全線領先）。
+// 全線最優的上墨標名，其餘髮絲退後。軸頂名、軸腳 min/max。
 (()=>{
 const DIMS=[['PRICE $',8,30],['CSAT',6,9.6],['RETENTION %',55,95],['GROWTH %',-5,40]];
 const P=[['Editor',12,9.1,91,22],['Boards',18,8.4,86,18],['Forms',9,8.8,78,31],

@@ -1,38 +1,38 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>把回答写在明处 — Lieflat 报告模板 · 反色高亮</title>
+<title>把回答寫在明處 — Lieflat 報告範本 · 反色強調</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   /* ═══════════════════════════════════════════════════════════════
-     LIEFLAT 报告模板 05 · 影响力故事（中文版）
-     场景：叙事型影响力报告（开源项目年度回顾、公益/社区项目汇报、
-           「一个故事 + 三组证据」式对外沟通页）
-     排版参考："Hope for Girls and Women in Tanzania"（标题关键词
-               反色高亮块、正文导语开场、大数 + 长条带、高峰叙事图、
-               结尾行动号召）—— 只学排版和字体。
-     中西混排：数字走 Inter，汉字走 Noto Sans SC。中文标题不用负字距。
-     色板正本 = mono-tokens.js 的 Mono 灰阶。反色高亮块 = 炭黑 INK
-     上纸色字，是 Mono 两极的合法用法，没有引入新色。
-     图表正本 = lieflat gallery：
-       图A  百 tick 分段条带 · 结构 = lupi-gallery "ballot tally"
-            的单行 100 tick 队列 + basics-gallery "tick donut" 的
-            灰阶 ladder 分段语法（同数据形状的直排版本）
-       图B  L3 barcode lollipop · lupi-gallery.html
+     LIEFLAT 報告範本 05 · 影響力故事（繁體中文版）
+     場景：敘事型影響力報告（開源專案年度回顧、公益/社群專案彙報、
+           「一個故事 + 三組證據」式對外溝通頁）
+     排版參考："Hope for Girls and Women in Tanzania"（標題關鍵詞
+               反色強調塊、正文導語開場、大數 + 長條帶、高峰敘事圖、
+               結尾行動號召）—— 只學排版和字型。
+     中西混排：數字走 Inter，漢字走 Noto Sans TC。中文標題不用負字距。
+     色盤正本 = mono-tokens.js 的 Mono 灰階。反色強調塊 = 炭黑 INK
+     上紙色字，是 Mono 兩極的合法用法，沒有引入新色。
+     圖表正本 = lieflat gallery：
+       圖A  百 tick 分段條帶 · 結構 = lupi-gallery "ballot tally"
+            的單行 100 tick 佇列 + basics-gallery "tick donut" 的
+            灰階 ladder 分段語法（同資料形狀的直排版本）
+       圖B  L3 barcode lollipop · lupi-gallery.html
      ═══════════════════════════════════════════════════════════════ */
   :root{
     --bg:#F0EFEB; --ink:#1C1C1A; --muted:#8F8E88; --faint:#C6C5BF; --grid:#DEDDD6;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans SC',sans-serif;
+  body{background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans TC',sans-serif;
     -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums lining-nums;
     display:flex;justify-content:center;padding:64px 24px}
   .sheet{width:760px;max-width:760px}
 
-  /* ── 标题：关键词反色高亮（学参考图5）── */
+  /* ── 標題：關鍵詞反色強調（學參考圖5）── */
   h1{font-size:42px;font-weight:900;letter-spacing:.01em;line-height:1.3;max-width:560px}
   h1 .hl{background:var(--ink);color:var(--bg);padding:0 12px;box-decoration-break:clone;
     -webkit-box-decoration-break:clone}
@@ -40,17 +40,17 @@
   .lede b{font-weight:700;color:var(--ink)}
   .lede .caps{font-weight:700;letter-spacing:.06em}
 
-  /* ── 大数 + 条带 ── */
+  /* ── 大數 + 條帶 ── */
   .bignum{display:flex;align-items:baseline;gap:14px;margin-top:52px}
   .bignum .v{font-size:54px;font-weight:800;letter-spacing:-.04em;line-height:1}
   .bignum .l{font-size:12px;color:var(--muted);font-weight:500}
   .fig{margin-top:10px}
   .fig svg{width:100%;height:auto;display:block}
-  svg text{font-family:'Inter','Noto Sans SC',sans-serif}
+  svg text{font-family:'Inter','Noto Sans TC',sans-serif}
   .srcline{font-size:9px;font-weight:600;letter-spacing:.1em;
     color:var(--faint);margin-top:8px}
 
-  /* ── 章节句：行内高亮块承接（学参考图5）── */
+  /* ── 章節句：行內強調塊承接（學參考圖5）── */
   .storyline{font-size:22px;font-weight:700;letter-spacing:.01em;line-height:1.6;
     margin-top:68px;max-width:600px}
   .storyline .hl{background:var(--ink);color:var(--bg);padding:1px 12px 2px;
@@ -61,7 +61,7 @@
   .legendrow .sw{width:14px;height:10px;background:
     repeating-linear-gradient(-45deg,var(--ink) 0 1.5px,transparent 1.5px 4px)}
 
-  /* ── 结尾 ── */
+  /* ── 結尾 ── */
   .close{font-size:13px;line-height:1.95;color:#4A4944;max-width:560px;margin-top:56px}
   .close b{color:var(--ink)}
   .cta{margin-top:22px;font-size:13.5px;font-weight:700}
@@ -71,7 +71,7 @@
     display:flex;justify-content:space-between;font-size:9px;font-weight:600;
     letter-spacing:.12em;color:var(--faint)}
 
-  /* ── 动画（mono-tokens MOTION.css 原样）── */
+  /* ── 動畫（mono-tokens MOTION.css 原樣）── */
   .pop{transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.2,.7,.3,1.3) both}
   @keyframes pop{from{transform:scale(0)}to{transform:none}}
   .fade{animation:fade .9s ease both}
@@ -88,46 +88,46 @@
 <body>
 <div class="sheet">
 
-  <h1>把回答，<br>写在<span class="hl">明处</span></h1>
+  <h1>把回答，<br>寫在<span class="hl">明處</span></h1>
 
-  <p class="lede"><span class="caps">「公开答疑」</span>最初只是个实验：关于我们产品的每一个问题，
-    都在公开处回答——论坛、更新日志，或者一场任何人都能加入的通话。十二个月过去，这个习惯已经长得比实验大。
-    这一年共有 <b>1,204 个问题</b>被提出；大多数在公开处找到了答案，下一个遇到同样问题的人也能找到它。</p>
+  <p class="lede"><span class="caps">「公開答疑」</span>最初只是個實驗：關於我們產品的每一個問題，
+    都在公開處回答——論壇、更新日誌，或者一場任何人都能加入的通話。十二個月過去，這個習慣已經長得比實驗大。
+    這一年共有 <b>1,204 個問題</b>被提出；大多數在公開處找到了答案，下一個遇到同樣問題的人也能找到它。</p>
 
-  <!-- ══ 图A · 百 tick 分段条带 ══
-       结构 = lupi-gallery "ballot tally" 的单行 100 tick 队列，
-       分段语法 = basics-gallery "tick donut" 的灰阶 ladder。
-       1 tick = 1% ≈ 12 个问题。 -->
-  <div class="bignum"><div class="v">1,204</div><div class="l">个问题 · 2025 年 8 月至 2026 年 7 月</div></div>
+  <!-- ══ 圖A · 百 tick 分段條帶 ══
+       結構 = lupi-gallery "ballot tally" 的單行 100 tick 佇列，
+       分段語法 = basics-gallery "tick donut" 的灰階 ladder。
+       1 tick = 1% ≈ 12 個問題。 -->
+  <div class="bignum"><div class="v">1,204</div><div class="l">個問題 · 2025 年 8 月至 2026 年 7 月</div></div>
   <div class="fig"><svg id="strip" viewBox="0 0 400 84" preserveAspectRatio="xMidYMid meet"></svg></div>
-  <div class="srcline">TICK STRIP · 一格 = 1% ≈ 12 个问题 · 墨色 = 公开解答 · 中灰 = 私下解答 · 浅灰 = 仍待解</div>
+  <div class="srcline">TICK STRIP · 一格 = 1% ≈ 12 個問題 · 墨色 = 公開解答 · 中灰 = 私下解答 · 淺灰 = 仍待解</div>
 
-  <div class="storyline">大多数问题，出现在<span class="hl">发布</span>后的那一周。</div>
-  <p class="sidenote">发布周持续六天左右，提问量会冲到平静周基线的三到四倍。今年三次发布之后，这个规律一次没落空。</p>
-  <div class="legendrow"><span class="sw"></span> 发布周</div>
+  <div class="storyline">大多數問題，出現在<span class="hl">發布</span>後的那一週。</div>
+  <p class="sidenote">發布週持續六天左右，提問量會衝到平靜週基線的三到四倍。今年三次發布之後，這個規律一次沒落空。</p>
+  <div class="legendrow"><span class="sw"></span> 發布週</div>
 
-  <!-- ══ 图B · L3 barcode lollipop ══
-       模板：lupi-gallery.html · "Ninety days as a barcode"
-       90 个工作日的提问量，发布周的日子加斜纹背景带。 -->
+  <!-- ══ 圖B · L3 barcode lollipop ══
+       範本：lupi-gallery.html · "Ninety days as a barcode"
+       90 個工作日的提問量，發布週的日子加斜紋背景帶。 -->
   <div class="fig" style="margin-top:18px"><svg id="barcode" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet"></svg></div>
-  <div class="srcline">BARCODE LOLLIPOP · 一根 = 一个工作日 · 空心头 = 周五 · 最高三天标数</div>
+  <div class="srcline">BARCODE LOLLIPOP · 一根 = 一個工作日 · 空心頭 = 週五 · 最高三天標數</div>
 
-  <div class="storyline" style="margin-top:60px">公开的回答，在我们<span class="hl">下线</span>之后还在工作。</div>
+  <div class="storyline" style="margin-top:60px">公開的回答，在我們<span class="hl">下線</span>之後還在工作。</div>
 
-  <p class="close">私下回复，帮到一个人一次。公开的回复会复利：已解答的帖子今年被重访了
-    <b>11,830 次</b>——几乎每个原始问题带来十次阅读。有 41 条回答长成了正式文档页。
-    <b>如果一个问题教会了我们什么，它就该教会所有人。</b>这就是全部的模式。</p>
+  <p class="close">私下回復，幫到一個人一次。公開的回覆會複利：已解答的帖子今年被重訪了
+    <b>11,830 次</b>——幾乎每個原始問題帶來十次閱讀。有 41 條回答長成了正式文件頁。
+    <b>如果一個問題教會了我們什麼，它就該教會所有人。</b>這就是全部的模式。</p>
 
-  <div class="cta"><span class="hl">ask.yourproduct.com —— 每一条回答，都在明处</span></div>
+  <div class="cta"><span class="hl">ask.yourproduct.com —— 每一條回答，都在明處</span></div>
 
   <div class="foot">
-    <span>影响力一页纸 · 2026 财年</span>
-    <span>来源 · 论坛 + 通话记录 · LIEFLAT CHARTS</span>
+    <span>影響力一頁紙 · 2026 財年</span>
+    <span>來源 · 論壇 + 通話記錄 · LIEFLAT CHARTS</span>
   </div>
 </div>
 
 <script>
-/* ── mono-tokens 内联（色板 / 几何 / 工具函数与正本一致）── */
+/* ── mono-tokens 內聯（色盤 / 幾何 / 工具函式與正本一致）── */
 const INK='#1C1C1A',PAPER='#F0EFEB',MUTED='#8F8E88',GRID='#DEDDD6';
 const NS='http://www.w3.org/2000/svg';
 const el=(p,t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);p.appendChild(n);return n};
@@ -141,12 +141,12 @@ const obsReveal=(id,fn)=>{
   io.observe(n); n.style.cursor='pointer'; n.addEventListener('click',go);
 };
 
-/* ════ 图A · 百 tick 分段条带 ════
-   ballot tally 的单行队列 + tick donut 的 ladder 分段：
-   100 根 tick，前 68 根上墨（公开解答）、中 21 根中灰（私下解答）、
-   后 11 根淡灰（仍待解）。三段标签分别锚定首/中/尾。 */
+/* ════ 圖A · 百 tick 分段條帶 ════
+   ballot tally 的單行佇列 + tick donut 的 ladder 分段：
+   100 根 tick，前 68 根上墨（公開解答）、中 21 根中灰（私下解答）、
+   後 11 根淡灰（仍待解）。三段標籤分別錨定首/中/尾。 */
 (()=>{
-const SEG=[['公开解答',68,INK],['私下',21,'#8F8E88'],['待解',11,'#C6C5BF']];
+const SEG=[['公開解答',68,INK],['私下',21,'#8F8E88'],['待解',11,'#C6C5BF']];
 obsReveal('strip',s=>{
   const base=46,X0=14,PX=3.72;
   el(s,'line',{x1:X0,y1:base,x2:X0+100*PX,y2:base,stroke:GRID,'stroke-width':.8,class:'fade'});
@@ -161,36 +161,36 @@ obsReveal('strip',s=>{
       if(idx%10===0)el(s,'circle',{cx:x,cy:base+4.5,r:.8,fill:'#C6C5BF',
         class:'fade',style:`animation-delay:${idx*.008}s`});
     }
-    // 三段标签分别锚定：首段左对齐、中段居中、末段右对齐，避免相互挤压
+    // 三段標籤分別錨定：首段左對齊、中段居中、末段右對齊，避免相互擠壓
     const anchors=[[X0,'start'],[X0+(k0+v/2)*PX,'middle'],[X0+100*PX,'end']];
     const [lx,anchor]=anchors[si];
     const lab=txt(s,{x:lx,y:base+18,'font-size':8,'font-weight':800,
       fill:shade==='#C6C5BF'?'#8F8E88':shade,'text-anchor':anchor,'letter-spacing':'.04em',
       class:'fade',style:`animation-delay:${.5+si*.12}s`},`${name} · ${v}`);
-    tip(lab,`${name} —— 占全部问题的 ${v}%`);
+    tip(lab,`${name} —— 佔全部問題的 ${v}%`);
     k0+=v;
   });
   txt(s,{x:200,y:78,'font-size':7,'font-weight':600,fill:'#B0AFA9','text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:.9s'},
-    '68 + 21 + 11 = 100 · 每十格一个圆点');
+    '68 + 21 + 11 = 100 · 每十格一個圓點');
 });
 })();
 
-/* ════ 图B · L3 barcode lollipop ════
-   结构照搬 lupi-gallery "barcode lollipop"：90 根发丝日历 +
-   逐日 lollipop（周五空心头），top-3 标数保持 ≥6 天间距。
-   发布周（三段各 6 天）在日历带上以密纹发丝标出——
-   密度本身就是 Mono 的合法材质，没有新颜色。 */
+/* ════ 圖B · L3 barcode lollipop ════
+   結構照搬 lupi-gallery "barcode lollipop"：90 根髮絲日曆 +
+   逐日 lollipop（週五空心頭），top-3 標數保持 ≥6 天間距。
+   發布週（三段各 6 天）在日曆帶上以密紋髮絲標出——
+   密度本身就是 Mono 的合法材質，沒有新顏色。 */
 (()=>{
 const N=90;
-const RELEASE=[[18,23],[47,52],[76,81]];               // 三个发布周
+const RELEASE=[[18,23],[47,52],[76,81]];               // 三個發布週
 const inRel=d=>RELEASE.some(([a,b])=>d>=a&&d<=b);
 const val=d=>{
   const base=28+10*Math.sin(d/8.5)+rnd(d+1,5)*14;
   return inRel(d)?base*(2.6+rnd(d+2,7)*1.1):base;
 };
 obsReveal('barcode',s=>{
-  // 发布周：日历带背后加密发丝
+  // 發布週：日曆帶背後加密髮絲
   RELEASE.forEach(([a,b],ri)=>{
     for(let d=a;d<=b;d++){
       const x=18+d*4.05;
@@ -199,7 +199,7 @@ obsReveal('barcode',s=>{
           'stroke-width':.5,class:'fade',style:`animation-delay:${ri*.1}s`});
     }
   });
-  // 日历条码：一根发丝 = 一个工作日
+  // 日曆條碼：一根髮絲 = 一個工作日
   for(let d=0;d<N;d++){
     const x=18+d*4.05;
     el(s,'line',{x1:x,y1:12,x2:x,y2:252,stroke:GRID,'stroke-width':.7,
@@ -221,7 +221,7 @@ obsReveal('barcode',s=>{
     const dot=el(s,'circle',{cx:x,cy:y,r:big?4.4:2.4,
       fill:friday?PAPER:INK,stroke:INK,'stroke-width':friday?1.2:0,
       class:'pop',style:`animation-delay:${.3+d*.008}s`});
-    tip(dot,`第 ${d+1} 个工作日 —— ${Math.round(v)} 个问题`);
+    tip(dot,`第 ${d+1} 個工作日 —— ${Math.round(v)} 個問題`);
     if(big)txt(s,{x,y:y-10,'font-size':9,'font-weight':800,fill:INK,'text-anchor':'middle',
       style:`paint-order:stroke;stroke:${PAPER};stroke-width:3px;animation-delay:${.9+d*.004}s`,
       class:'fade'},Math.round(v));
@@ -231,16 +231,16 @@ obsReveal('barcode',s=>{
       'letter-spacing':'.08em',class:'fade'},m));
   txt(s,{x:200,y:292,'font-size':7.5,'font-weight':600,fill:'#B0AFA9','text-anchor':'middle',
     'letter-spacing':'.1em',class:'fade',style:'animation-delay:1.1s'},
-    '密纹带 = 发布周 · 一根 = 一个工作日');
+    '密紋帶 = 發布週 · 一根 = 一個工作日');
 });
 })();
 
 </script>
 <script>
-/* ── fit-width：视口比版心窄时整页等比缩小，不重排 ──
-   报告是一张版面，不是响应式网页。窄屏塌成单栏会得到一个
-   设计时不存在的版式；等比缩小则保留构图，跟 PDF 的「适合宽度」一致。
-   机制同模板 11。 */
+/* ── fit-width：視口比版心窄時整頁等比縮小，不重排 ──
+   報告是一張版面，不是響應式網頁。窄螢幕塌成單欄會得到一個
+   設計時不存在的版型；等比縮小則保留構圖，跟 PDF 的「適合寬度」一致。
+   機制同範本 11。 */
 (()=>{
   const sheet=document.querySelector('.sheet');
   const W=760;

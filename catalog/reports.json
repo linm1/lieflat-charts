@@ -1,0 +1,224 @@
+[
+  {
+    "id": "R01",
+    "name": "Survey One-Pager",
+    "zh_title": "調查一頁紙",
+    "common_types": [
+      "survey report",
+      "research brief",
+      "policy / market insight",
+      "white-paper opener",
+      "external data release"
+    ],
+    "page_width": "1080",
+    "density": "3 charts, medium",
+    "color_system": "Porcelain",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-01.zh.html",
+    "gallery_file_en": "templates/reports/report-01.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R02",
+    "name": "Annual Milestones",
+    "zh_title": "年度里程碑",
+    "common_types": [
+      "annual retrospective",
+      "earnings / financial review",
+      "investor update",
+      "product or project milestones"
+    ],
+    "page_width": "980",
+    "density": "3 charts, medium",
+    "color_system": "Palm",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-02.zh.html",
+    "gallery_file_en": "templates/reports/report-02.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R03",
+    "name": "Year in Data",
+    "zh_title": "年度資料海報",
+    "common_types": [
+      "annual data report",
+      "operations / financial annual report",
+      "personal annual record",
+      "annual trend poster"
+    ],
+    "page_width": "1080",
+    "density": "4 charts, high",
+    "color_system": "Wire",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-03.zh.html",
+    "gallery_file_en": "templates/reports/report-03.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R04",
+    "name": "Monthly Ops",
+    "zh_title": "月度營運",
+    "common_types": [
+      "monthly report",
+      "business data report",
+      "financial report",
+      "operations / financial retrospective",
+      "periodic monitoring"
+    ],
+    "page_width": "1080",
+    "density": "4 charts, high",
+    "color_system": "Porcelain",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-04.zh.html",
+    "gallery_file_en": "templates/reports/report-04.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R05",
+    "name": "Impact Story",
+    "zh_title": "影響力故事",
+    "common_types": [
+      "project retrospective",
+      "product record",
+      "nonprofit / community case study",
+      "impact narrative",
+      "personal growth record"
+    ],
+    "page_width": "760",
+    "density": "2 charts, low",
+    "color_system": "Mono",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-05.zh.html",
+    "gallery_file_en": "templates/reports/report-05.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R06",
+    "name": "Eight-Year Product Almanac",
+    "zh_title": "產品八年年鑑",
+    "common_types": [
+      "long-horizon almanac",
+      "product / company history",
+      "multi-year financial or business trend",
+      "personal long-term data"
+    ],
+    "page_width": "980",
+    "density": "4 charts, high",
+    "color_system": "Palm",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-06.zh.html",
+    "gallery_file_en": "templates/reports/report-06.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R07",
+    "name": "Survey Collage Poster",
+    "zh_title": "調查拼貼海報",
+    "common_types": [
+      "survey-report poster",
+      "user / market research",
+      "event / expo data",
+      "social-media material"
+    ],
+    "page_width": "980",
+    "density": "5 charts, very high",
+    "color_system": "Palm",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-07.zh.html",
+    "gallery_file_en": "templates/reports/report-07.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R08",
+    "name": "Population One-Pager",
+    "zh_title": "單位人群一頁",
+    "common_types": [
+      "audience / user profile",
+      "policy / nonprofit brief",
+      "market segmentation",
+      "demographic and socioeconomic data"
+    ],
+    "page_width": "880",
+    "density": "2 charts, low",
+    "color_system": "Wire",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-08.zh.html",
+    "gallery_file_en": "templates/reports/report-08.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R09",
+    "name": "Data Story Dashboard",
+    "zh_title": "資料故事儀表板",
+    "common_types": [
+      "dashboard",
+      "financial / operations cockpit",
+      "business overview",
+      "competitor / market comparison",
+      "KPI snapshot"
+    ],
+    "page_width": "1080",
+    "density": "4 charts + KPI, high",
+    "color_system": "Porcelain",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-09.zh.html",
+    "gallery_file_en": "templates/reports/report-09.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R10",
+    "name": "Travel Notebook",
+    "zh_title": "旅行手記",
+    "common_types": [
+      "travel data record",
+      "sports/fitness data record",
+      "personal annual / lifestyle data",
+      "lightweight project log"
+    ],
+    "page_width": "980",
+    "density": "4 charts + table, medium",
+    "color_system": "Palm",
+    "dependencies": "web fonts",
+    "gallery_file_zh": "templates/reports/report-10.zh.html",
+    "gallery_file_en": "templates/reports/report-10.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R11",
+    "name": "Research Brief Card",
+    "zh_title": "研究簡報卡",
+    "common_types": [
+      "research brief",
+      "financial / economic flash update",
+      "social-media card",
+      "presentation insert",
+      "key-metric snapshot"
+    ],
+    "page_width": "600x1000",
+    "density": "2 charts, fixed size",
+    "color_system": "Mono",
+    "dependencies": "Chart.js + ECharts CDN",
+    "gallery_file_zh": "templates/reports/report-11.zh.html",
+    "gallery_file_en": "templates/reports/report-11.en.html",
+    "origin": "upstream"
+  },
+  {
+    "id": "R12",
+    "name": "Weekly Glance",
+    "zh_title": "週報速覽",
+    "common_types": [
+      "weekly report",
+      "financial / operations flash update",
+      "operations monitoring",
+      "project progress",
+      "sports or travel weekly log"
+    ],
+    "page_width": "1080",
+    "density": "4 charts, high",
+    "color_system": "Palm",
+    "dependencies": "Chart.js + ECharts CDN",
+    "gallery_file_zh": "templates/reports/report-12.zh.html",
+    "gallery_file_en": "templates/reports/report-12.en.html",
+    "origin": "upstream"
+  }
+]

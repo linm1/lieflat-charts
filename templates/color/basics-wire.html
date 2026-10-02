@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Lieflat Basics F1–F17 × WIRE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/echarts@6/dist/echarts.min.js"></script>
 <style>
   :root{--bg:#F0F0EE;--ink:#1F1E1C;--muted:rgba(31,30,28,.60);--faint:rgba(31,30,28,.32);--grid:rgba(31,30,28,.16)}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);font-family:'Inter','Noto Sans SC',sans-serif;color:var(--ink);padding:40px;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);font-family:'Inter','Noto Sans TC',sans-serif;color:var(--ink);padding:40px;-webkit-font-smoothing:antialiased}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1100px;margin:0 auto}
   .card{background:var(--bg);border-radius:24px;padding:28px 28px 20px}
   .card.wide{grid-column:1/-1}
@@ -40,13 +40,13 @@
 </head>
 <body>
 <div class="pagehead">
-  <h1>基础型组 F1–F17 × WIRE</h1>
-  <p><span class="chip" style="background:#F5572F"></span><span class="chip" style="background:#22211F"></span><span class="chip" style="background:#8F8E86"></span><span class="chip" style="background:#C0BFB7"></span><span class="chip" style="background:#DBDAD3"></span> &nbsp;编辑部红 · 黑灰为体，每张图一个主角元素上红（最大柱/峰值/NET/改版后）。几何、动画、数据与 basics-gallery 一致；彩色版统一加墨（线宽 ×1.8 / 透明度地板 .85，dot heat 除外——它的墨本来就够）。滚入播动画，点击重播。</p>
+  <h1>基礎型組 F1–F17 × WIRE</h1>
+  <p><span class="chip" style="background:#F5572F"></span><span class="chip" style="background:#22211F"></span><span class="chip" style="background:#8F8E86"></span><span class="chip" style="background:#C0BFB7"></span><span class="chip" style="background:#DBDAD3"></span> &nbsp;編輯部紅 · 黑灰為體，每張圖一個主角元素上紅（最大柱/峰值/NET/改版後）。幾何、動畫、資料與 basics-gallery 一致；彩色版統一加墨（線寬 ×1.8 / 透明度地板 .85，dot heat 除外——它的墨本來就夠）。滑入播放動畫，點選重播。</p>
 </div>
 <div class="grid2">
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 柱状</span>
+    <span class="badge">LUPI 基礎型 · 柱狀</span>
     <h2>Revenue by plan, rung by rung</h2>
     <div class="sub">one rung = one $k of MRR · the bar is a ladder you can count</div>
     <svg id="rungs" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -54,7 +54,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 折线</span>
+    <span class="badge">LUPI 基礎型 · 折線</span>
     <h2>Thirty days of sign-ups</h2>
     <div class="sub">one dot = one day · hollow = weekend · the barcode floor keeps the calendar honest</div>
     <svg id="dayline" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -62,7 +62,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 面积</span>
+    <span class="badge">LUPI 基礎型 · 面積</span>
     <h2>Concurrent users, filled with days</h2>
     <div class="sub">one hairline = one day, floor to peak · the area is made of days, not paint</div>
     <svg id="hairarea" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -70,7 +70,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 环形</span>
+    <span class="badge">LUPI 基礎型 · 環形</span>
     <h2>Where the traffic comes from</h2>
     <div class="sub">one tick = one percent · four sources shade the dial · read it like a clock</div>
     <svg id="tickdonut" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -78,7 +78,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 横向条形</span>
+    <span class="badge">LUPI 基礎型 · 橫向條形</span>
     <h2>Six teams, shipped and counted</h2>
     <div class="sub">one tick = one release this quarter · the row is a queue, not a bar</div>
     <svg id="tickrows" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -86,7 +86,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 分组柱</span>
+    <span class="badge">LUPI 基礎型 · 分組柱</span>
     <h2>This year against last, plan by plan</h2>
     <div class="sub">two ladders per plan · solid rungs = 2026 · faint rungs = 2025 · one rung = $1k</div>
     <svg id="pairrungs" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -94,7 +94,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 堆叠柱</span>
+    <span class="badge">LUPI 基礎型 · 堆疊柱</span>
     <h2>Where each region's revenue sits</h2>
     <div class="sub">one rung = $1k · three products stack up the ladder, strongest carries the most</div>
     <svg id="stackrungs" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -102,7 +102,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 散点</span>
+    <span class="badge">LUPI 基礎型 · 散點</span>
     <h2>Price against satisfaction, twelve products</h2>
     <div class="sub">every dot hangs a plumb line to the floor · read x by the line, y by the height</div>
     <svg id="plumb" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -110,7 +110,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 瀑布</span>
+    <span class="badge">LUPI 基礎型 · 瀑布</span>
     <h2>From gross to net, step by step</h2>
     <div class="sub">one rung = $1k · solid rungs add, dashed rungs take away · the ladder walks down</div>
     <svg id="fall" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -118,7 +118,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 热力</span>
+    <span class="badge">LUPI 基礎型 · 熱力</span>
     <h2>When support gets loud</h2>
     <div class="sub">7 days × 12 hours · dot area = tickets · biggest cell labeled · silence stays visible</div>
     <svg id="dotheat" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -126,7 +126,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 进度</span>
+    <span class="badge">LUPI 基礎型 · 進度</span>
     <h2>How far to the quarter's goal</h2>
     <div class="sub">one tick = one percent of target · inked = earned · the dial reads left to right</div>
     <svg id="gauge" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -134,7 +134,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">LUPI 基础型 · 哑铃对比</span>
+    <span class="badge">LUPI 基礎型 · 啞鈴對比</span>
     <h2>Onboarding, before and after the redesign</h2>
     <div class="sub">hollow dot = before · solid dot = after · beads on the track = minutes saved, countable</div>
     <svg id="dumbbell" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -142,7 +142,7 @@
   </div>
 
   <div class="card wide">
-    <span class="badge">LUPI 基础型 · 矩形树图</span>
+    <span class="badge">LUPI 基礎型 · 矩形樹圖</span>
     <h2>Where the work went</h2>
     <div class="sub">1,280 shipped hours · area = effort · fluorescent orange = the single focal workstream</div>
     <div id="treemap" class="chartbox" role="img" aria-label="Wire treemap of shipped hours nested by product family"></div>
@@ -152,7 +152,7 @@
 
   <!-- F14 · rung histogram -->
   <div class="card">
-    <span class="badge">LUPI 基础型 · 直方图</span>
+    <span class="badge">LUPI 基礎型 · 直方圖</span>
     <h2>Most tickets resolve within six hours</h2>
     <div class="sub">one rung = one ticket in a hundred · bins of two hours · the ladder shows the pile</div>
     <svg id="histo" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -161,7 +161,7 @@
 
   <!-- F15 · tick box -->
   <div class="card">
-    <span class="badge">LUPI 基础型 · 箱线图</span>
+    <span class="badge">LUPI 基礎型 · 箱線圖</span>
     <h2>Reply times, boxed by plan</h2>
     <div class="sub">box = the middle half of tickets · paper tick = median · hollow dot = an outlier nobody enjoyed</div>
     <svg id="boxplot" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -170,7 +170,7 @@
 
   <!-- F16 · stream ribbon -->
   <div class="card wide">
-    <span class="badge">LUPI 基础型 · STREAMGRAPH</span>
+    <span class="badge">LUPI 基礎型 · STREAMGRAPH</span>
     <h2>Three products trade the same river</h2>
     <div class="sub">48 weeks of usage share · band width = weekly active accounts · the river swells where the total grows</div>
     <svg id="stream" viewBox="0 0 840 300" preserveAspectRatio="xMidYMid meet" style="max-height:300px"></svg>
@@ -179,7 +179,7 @@
 
   <!-- F17 · candlestick -->
   <div class="card">
-    <span class="badge">LUPI 基础型 · K 线</span>
+    <span class="badge">LUPI 基礎型 · K 線</span>
     <h2>Six weeks of the token, candle by candle</h2>
     <div class="sub">body = open to close · wick = the day's full reach · ink = closed down · hollow = closed up</div>
     <svg id="candle" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -188,13 +188,13 @@
 
 </div>
 <script>
-// ── WIRE 角色 token（结构灰一律为文字色的透明档，不引入新色相）──
+// ── WIRE 角色 token（結構灰一律為文字色的透明檔，不引入新色相）──
 const BG='#F0F0EE',TXT='#1F1E1C',MUT='rgba(31,30,28,.60)',LAB='rgba(31,30,28,.72)',FAINT='rgba(31,30,28,.32)';
 const FLOOR='rgba(31,30,28,.24)',QUIET='rgba(31,30,28,.15)',TRACK='rgba(31,30,28,.12)',GRID='rgba(31,30,28,.16)';
 const DATA='#22211F',DATA2='#8F8E86',HERO='#F5572F';
 const FAINTDATA='#C0BFB7',BEAD='#8F8E86';
 const CAT4=["#F5572F", "#22211F", "#8F8E86", "#C0BFB7"],CAT3=["#F5572F", "#22211F", "#8F8E86"],CAT3L=["#F5572F", "#22211F", "#6E6D66"],HEAT=["#F5572F", "#6E6D66", "#C0BFB7"];
-const HEROMODE=true; // 黑体红睛模式：每张图一个主角元素整体走 HERO
+const HEROMODE=true; // 黑體紅睛模式：每張圖一個主角元素整體走 HERO
 const NS='http://www.w3.org/2000/svg';
 const el=(p,t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);p.appendChild(n);return n};
 const txt=(p,a,s)=>{const n=el(p,'text',a);n.textContent=s;return n};
@@ -668,9 +668,9 @@ const tip=(n,s)=>{const t=document.createElementNS(NS,'title');t.textContent=s;n
 const rnd=(i,k)=>Math.abs(((i*73856093)^(k*19349663))%1000)/1000;
 
 // ════ F14 · rung histogram ════
-// 直方图的 Lupi Basics 皮：连续数值分箱，一箱一把梯子，1 档 = 1 张工单
-// （百分之一）。箱界写在梯脚之间——直方图的箱是区间不是类目，
-// 这是它和 F1 Rung Bars 的本质区别。峰值箱标数，中位数落点小旗标注。
+// 直方圖的 Lupi Basics 皮：連續數值分箱，一箱一把梯子，1 檔 = 1 張工單
+// （百分之一）。箱界寫在梯腳之間——直方圖的箱是區間不是類目，
+// 這是它和 F1 Rung Bars 的本質區別。峰值箱標數，中位數落點小旗標註。
 (()=>{
 const BIN=[6,14,22,19,13,9,6,4,3,2,1,1];       // 2h bins, sums to 100
 obsReveal('histo',s=>{
@@ -688,7 +688,7 @@ obsReveal('histo',s=>{
   // peak label
   const pk=BIN.indexOf(Math.max(...BIN));
   const px=X0+pk*PW+PW/2;
-  // 一图一红：红给中位旗（half resolved 才是结论），峰值数走墨
+  // 一圖一紅：紅給中位旗（half resolved 才是結論），峰值數走墨
   const num=txt(s,{x:px,y:base-(BIN[pk]-1)*step-10,'font-size':11,'font-weight':800,fill:INK,
     'text-anchor':'middle',class:'fade',style:'animation-delay:.8s'},BIN[pk]);
   tip(num,`${BIN[pk]} of 100 tickets took ${pk*2}–${pk*2+2}h`);
@@ -715,8 +715,8 @@ obsReveal('histo',s=>{
 })();
 
 // ════ F15 · tick box ════
-// 箱线图的 Basics 皮：发丝须线 + 胶囊箱体（IQR），纸色横档 = 中位数，
-// 空心点 = 离群值。箱体明度按中位数快慢排：越快越黑。
+// 箱線圖的 Basics 皮：髮絲須線 + 膠囊箱體（IQR），紙色橫檔 = 中位數，
+// 空心點 = 離群值。箱體明度按中位數快慢排：越快越黑。
 (()=>{
 const G=[['ENT',[.4,.9,1.5,2.6,4.4],[6.2]],
          ['PRO',[.8,2.1,3.3,5,7.8],[10.5]],
@@ -743,7 +743,7 @@ obsReveal('boxplot',s=>{
     tip(box,`${name} — half of tickets answered in ${q1}–${q3}h`);
     el(s,'line',{x1:x-BW/2+3,y1:mapY(md),x2:x+BW/2-3,y2:mapY(md),stroke:PAPER,'stroke-width':2.2,
       class:'fade',style:`animation-delay:${.5+g*.12}s`});
-    // 红只给一个主角：最慢的 FREE 是这张图的故事，其余中位数走墨色
+    // 紅只給一個主角：最慢的 FREE 是這張圖的故事，其餘中位數走墨色
     const slow=g===G.length-1;
     txt(s,{x:x+BW/2+6,y:mapY(md)+3,'font-size':slow?11:9.5,'font-weight':800,
       fill:slow?'#F5572F':INK,
@@ -763,14 +763,14 @@ obsReveal('boxplot',s=>{
 })();
 
 // ════ F16 · stream ribbon ════
-// Streamgraph / ThemeRiver：多系列构成随时间此消彼长。轮廓对称于中轴
-// （silhouette 基线），带宽 = 该系列当周量，纸色缝分带（treemap 同法）。
-// 三带明度按当前份额排：现任霸主最黑。带名标在各自最宽处。
+// Streamgraph / ThemeRiver：多系列構成隨時間此消彼長。輪廓對稱於中軸
+// （silhouette 基線），頻寬 = 該系列當週量，紙色縫分帶（treemap 同法）。
+// 三帶明度按當前份額排：現任霸主最黑。帶名標在各自最寬處。
 (()=>{
 const N=48;
 const mk=(base,trend,w1,w2,seed)=>Array.from({length:N},(_,t)=>
   Math.max(2,base+trend*t+10*Math.sin(t/w1+seed)+5*Math.sin(t/w2+seed*2)+rnd(t+1,seed)*6));
-// 现任霸主是主角：FLOWS 上红，其余灰阶退后
+// 現任霸主是主角：FLOWS 上紅，其餘灰階退後
 const SERIES=[
   ['LEGACY EDITOR',mk(46,-.62,9,3.7,2),'rgba(31,30,28,.32)'],
   ['BOARDS',mk(26,.10,11,4.2,5),'#8F8E86'],
@@ -824,9 +824,9 @@ obsReveal('stream',s=>{
 })();
 
 // ════ F17 · candlestick ════
-// K 线的 Mono 化：不用红绿——实心墨 = 收跌，空心（纸底墨框）= 收涨，
-// 和哑铃图 hollow/ink 的语义一脉。影线是发丝，柱体胶囊圆角。
-// OHLC 四值都是真实记录，最高/最低两日标数。30 个交易日。
+// K 線的 Mono 化：不用紅綠——實心墨 = 收跌，空心（紙底墨框）= 收漲，
+// 和啞鈴圖 hollow/ink 的語義一脈。影線是髮絲，柱體膠囊圓角。
+// OHLC 四值都是真實記錄，最高/最低兩日標數。30 個交易日。
 (()=>{
 const N=30;
 // deterministic random walk with a dip-and-recover arc
@@ -871,7 +871,7 @@ obsReveal('candle',s=>{
       class:'fade',style:`animation-delay:${.05+d*.03}s`});
     tip(body,`Day ${d+1} — open $${o.toFixed(1)} · close $${c.toFixed(1)} · high $${h.toFixed(1)} · low $${l.toFixed(1)}`);
     // extremes, labeled with hairline flags
-    // 一图一红：这段行情的故事是探底，红只给最低价，最高价走墨
+    // 一圖一紅：這段行情的故事是探底，紅只給最低價，最高價走墨
     if(d===hiD)txt(s,{x:cx,y:mapY(h)-7,'font-size':8,'font-weight':800,fill:INK,'text-anchor':'middle',
       style:`paint-order:stroke;stroke:${PAPER};stroke-width:3px;animation-delay:1s`,
       class:'fade'},'$'+Math.round(h));
