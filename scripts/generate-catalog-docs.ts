@@ -159,7 +159,7 @@ function generateChartsMd(charts: ChartEntry[]): string {
     }
     lines.push('');
     if (family === 'glance') {
-      lines.push('\\* G1/G3 still use Chart.js; a future pass may migrate them to ECharts for a single rendering stack.');
+      lines.push('\\* G3 still uses Chart.js; a future pass may migrate it to ECharts for a single rendering stack.');
       lines.push('');
     }
     if (family === 'lupi') {

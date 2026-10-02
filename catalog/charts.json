@@ -1,48 +1,5 @@
 [
   {
-    "id": "G1",
-    "family": "glance",
-    "name": "Range Capsules",
-    "card_title": "Daily active range",
-    "card_anchor_id": "c1",
-    "data_shape": "one min-max range per day, daily series",
-    "occasion": "weekly report dashboard",
-    "reading_speed": "<10s",
-    "engine": "Chart.js",
-    "gallery_file": "templates/glance-gallery.html",
-    "legacy_anchor": null,
-    "tier": "primary",
-    "siblings": [
-      {
-        "id": "L3",
-        "note": "range only"
-      }
-    ],
-    "origin": "upstream",
-    "notes": "G1 and G3 still use Chart.js; a future pass may migrate them to ECharts for a single rendering stack."
-  },
-  {
-    "id": "G2",
-    "family": "glance",
-    "name": "Petal Rose",
-    "card_title": "How releases made us feel",
-    "card_anchor_id": "rose",
-    "data_shape": "single-variable categorical counts, up to 8 categories, roughly even split",
-    "occasion": "facade / cover",
-    "reading_speed": "<10s",
-    "engine": "ECharts (dark card)",
-    "gallery_file": "templates/glance-gallery.html",
-    "legacy_anchor": null,
-    "tier": "primary",
-    "siblings": [
-      {
-        "id": "G13",
-        "note": "upgrade at two variables"
-      }
-    ],
-    "origin": "upstream"
-  },
-  {
     "id": "G3",
     "family": "glance",
     "name": "Chunky Bars",
@@ -235,12 +192,7 @@
     "gallery_file": "templates/glance-gallery.html",
     "legacy_anchor": null,
     "tier": "primary",
-    "siblings": [
-      {
-        "id": "G2",
-        "note": "downgrade at one variable"
-      }
-    ],
+    "siblings": [],
     "origin": "upstream"
   },
   {
@@ -461,12 +413,7 @@
     "gallery_file": "templates/lupi-gallery.html",
     "legacy_anchor": null,
     "tier": "primary",
-    "siblings": [
-      {
-        "id": "G1",
-        "note": "Range Capsules"
-      }
-    ],
+    "siblings": [],
     "origin": "upstream"
   },
   {
@@ -747,29 +694,6 @@
     "notes": "No primary-tier chart encodes a full year of daily data; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
   },
   {
-    "id": "L18",
-    "family": "lupi",
-    "name": "Beeswarm",
-    "card_title": "A hundred and twenty deals, swarming",
-    "card_anchor_id": "beeswarm",
-    "data_shape": "single-variable record-by-record stacked distribution, roughly 40-180 points",
-    "occasion": "sales / research appendix figure",
-    "reading_speed": "~30s",
-    "engine": "SVG",
-    "gallery_file": "templates/lupi-gallery.html",
-    "legacy_anchor": null,
-    "tier": "primary",
-    "siblings": [
-      {
-        "id": "G15"
-      },
-      {
-        "id": "G19"
-      }
-    ],
-    "origin": "upstream"
-  },
-  {
     "id": "L19",
     "family": "lupi",
     "name": "Ridgeline",
@@ -846,12 +770,7 @@
     "gallery_file": "templates/basics-gallery.html",
     "legacy_anchor": "B2",
     "tier": "primary",
-    "siblings": [
-      {
-        "id": "G1",
-        "note": "Range Capsules"
-      }
-    ],
+    "siblings": [],
     "origin": "upstream"
   },
   {
@@ -1152,12 +1071,7 @@
     "gallery_file": "templates/basics-gallery.html",
     "legacy_anchor": null,
     "tier": "backup",
-    "siblings": [
-      {
-        "id": "G1",
-        "note": "when only a range is available"
-      }
-    ],
+    "siblings": [],
     "origin": "upstream",
     "notes": "No primary-tier chart encodes OHLC data; use directly for this shape without first disproving the primary tier (SKILL.md hard rule 3.2)."
   },

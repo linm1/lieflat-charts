@@ -26,7 +26,7 @@ Representative templates from each chart family.
 
 ### Lupi Editorial
 
-Detailed, record-level, and editorial. Selected examples from 20 narrative templates.
+Detailed, record-level, and editorial. Selected examples from 19 narrative templates.
 
 <table>
   <tr>
@@ -38,14 +38,13 @@ Detailed, record-level, and editorial. Selected examples from 20 narrative templ
 
 ### Glance
 
-Fast reading, pre-aggregated information, and conclusion-first composition. Selected examples from 22 Glance templates.
+Fast reading, pre-aggregated information, and conclusion-first composition. Selected examples from 20 Glance templates.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-glance-01.png" alt="Glance preview one" width="100%"></td>
     <td width="50%"><img src="docs/assets/preview-glance-02.png" alt="Glance preview two" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-glance-03.png" alt="Glance preview three" width="100%"></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-glance-03.png" alt="Glance preview three" width="100%"></td></tr>
 </table>
 
 Motion preview:
@@ -97,8 +96,7 @@ A single-hue blue scale for ordered data and single-series charts.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="Porcelain Basics color preview" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-glance.png" alt="Porcelain Glance color preview" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="Porcelain Basics color preview" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-porcelain.png" alt="Porcelain Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -113,8 +111,7 @@ A low-saturation green and yellow family for a small number of unordered categor
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-palm-basics.png" alt="Palm Basics color preview" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-palm-glance.png" alt="Palm Glance color preview" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-palm-basics.png" alt="Palm Basics color preview" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-palm.png" alt="Palm Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -129,8 +126,7 @@ A black and gray palette with one fluorescent orange focal point.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-wire-basics.png" alt="Wire Basics color preview" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-wire-glance.png" alt="Wire Glance color preview" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-wire-basics.png" alt="Wire Basics color preview" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-wire.png" alt="Wire Lupi Editorial color preview" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -143,8 +139,8 @@ Alongside individual charts, the skill can generate complete HTML reports. The 1
   <tr>
     <td width="25%"><img src="docs/assets/reports/en/report-03.png" alt="Report Template 03 Annual Data Report / Poster" width="100%"><br><strong>R03 · Annual Data Report / Poster</strong></td>
     <td width="25%"><img src="docs/assets/reports/en/report-09.png" alt="Report Template 09 Business Data / Financial Dashboard" width="100%"><br><strong>R09 · Business Data / Financial Dashboard</strong></td>
-    <td width="25%"><img src="docs/assets/reports/en/report-12.png" alt="Report Template 12 Periodic Data Brief / Monitoring Summary" width="100%"><br><strong>R12 · Periodic Data Brief / Monitoring Summary</strong></td>
     <td width="25%"><img src="docs/assets/reports/en/report-08.png" alt="Report Template 08 Population / Socioeconomic One-Pager" width="100%"><br><strong>R08 · Population / Socioeconomic One-Pager</strong></td>
+    <td width="25%"><img src="docs/assets/reports/en/report-12-v3.png" alt="Report Template 12 Periodic Data Brief / Monitoring Summary" width="100%"><br><strong>R12 · Periodic Data Brief / Monitoring Summary</strong></td>
   </tr>
   <tr>
     <td width="25%"><img src="docs/assets/reports/en/report-01.png" alt="Report Template 01 Research Report / One-Pager" width="100%"><br><strong>R01 · Research Report / One-Pager</strong></td>
@@ -225,12 +221,12 @@ The number of charts follows the number of independent findings: one chart for o
 <!-- GENERATED:chart-family-table:start -->
 | Family | Count |
 | --- | ---: |
-| Glance | 22 |
-| Lupi Editorial | 20 |
+| Glance | 20 |
+| Lupi Editorial | 19 |
 | Lupi Basics | 17 |
 | Maps | 2 |
 | Interactive | 3 |
-| **Total** | **64** |
+| **Total** | **61** |
 <!-- GENERATED:chart-family-table:end -->
 
 | Family | Best for | Implementation |

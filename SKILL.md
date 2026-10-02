@@ -29,7 +29,7 @@ The following rules are not suggestions — violating any one of them requires r
 
 1. **Must be generated from the repo's templates.** Every finished chart first locks a chart-type number in `catalog.md`, then opens the matching gallery's real implementation: Lupi uses `templates/lupi-gallery.html`, Basics uses `templates/basics-gallery.html`, Glance uses `templates/glance-gallery.html`, Maps uses `templates/maps-gallery.html`, interactive big charts use `templates/big-*.html`. Colored charts still use these original templates as the structural source of truth; `templates/color/` is only for looking up color values.
 2. **Must reuse the chosen template's code skeleton.** Start from the `<div class="card">` matching the card title and the `// ════ <chart name> ════` comment block with the same name; keep its core SVG/Canvas/ECharts structure, data-encoding method, proportions, and animation rhythm. You may swap data, title, annotations, source, and necessary layout; you may not draw a "looks similar" chart independent of the template, splice structural elements from multiple templates into one hybrid chart, or fall back to a plotting library's default styling.
-3. **The default selection order is fixed.** Fully audit Lupi Editorial (L1–L20) first, then Lupi Basics (F1–F17). If either group has a template that can honestly carry the data, fit its labels, and stay readable, you must choose from these two groups. Maps never enter this default chain — they're checked separately, only on explicit request.
+3. **The default selection order is fixed.** Fully audit Lupi Editorial (L1–L19) first, then Lupi Basics (F1–F17). If either group has a template that can honestly carry the data, fit its labels, and stay readable, you must choose from these two groups. Maps never enter this default chain — they're checked separately, only on explicit request.
    3.1 **Within these two groups, there's a primary and a backup tier.** Primary is **L1–L15 and F1–F13** — default here. Backup is **L16–L20, F14–F17, G19–G22** — use these only when nothing in primary can honestly encode the data, and state in writing which primary candidates you checked and why each failed. "The newer chart looks nicer/more professional" is not an acceptable reason. The one exception is §3.2 below.
    3.2 **Five data shapes go straight to a backup chart without first disproving primary** — because primary has no honest encoding for them, and forcing one produces a wrong chart: OHLC four-value price series → F17 Candlestick; five-number summary + outliers → F15 Tick Box; the same entity across 3–6 continuous dimensions → L20 Parallel Coordinates; a full year of 52-week × 7-day date density → L17 Calendar Heat; multi-series composition changing over continuous time where you also need the running total → F16 Stream Ribbon. Outside these five, every backup chart follows §3.1.
 4. **Glance is a default fallback, not a co-equal first choice.** Use Glance only once both Lupi Editorial and Lupi Basics fail to fit, or the user explicitly asks for Glance, a dashboard, monitoring, a weekly report, or a three-second read. Before downgrading, state in writing the specific reason Lupi/Basics didn't fit.
@@ -39,7 +39,7 @@ The following rules are not suggestions — violating any one of them requires r
 
 1. **Diagnose the data shape.** Don't ask the user what chart they want — look at what their data actually is: a comparison across a few categories? A time series? A proportion? Values with positive/negative sign? A many-to-one grouping? A network? Record-level distribution? Shape is the primary key for chart selection.
 2. **Audit primary first, backup only if needed.** By data shape, scan primary L1–L15 and F1–F13 candidates, comparing at least 3 (list all of them if fewer than 3 exist). Compare semantic fit, unit honesty, label capacity, reading speed, narrative tension, and duplication within this batch. Only scan backup L16–L20/F14–F17 once every primary candidate fails, and state which primary candidates you checked and why each failed (§0.3.1). When the data shape hits one of the five §0.3.2 shapes, go straight to the matching backup chart.
-3. **Only check Glance when necessary.** Scan Glance (G1–G22) only once every Lupi and Basics candidate has failed, or the user explicitly asked for Glance/dashboard/monitoring/weekly-report/three-second-read. When you choose Glance, record why Lupi and Basics couldn't carry the data — "Glance is more intuitive" alone is not an acceptable reason. When the user explicitly asks for a map, jump straight to Maps (M1–M2); never mix Maps into the normal candidate pool.
+3. **Only check Glance when necessary.** Scan the 20 Glance candidates (G3–G22) only once every Lupi and Basics candidate has failed, or the user explicitly asked for Glance/dashboard/monitoring/weekly-report/three-second-read. When you choose Glance, record why Lupi and Basics couldn't carry the data — "Glance is more intuitive" alone is not an acceptable reason. When the user explicitly asks for a map, jump straight to Maps (M1–M2); never mix Maps into the normal candidate pool.
 4. **Lock the real template, then compose the page.** Every chart must record its family, chart-type number, gallery file, and card title, and use that card's real structure and rendering code as its skeleton. Never plan "this page needs to say six things" and then invent chart types to match — page-level narrative can only be organized after every template is locked.
 5. **Assemble the batch by the chart-count rule.** One chart carries one independent conclusion; after removing duplicate conclusions, size the batch by the default ranges in §1.2. Distribute templates across the whole batch: no repeats, no stacking the same silhouette, no padding the count just to fill space.
 6. **Render from the template and self-check** (§0, §2, §3, §8). Check line by line that the finished piece still traces back to the chosen gallery implementation — changing the data must never swap out the template's core geometry, encoding, or motion. Choose Mono or a color preset for the whole delivery per §6.5; library-external chart types go through the §6 translation workflow.
@@ -104,7 +104,7 @@ Default reference is `mono-tokens.js` (inline its contents into the HTML for ope
 
 Under the same Mono palette there are two distinct worldviews; which one you pick depends on the **occasion** and **how many seconds the reader is willing to spend**:
 
-| | Glance family (22 charts) | Lupi family (close reading, 20 charts) |
+| | Glance family (20 charts) | Lupi family (close reading, 19 charts) |
 |---|---|---|
 | Atomic unit | shape (thick bar, big arc, block of color) | record (one dot = one row of data) |
 | Line weight | 2px+, confident | 0.5–0.7px hairline |
@@ -131,7 +131,7 @@ The final choice is the intersection of all three — not "whichever template fi
 3. **Only invent a new one if the library genuinely has nothing matching that shape**, and any new chart must extend the gallery's existing grammar (hairline ticks, deterministic `rnd` jitter, paint-order glow, all-caps annotation) rather than importing an outside reference — "Lupi style" means the visual grammar of this gallery's charts, not Giorgia Lupi's own hand-drawn style.
 4. A newly invented small-data chart needs its full **environment layer**: half of what makes the gallery look good is data-free furniture (ledger-paper ruling, dashed guide rails, rim ticks, a column grid every 10 units, annotation leader lines). Keep the data layer honestly sparse and spend the density budget on the furniture. A small-data chart with only the data plus one baseline will always look thin.
 
-**Never repeat a template within one delivered batch (one page, multiple charts).** 20 Lupi charts is plenty to rotate through; when the same data could be carried by multiple templates, pick whichever hasn't been used yet in this batch.
+**Never repeat a template within one delivered batch (one page, multiple charts).** 19 Lupi charts is plenty to rotate through; when the same data could be carried by multiple templates, pick whichever hasn't been used yet in this batch.
 
 ## 4. Chart Decision Tree (data shape → candidates)
 
@@ -141,9 +141,9 @@ Numbers correspond to `catalog.md`. These are **recall candidates only** — the
 - **Multi-select percentages (each item independent 0–100, sum may exceed 100)** → G3 Chunky Bars ⇄ L15 Ballot Tally
 - **Distribution across many categories (30–60 bars)** → G12 Stagger Wave
 - **Signed categorical values** → G10 Diverging Bar
-- **Proportion / 100% composition** → G4 Dot Waffle ⇄ L14 Hundred Field ⇄ F4 Tick Donut (the default pie-chart replacement); near-equal split needing a cover-page feel → G2 Petal Rose; dual-encoded share × intensity → G13 Big Slice; stacked by category → F7 Stacked Rungs
+- **Proportion / 100% composition** → G4 Dot Waffle ⇄ L14 Hundred Field ⇄ F4 Tick Donut (the default pie-chart replacement); dual-encoded share × intensity → G13 Big Slice; stacked by category → F7 Stacked Rungs
 - **Two-point comparison (before/after)** → category-level (≤6 categories) → F12 Dumbbell Queue (horizontal, beads = real units) ⇄ F6 Paired Rungs (side-by-side pairs); only for 2–4 series needing a trend line → Glance chunky slope (thick line, big numbers, conclusion in the title). Slope charts with too many crossings become significantly less readable — don't pile on decoration just to "Lupi-fy" one.
-- **Daily series (≤30 days, with a range)** → G1 Range Capsules ⇄ day-by-day reading F2 Hairline Line ⇄ (90-day scale, wants texture) L3 Barcode Lollipop; 30–60 days wanting shape → F3 Hairline Area
+- **Daily series (≤30 days, day-by-day reading)** → F2 Hairline Line ⇄ (90-day scale, wants texture) L3 Barcode Lollipop; 30–60 days wanting shape → F3 Hairline Area
 - **Cumulative growth** → G18 Draw-in + Counter
 - **Two-series cause/effect (input vs. output)** → G8 Rainfall
 - **Real-time data** → G17 Dynamic Stream
@@ -154,7 +154,7 @@ Numbers correspond to `catalog.md`. These are **recall candidates only** — the
 - **2D scatter (≤20 points)** → F8 Plumb Scatter; a few hundred points → G15 Jitter Strip
 - **Univariate binned frequency** → first check whether F1 Rung Bars can carry it directly (bin as category); only use F14 Rung Histogram when true binning semantics are required. Bin boundaries must have real business meaning — never slice bins arbitrarily for looks.
 - **Grouped continuous distribution** → **five-number summary + outliers go straight to F15 Tick Box** (primary has no matching encoding). For density-shape-only comparisons, check G15 Jitter Strip first; G19 Violin and L19 Ridgeline are backup — state explicitly why Jitter/F15 wasn't enough.
-- **Record-level distribution** → G15 Jitter Strip. Only downgrade to L18 Beeswarm when every point must be preserved and the stacking shape itself is meaningful — beeswarm is not the default.
+- **Record-level distribution** → G15 Jitter Strip.
 - **Category × category + volume (matrix)** → primary first: lightweight L4 Arc Matrix, or L9 Bubble Almanac when it spans years and needs annotation. Only use L16 Matrix Heat when neither can hold up (too many cells, bubbles crowding, must be read by lightness); use G20 when a fast read with directly labeled cells is required.
 - **Date × count across a full year** → **a full 52-week × 7-day year goes straight to L17 Calendar Heat** (primary has no matching encoding; L3 only scales to ~90 days). Weekday × hour recurring cycles still use F10/G14.
 - **Many-to-one attribution** → strong visual form L5 Radial Convergence ⇄ with a name list L12 Type Colonnade
@@ -163,7 +163,7 @@ Numbers correspond to `catalog.md`. These are **recall candidates only** — the
 - **Hierarchy + share/weight (two levels, positive values)** → F13 Nested Treemap; when only membership matters and not relative size → G7 Tree LR
 - **Multi-series composition changing over continuous time** → static categorical composition uses F7 Stacked Rungs first; **when you need the running total and the continuous-time flow together, go straight to F16 Stream Ribbon** (primary has no matching encoding). A single series' total alone uses F3/G17.
 - **The same entity across 3–6 continuous dimensions** → **go straight to L20 Parallel Coordinates** (primary has no matching encoding). Beyond 6 dimensions, filter first or split into multiple charts.
-- **OHLC price data** → **go straight to F17 Candlestick** (primary has no matching encoding). Use G1 only when there's a min–max range with no open/close values.
+- **OHLC price data** → **go straight to F17 Candlestick** (primary has no matching encoding).
 - **Two-sided aggregate flow** → check first whether L5 Radial Convergence / L12 Type Colonnade can carry the attribution relationship; only use G22 Aggregate Sankey when flow width itself must be read. For per-path queries, use B3 Threads.
 - **Rank changing over discrete time (static)** → compare L11 Trend Lineage / L2 Dot Cascade first; only use G21 Rank Strip when period-by-period cell alignment is genuinely required.
 - **Event-sequence life history** → L11 Trend Lineage
@@ -330,7 +330,7 @@ Being willing to refuse is more credible than accepting everything. Don't build 
 <title>Mono — {chart name}</title>
 <!-- When ECharts is needed: -->
 <script src="https://cdn.jsdelivr.net/npm/echarts@6/dist/echarts.min.js"></script>
-<!-- When Chart.js is needed (G1 / G3): -->
+<!-- When Chart.js is needed (G3): -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="{MONO.FONT.link}" rel="stylesheet">
@@ -344,7 +344,7 @@ Being willing to refuse is more credible than accepting everything. Don't build 
     <!-- pick one container per engine: -->
     <div class="ch" id="ch"></div><!-- ECharts -->
     <!-- hand-written SVG: <svg id="ch" viewBox="0 0 400 320"></svg> -->
-    <!-- Chart.js (G1/G3): <div class="wrap"><canvas id="ch"></canvas></div>, paired with .wrap{position:relative;height:320px} -->
+    <!-- Chart.js (G3): <div class="wrap"><canvas id="ch"></canvas></div>, paired with .wrap{position:relative;height:320px} -->
     <!-- ⚠️ Chart.js must mount on a <canvas> — wrapping it in <div class="ch"> throws "can't acquire context" -->
     <div class="src">{chart type} · {series} · {data source}</div>
   </div>

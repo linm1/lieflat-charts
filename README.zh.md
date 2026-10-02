@@ -24,7 +24,7 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
 
 ### Lupi Editorial
 
-細讀、逐記錄、編輯感。精選 20 張編輯敘事型範本中的代表圖型。
+細讀、逐記錄、編輯感。精選 19 張編輯敘事型範本中的代表圖型。
 
 <table>
   <tr>
@@ -36,14 +36,13 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
 
 ### Glance
 
-快讀、聚合、結論先行。精選 22 張快速判斷型範本中的代表圖型。
+快讀、聚合、結論先行。精選 20 張快速判斷型範本中的代表圖型。
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-glance-01.png" alt="Glance 快讀型預覽一" width="100%"></td>
     <td width="50%"><img src="docs/assets/preview-glance-02.png" alt="Glance 快讀型預覽二" width="100%"></td>
+    <td width="50%"><img src="docs/assets/preview-glance-03.png" alt="Glance 快讀型預覽三" width="100%"></td>
   </tr>
-  <tr><td colspan="2"><img src="docs/assets/preview-glance-03.png" alt="Glance 快讀型預覽三" width="100%"></td></tr>
 </table>
 
 動態預覽：
@@ -95,8 +94,7 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="青瓷藍 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-porcelain-glance.png" alt="青瓷藍 Glance 彩色圖表預覽" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-porcelain-basics.png" alt="青瓷藍 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-porcelain.png" alt="青瓷藍 Lupi 彩色圖表預覽" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -111,8 +109,7 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-palm-basics.png" alt="椰林綠 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-palm-glance.png" alt="椰林綠 Glance 彩色圖表預覽" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-palm-basics.png" alt="椰林綠 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-palm.png" alt="椰林綠 Lupi 彩色圖表預覽" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -127,8 +124,7 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/preview-color-wire-basics.png" alt="編輯部紅 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
-    <td width="50%"><img src="docs/assets/preview-color-wire-glance.png" alt="編輯部紅 Glance 彩色圖表預覽" width="100%"><br><strong>Glance</strong></td>
+    <td width="100%"><img src="docs/assets/preview-color-wire-basics.png" alt="編輯部紅 Basics 彩色圖表預覽" width="100%"><br><strong>Basics</strong></td>
   </tr>
   <tr><td colspan="2"><img src="docs/assets/preview-color-wire.png" alt="編輯部紅 Lupi 彩色圖表預覽" width="100%"><br><strong>Lupi Editorial</strong></td></tr>
 </table>
@@ -143,8 +139,8 @@ Mono 黑白灰是穩定的保底方案，同時也有彩色模式，目前支援
   <tr>
     <td width="25%"><img src="docs/assets/reports/report-03.png" alt="報告範本 03 年度資料報告 / 年度海報" width="100%"><br><strong>R03 · 年度資料報告 / 年度海報</strong></td>
     <td width="25%"><img src="docs/assets/reports/report-09.png" alt="報告範本 09 業務資料 / 財務經營 Dashboard" width="100%"><br><strong>R09 · 業務資料 / 財務經營 Dashboard</strong></td>
-    <td width="25%"><img src="docs/assets/reports/report-12.png" alt="報告範本 12 週期資料快報 / 監控摘要" width="100%"><br><strong>R12 · 週期資料快報 / 監控摘要</strong></td>
     <td width="25%"><img src="docs/assets/reports/report-08.png" alt="報告範本 08 人群與社會經濟資料一頁" width="100%"><br><strong>R08 · 人群 / 社會經濟資料一頁</strong></td>
+    <td width="25%"><img src="docs/assets/reports/report-12-v3.png" alt="報告範本 12 週期資料快報 / 監控摘要" width="100%"><br><strong>R12 · 週期資料快報 / 監控摘要</strong></td>
   </tr>
   <tr>
     <td width="25%"><img src="docs/assets/reports/report-01.png" alt="報告範本 01 調查報告 / 研究一頁" width="100%"><br><strong>R01 · 調查報告 / 研究一頁</strong></td>

@@ -1,4 +1,4 @@
-# Navi Chart — Chart Catalog · 64 charts
+# Navi Chart — Chart Catalog · 61 charts
 
 > Every chart carries three tags: **data shape** (the primary key for selection), **occasion**, and **reader time**.
 > **Primary vs. backup:** primary tier is L1–L15 and F1–F13 — default here first. L16–L20, F14–F17, and G19–G22 are backup tier, used only when the primary tier cannot honestly encode the data, with the reason written down. The exceptions are F15, F16, F17, L17, and L20 — no primary-tier encoding exists for their data shapes, so hitting that shape goes straight to the backup entry (see `SKILL.md` hard rules §0.3.1 / §0.3.2).
@@ -10,8 +10,6 @@
 
 | # | Name | Card title | Data shape | Occasion | Reading time | Engine | Siblings |
 | --- | ------ | --------- | --------- | ------ | --------- | ------ | ------ |
-| G1 | Range Capsules | Daily active range | one min-max range per day, daily series | weekly report dashboard | <10s | Chart.js | L3 (range only) |
-| G2 | Petal Rose | How releases made us feel | single-variable categorical counts, up to 8 categories, roughly even split | facade / cover | <10s | ECharts (dark card) | G13 (upgrade at two variables) |
 | G3 | Chunky Bars | Revenue by plan | small-category ranking comparison (up to 6) | weekly report dashboard | <10s | Chart.js | L2; L15 (multi-select percentages) |
 | G4 | Dot Waffle | Where sign-ups come from | 100% composition (share of a whole) | general purpose, default replacement for a pie chart | <10s | hand-written SVG | L14 |
 | G5 | Pictorial Bar | Trees planted, year by year | year-by-year count (one symbol = a fixed quantity) | external-facing story page | <10s | ECharts | — |
@@ -22,7 +20,7 @@
 | G10 | Diverging Bar | Where we gained, where we bled | signed (positive/negative) categorical values | weekly report dashboard | <10s | ECharts | — |
 | G11 | Force Graph (small) | Integrations, pulled into orbit | hub-and-satellite network, up to 15 nodes | quick illustration, draggable | <10s | ECharts (dark card) | L6 (static poster version) |
 | G12 | Stagger Wave | Fifty markets, one wave | multi-category distribution (30-60 bars) | short-video entrance | animated | ECharts | — |
-| G13 | Big Slice (Custom Pie) | Big slice, deep engagement | double encoding: share of whole (angle) x intensity (radius) | product analysis | ~30s | ECharts custom series | G2 (downgrade at one variable) |
+| G13 | Big Slice (Custom Pie) | Big slice, deep engagement | double encoding: share of whole (angle) x intensity (radius) | product analysis | ~30s | ECharts custom series | — |
 | G14 | Single Axis | Support load, day by day | weekday x hour x volume (punch-card data) | support/ops weekly report | ~30s | ECharts | — |
 | G15 | Jitter Strip | Response times, spread out | grouped distribution, record-by-record (a few hundred points) | SRE / ticket analysis | ~30s | ECharts | — |
 | G16 | Bar Race | Eight products race for revenue | ranking evolving over time | short video | animated | ECharts realtimeSort | — |
@@ -33,7 +31,7 @@
 | G21 | Rank Strip | Flows climbs to the top | multi-entity ranking over discrete time, print-friendly | reporting / billing retrospective | <10s | SVG | G16 (animated presentation version) |
 | G22 | Aggregate Sankey | Channels pour into plans | two-sided aggregate flow, band width = quantity, no per-path lookup required | attribution / conversion analysis | ~30s | SVG | B3 (needs per-path lookup) |
 
-\* G1/G3 still use Chart.js; a future pass may migrate them to ECharts for a single rendering stack.
+\* G3 still uses Chart.js; a future pass may migrate it to ECharts for a single rendering stack.
 
 ## Lupi family · 20 charts (hairline · record-by-record · 30-second read)
 
@@ -41,7 +39,7 @@
 | --- | ------ | --------- | --------- | ------ | --------- | ------ | ------ |
 | L1 | Launch Fan | Twelve features, fanned out | multiple entities, each with a birth time and current scale | annual report / story page | ~30s | SVG | — |
 | L2 | Dot Cascade | What breaks, stacked and ranked | ranking comparison, countable units (a unit chart) | annual report / story page | ~30s | SVG (dark card) | G3 (Chunky Bars) |
-| L3 | Barcode Lollipop | Ninety days as a barcode | one reading per day, daily series (roughly 90 days) | annual report / story page (with a text column) | ~30s | SVG (full width) | G1 (Range Capsules) |
+| L3 | Barcode Lollipop | Ninety days as a barcode | one reading per day, daily series (roughly 90 days) | annual report / story page (with a text column) | ~30s | SVG (full width) | — |
 | L4 | Arc Matrix | Eight products land in twelve cities | category x category + value, small data (up to 100 cells) | lightweight matrix | ~30s | SVG | L9 (use this for thinner data; Almanac is the heavier version) |
 | L5 | Radial Convergence | 48 requests pull toward five themes | many-to-one attribution without losing detail (up to 60 records) | poster / cover | ~30s | SVG | L12 (two alternates offered for the same data shape) |
 | L6 | Cluster Field | The contributor field | hub-and-satellite network, poster version | poster / cover (read the shape, not the numbers) | ~30s | SVG (full width) | B2 (use the big force template when interaction / lookup is needed) |
@@ -56,7 +54,6 @@
 | L15 | Ballot Tally | What they fear, tick by tick | multi-select-question percentages (each item independent, 0-100), up to 6 items | annual report / story page | ~30s | SVG | G3 (Chunky Bars) |
 | L16 | Matrix Heat | Which features get used together | two discrete dimensions x value, up to 100 cells, keeps matrix structure and highlight cells | annual report / product analysis | ~30s | SVG | G20 (quick-read version) |
 | L17 | Calendar Heat | A year of deploys, day by day | a full year of dates x count, 52 weeks x 7 days | annual report / ops retrospective | ~30s | SVG (full width) | F10 (weekday x hour instead of full year) |
-| L18 | Beeswarm | A hundred and twenty deals, swarming | single-variable record-by-record stacked distribution, roughly 40-180 points | sales / research appendix figure | ~30s | SVG | G15; G19 |
 | L19 | Ridgeline | Five pipelines, five tempos | 3-8 groups of continuous-distribution density shapes, compared | annual report / research report | >30s | SVG | G19 (quick read with fewer groups) |
 | L20 | Parallel Coordinates | Twelve products, four dimensions | same entity set across 3-6 continuous dimensions, one line per entity | product-portfolio / research report | >30s | SVG | G9 (animated carousel presentation) |
 
@@ -69,7 +66,7 @@ Recognizable as a familiar chart type from a distance (bar / line / donut...); e
 | # | Name | Card title | Data shape | Occasion | Reading time | Engine | Siblings |
 | --- | ------ | --------- | --------- | ------ | --------- | ------ | ------ |
 | F1 | Rung Bars | Revenue by plan, rung by rung | small-category comparison (up to 8), countable units | annual report / story page | ~30s | SVG | G3 (Chunky Bars) |
-| F2 | Hairline Line | Thirty days of sign-ups | daily series (up to 30 days, day-by-day reading) | annual report / story page | ~30s | SVG | G1 (Range Capsules) |
+| F2 | Hairline Line | Thirty days of sign-ups | daily series (up to 30 days, day-by-day reading) | annual report / story page | ~30s | SVG | — |
 | F3 | Hairline Area | Concurrent users, filled with days | daily series (30-60 days, read for shape) | annual report / story page | ~30s | SVG | L3 (Barcode Lollipop) |
 | F4 | Tick Donut | Where the traffic comes from | 100% composition (up to 6 segments) | annual report / story page | ~30s | SVG | G4; L14 |
 | F5 | Tick Rows | Six teams, shipped and counted | horizontal ranking comparison, countable units (up to 8 rows) | annual report / story page | ~30s | SVG | L2 (Dot Cascade) |
@@ -84,7 +81,7 @@ Recognizable as a familiar chart type from a distance (bar / line / donut...); e
 | F14 | Rung Histogram | Most tickets resolve within six hours | single-variable binned frequency, bins have business meaning and countable units | support / ops analysis | ~30s | SVG | G19; F15 (Tick Box) |
 | F15 | Tick Box | Reply times, boxed by plan | grouped five-number summary + outliers, raw distribution can be summarized | support / experiment analysis | ~30s | SVG | G19; F14 (Rung Histogram) |
 | F16 | Stream Ribbon | Three products trade the same river | 2-5 series of composition changing over continuous time, while still showing the total | product / traffic retrospective | ~30s | SVG (full width) | F7 (static-category alternative) |
-| F17 | Candlestick | Six weeks of the token, candle by candle | OHLC four-value time series, hollow = up, filled = down | market / price retrospective | ~30s | SVG | G1 (when only a range is available) |
+| F17 | Candlestick | Six weeks of the token, candle by candle | OHLC four-value time series, hollow = up, filled = down | market / price retrospective | ~30s | SVG | — |
 
 ## Maps · 2 charts (recalled only on explicit user request)
 

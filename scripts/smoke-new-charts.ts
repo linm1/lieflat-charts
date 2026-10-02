@@ -29,7 +29,7 @@ function readJson<T>(relPath: string): T {
 // Smoke-test the entries that carried a legacy_anchor or were the last batch added
 // upstream (F14-F17, L16-L20, G19-G22) — the same "most recently added, least proven"
 // set the original script targeted, now derived from the catalog instead of hardcoded.
-const RECENT_IDS = new Set(['F14', 'F15', 'F16', 'F17', 'L16', 'L17', 'L18', 'L19', 'L20', 'G19', 'G20', 'G21', 'G22']);
+const RECENT_IDS = new Set(['F14', 'F15', 'F16', 'F17', 'L16', 'L17', 'L19', 'L20', 'G19', 'G20', 'G21', 'G22']);
 
 const suffixes = ['gallery', 'porcelain', 'palm', 'wire'] as const;
 type Family = 'basics' | 'lupi' | 'glance';

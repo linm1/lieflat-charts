@@ -18,25 +18,21 @@
            資料形狀 Lupi 撐不住，是場合本身要三秒讀完，使用者也點名要
            Glance 的粗筆畫質感——這條例外在 SKILL.md 裡寫得很明白。
      依賴說明：這是範本庫裡第一張、目前也是唯一一張掛 CDN 依賴的範本。
-           庫裡其餘範本都是純 SVG、離線可開；這四張圖來自 Chart.js 和
+           庫裡其餘範本都是純 SVG、離線可開；這兩張圖來自 Chart.js 和
            ECharts，指令碼標籤原樣照抄 glance-palm.html 畫廊，沒有聯網
            時圖表區會是空白。
      圖表正本 = templates/color/glance-palm.html：
-       圖A  G1 Range Capsules   （Chart.js floating bar）
-       圖B  G2 Petal Rose       （ECharts，暗卡，本頁唯一一張深色卡）
-       圖C  G5 Pictorial Bar    （ECharts pictorialBar）
-       圖D  G3 Chunky Bars      （Chart.js，補上"排名比較"這個資料
-                                  形狀缺口——G1/G2/G5 分別覆蓋了區間、
-                                  近似等分構成、逐日計數，唯獨少類目
-                                  排名比較沒人管）
+       圖A  G5 Pictorial Bar    （ECharts pictorialBar）
+       圖B  G3 Chunky Bars      （Chart.js，補上"排名比較"這個資料
+                                  形狀缺口——G5 覆蓋逐日計數，類目排名比較由 G3 承接）
      色盤正本 = color-presets.js 的 PALM 一套，與範本 02 共用同一批
        色值，不新增色值。深綠 #43593B 當主墨，琥珀 #D4A017 當強調，
        濃咖 #58402E 當紙漿襯底；RAMP 五檔梯（#F2D17E → #ACAD79 →
        #929960 → #77835A → #43593B）直接取自 glance-palm.html 指令碼
-       內的同名常量，暗卡用的 DRAMP4/DMID/DQ 同理照搬。
+       內的同名常量。
      排版參考：範本 02 的信紙墊底結構（濃咖襯底 + 紙張、全大寫字距
        節標題 + 下劃線、claim + 圖 + srcline 三件套、頁尾雙欄）——只學
-       骨架，欄位為這張儀表板重排成 2×2 圖區 + 頂部速覽條。
+       骨架，欄位為這張儀表盤重排成 兩張圖區 + 頂部速覽條。
      資料說明：全部為虛構示範資料，僅用於驗證版型。
      ═══════════════════════════════════════════════════════════════ */
   :root{
@@ -63,8 +59,8 @@
     padding-bottom:10px;border-bottom:2px solid var(--txt);margin-bottom:22px}
   .sect .yr{float:right;font-weight:600;color:var(--mut);letter-spacing:.1em}
 
-  /* ── 頂部速覽條：四個數,當天一句話就懂（學範本 02 的 .miles） ── */
-  .miles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:44px}
+  /* ── 頂部速覽條：兩個數,當天一句話就懂（學範本 02 的 .miles） ── */
+  .miles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:44px}
   .miles .m{padding:18px 16px 16px;position:relative}
   .miles .m.hero{background:var(--hero);color:var(--paper)}
   .miles .m.frame{border:1px solid var(--faint)}
@@ -74,17 +70,12 @@
   .miles .m .v small{font-size:13px;font-weight:700;margin-left:2px}
   .miles .m .l{font-size:10px;line-height:1.65;margin-top:8px;opacity:.85}
 
-  /* ── 2×2 圖區（沿用範本 02 的 .duo，縱向再疊一份） ── */
+  /* ── 圖區（沿用範本 02 的 .duo，縱向再疊一份） ── */
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:40px}
   .duo + .duo{margin-top:40px}
 
-  /* ── 圖卡：輕卡描邊,暗卡實底(唯一一張,讀花瓣要暗底) ── */
+  /* ── 圖卡：輕卡描邊 ── */
   .gcard{padding:24px 26px 22px;border:1px solid var(--faint)}
-  .gcard.dark{background:var(--mat);color:var(--paper);border:none}
-  .gcard.dark .sect{border-bottom-color:var(--paper);color:var(--paper)}
-  .gcard.dark .sub{color:var(--dmid)}
-  .gcard.dark .claim{color:var(--paper)}
-  .gcard.dark .srcline{color:var(--dq)}
 
   .sub{font-size:11px;color:var(--mut);margin-bottom:14px;line-height:1.75}
   .claim{font-size:13.5px;font-weight:700;margin-bottom:10px;line-height:1.6}
@@ -122,18 +113,9 @@
 
   <div class="sect">Loop 營運速覽 <span class="yr">第 32 週 · 2026 年 8 月 3 日–8 月 9 日</span></div>
 
-  <!-- ══ 頂部速覽條：四個數,串起下面四張圖 ══ -->
+  <!-- ══ 頂部速覽條：兩個數,串起下面兩張圖 ══ -->
   <div class="miles">
-    <div class="m hero">
-      <div class="tag">週活躍峰值</div>
-      <div class="v">210<small>人</small></div>
-      <div class="l">週三同時線上的最高點</div>
-    </div>
-    <div class="m frame">
-      <div class="tag">發布心情</div>
-      <div class="v">12<small>票</small></div>
-      <div class="l">「順暢」是這週投票最多的詞</div>
-    </div>
+
     <div class="m frame">
       <div class="tag">本週上線</div>
       <div class="v">28<small>個</small></div>
@@ -146,57 +128,34 @@
     </div>
   </div>
 
-  <!-- ══ 第一行：區間 | 暗卡花瓣 ══ -->
+  <!-- ══ 第二行：逐日計數 | 排名比較 ══ -->
   <div class="duo">
     <div class="gcard">
-      <div class="sect" style="border-bottom-width:1px">同時線上人數，週三波動最大</div>
-      <div class="sub">每天同時線上人數的最低到最高區間 · 8 月 3 日–8 月 9 日</div>
-      <!-- 圖A · G1 Range Capsules
-           範本：templates/color/glance-palm.html · "Daily active range" -->
-      <div class="claim">週三從 95 人衝到 210 人，振幅是全週平均的兩倍多</div>
-      <div class="wrap"><canvas id="c1"></canvas></div>
-      <div class="srcline">RANGE CAPSULES · 每日同時線上人數區間（人） · 深綠＝常規日，琥珀＝全週最大擺動</div>
-    </div>
-
-    <div class="gcard dark">
-      <div class="sect" style="border-bottom-width:1px">這次發布，團隊整體鬆了口氣</div>
-      <div class="sub">回顧會上給這次發布投的形容詞票 · 7 個詞，54 票</div>
-      <!-- 圖B · G2 Petal Rose（暗卡,本頁唯一一張）
-           範本：templates/color/glance-palm.html · "How releases made us feel" -->
-      <div class="claim">「順暢」拿到 12 票，「緊張」只有 3 票</div>
-      <div class="ch" id="rose"></div>
-      <div class="srcline">PETAL ROSE · 回顧投票數（票） · 花瓣越亮＝票數越高，越暗＝票數越低</div>
-    </div>
-  </div>
-
-  <!-- ══ 第二行：逐日計數 | 排名比較(補的第四張) ══ -->
-  <div class="duo">
-    <div class="gcard">
-      <div class="sect" style="border-bottom-width:1px">上線節奏，一路走高</div>
+      <div class="sect" style="border-bottom-width:1px">上線節奏,一路走高</div>
       <div class="sub">工作日的功能上線數量 · 週一到週五</div>
-      <!-- 圖C · G5 Pictorial Bar
+      <!-- 圖A · G5 Pictorial Bar
            範本：templates/color/glance-palm.html · "Trees planted, year by year" -->
-      <div class="claim">週五上線 9 個改動，是週一的 3 倍</div>
+      <div class="claim">週五上線9個改動,是週一的3倍</div>
       <div class="ch" id="ship"></div>
-      <div class="srcline">PICTORIAL BAR · 每日上線改動數（個） · 一個符號＝1 個改動 · 麥黃到深綠＝週一到週五遞深</div>
+      <div class="srcline">PICTORIAL BAR · 每日上線改動數(個) · 一個符號=1個改動 · 麥黃到深綠=週一到週五遞深</div>
     </div>
 
     <div class="gcard">
-      <div class="sect" style="border-bottom-width:1px">工單，大半還是從郵件來的</div>
-      <div class="sub">本週工單量，按提交管道 · 4 個管道，293 件</div>
-      <!-- 圖D · G3 Chunky Bars（補"排名比較"這個資料形狀缺口）
+      <div class="sect" style="border-bottom-width:1px">工單,大半還是從郵件來的</div>
+      <div class="sub">本週工單量,按提交管道 · 4 個管道,293 件</div>
+      <!-- 圖B · G3 Chunky Bars（補"排名比較"這個資料形狀缺口）
            範本：templates/color/glance-palm.html · "Revenue by plan" -->
-      <div class="claim">郵件工單 186 件，比其餘三個管道加起來還多</div>
+      <div class="claim">郵件工單186件,比其餘三個管道加起來還多</div>
       <div class="wrap"><canvas id="c3"></canvas></div>
-      <div class="srcline">CHUNKY BARS · 本週工單量，按管道（件） · 深綠＝工單最多的管道，依序轉淺</div>
+      <div class="srcline">CHUNKY BARS · 本週工單量,按管道(件) · 深綠=工單最多的管道,依次轉淺</div>
     </div>
   </div>
 
   <div class="foot">
-    <div class="warn">資料說明：全部為虛構示範資料，不代表任何真實產品的營運指標。
+    <div class="warn">資料說明:全部為虛構示範資料,不代表任何真實產品的營運指標。
       <small>這頁只用來驗證 Glance 圖表家族放進報告範本裡是什麼樣子。</small></div>
-    <div class="dep">依賴說明：這四張圖跑在 Chart.js 和 ECharts 上，是範本庫裡唯一一張掛 CDN 依賴的範本。離線開啟會看到圖表區空白，聯網後重新整理即可正常渲染。</div>
-    <div class="end">Loop · 營運週報一頁紙<br>資料 · 內部看板（示範） · LIEFLAT CHARTS</div>
+    <div class="dep">依賴說明:這兩張圖跑在 Chart.js 和 ECharts 上,是範本庫裡唯一一張掛 CDN 依賴的範本。離線開啟會看到圖表區空白,聯網後重新整理即可正常渲染。</div>
+    <div class="end">Loop · 營運週報一頁紙<br>資料 · 內部看板(示範) · LIEFLAT CHARTS</div>
   </div>
 </div>
 
@@ -207,24 +166,15 @@ const MUT='rgba(88,64,46,.60)',LAB='rgba(88,64,46,.72)',FAINT='rgba(88,64,46,.40
 const DATA='#43593B',DATA2='#58402E',HERO='#D4A017';
 const HERODK='#F2D17E';
 const FAINTDATA='#ACAD79';
-const DMID='rgba(240,239,235,.62)',DQ='rgba(240,239,235,.24)';
 const RAMP=['#F2D17E','#ACAD79','#929960','#77835A','#43593B'];
-const DRAMP4=['#F2D17E','#ACAD79','rgba(240,239,235,.55)','rgba(240,239,235,.26)'];
 const INK=TXT,PAPER=BG,MUTED=MUT;
 const rgb=h=>[0,2,4].map(i=>parseInt(h.slice(1).substr(i,2),16));
 const alpha=(h,a)=>h[0]==='#'?'rgba('+rgb(h).join(',')+','+a+')':h;
-const mix=(a,b,t)=>'#'+rgb(a).map((v,i)=>Math.round(v+(rgb(b)[i]-v)*t).toString(16).padStart(2,'0')).join('');
-const lum=h=>{const [r,g,b]=rgb(h).map(v=>v/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));
-  return .2126*r+.7152*g+.0722*b};
-const ratio=(a,b)=>{const l=[lum(a),lum(b)].sort((p,q)=>q-p);return (l[0]+.05)/(l[1]+.05)};
-const readable=c=>c[0]!=='#'?BG:(ratio(c,DARK)>=ratio(c,BG)?DARK:BG);
-const DSHELL=mix(DARK,BG,.09);
 const rankOf=a=>{const r=[...a].map((v,i)=>[v,i]).sort((x,y)=>y[0]-x[0]).map(d=>d[1]);
   return i=>r.indexOf(i)};
 const rampAt=(i,n)=>i===0?RAMP[4]
   :RAMP[Math.max(0,Math.min(3,3-Math.round((i-1)/Math.max(1,n-2)*3)))];
 const tipLight={backgroundColor:INK,borderWidth:0,textStyle:{color:PAPER,fontFamily:'Inter',fontSize:12},padding:[10,14]};
-const tipDark={backgroundColor:PAPER,borderWidth:0,textStyle:{color:INK,fontFamily:'Inter',fontSize:12},padding:[10,14]};
 
 /* ── 統一 reveal 機制（滾入播 + 點選重播，與 glance-palm.html 一致） ── */
 const timers={};
@@ -261,65 +211,7 @@ Chart.defaults.plugins.tooltip.padding=12;
 Chart.defaults.plugins.tooltip.cornerRadius=12;
 Chart.defaults.plugins.tooltip.displayColors=false;
 
-/* ════ 圖A · G1 Range Capsules ════
-   結構照搬 glance-palm.html "Daily active range"：浮動區間柱,
-   最寬的一根上琥珀墨。原圖是 14 天視窗,這裡換成一週 7 天。 */
-(()=>{
-const RANGES=[[120,178],[108,172],[95,210],[130,183],[142,188],[82,121],[76,116]];
-const DAYS=['週一','週二','週三','週四','週五','週六','週日'];
-const WIDEST=r=>r.reduce((b,x,i)=>x[1]-x[0]>r[b][1]-r[b][0]?i:b,0);
-cReveal('c1',()=>({
-  type:'bar',
-  data:{labels:DAYS,
-    datasets:[{data:RANGES,backgroundColor:RANGES.map((_,i)=>i===WIDEST(RANGES)?HERO:DATA),borderRadius:99,borderSkipped:false,barPercentage:.42}]},
-  options:{
-    maintainAspectRatio:false,
-    animation:{duration:800,easing:'easeOutQuart',delay:c=>c.type==='data'?c.dataIndex*60:0},
-    plugins:{tooltip:{callbacks:{label:i=>i.raw[0]+' – '+i.raw[1]+' 人線上'}}},
-    scales:{
-      x:{grid:{display:false},border:{display:false},ticks:{padding:6,font:{size:10,weight:600}}},
-      y:{min:50,max:230,grid:{display:false},border:{display:false},ticks:{padding:8,maxTicksLimit:6,callback:v=>v+'人',font:{size:9.5}}},
-    },
-  },
-}));
-})();
-
-/* ════ 圖B · G2 Petal Rose（暗卡） ════
-   結構照搬 glance-palm.html "How releases made us feel"：花瓣長度
-   編碼票數,顏色階(DRAMP4)也編碼票數,票數越高越亮。 */
-(()=>{
-const EMO=[
-  ['順暢',12],['輕鬆',10],['期待',9],['忐忑',7],
-  ['疲憊',6],['驚喜',5],['緊張',3],
-];
-const MAXV=12;
-const petal=v=>{const t=v/MAXV;return t>.8?DRAMP4[0]:t>.6?DRAMP4[1]:t>.35?DRAMP4[2]:DRAMP4[3]};
-const onPetal=v=>v/MAXV>.6;
-eReveal('rose',{
-  animationDuration:1100,animationEasing:'quarticOut',
-  tooltip:{...tipDark,formatter:p=>p.name+' — '+EMO[p.dataIndex][1]+' 票'},
-  series:[
-    {type:'pie',silent:false,radius:['14%','92%'],center:['50%','50%'],
-     itemStyle:{color:DSHELL,borderRadius:16,borderColor:DARK,borderWidth:5},
-     label:{show:false},emphasis:{scale:false},
-     data:EMO.map(([n])=>({name:n,value:1})),z:1},
-    {type:'pie',silent:true,radius:['14%','92%'],center:['50%','50%'],
-     itemStyle:{color:'transparent'},label:{position:'inside'},
-     data:EMO.map(([n,v])=>({name:n,value:1,
-       label:{formatter:`{n|${v}}\n{l|${n}}`,rich:{
-         n:{fontSize:17,fontWeight:700,fontFamily:'Inter',lineHeight:20,
-              color:onPetal(v)?readable(petal(v)):DMID},
-         l:{fontSize:9.5,fontFamily:"'Inter','Noto Sans TC',sans-serif",
-              color:onPetal(v)?alpha(readable(petal(v)),.66):DQ},
-       }}})),z:3},
-    {type:'pie',roseType:'area',silent:true,radius:['14%','88%'],center:['50%','50%'],
-     itemStyle:{borderRadius:14,borderColor:DARK,borderWidth:5},label:{show:false},
-     data:EMO.map(([n,v])=>({name:n,value:v,itemStyle:{color:petal(v)}})),z:2},
-  ],
-});
-})();
-
-/* ════ 圖C · G5 Pictorial Bar ════
+/* ════ 圖A · G5 Pictorial Bar ════
    結構照搬 glance-palm.html "Trees planted, year by year"：符號
    計數橫條,原圖 symbol 是樹形,這裡換成一箇中性菱形——上線的是
    功能改動,不是樹,符號形狀不該借一個不相關的隱喻。 */
@@ -351,7 +243,7 @@ eReveal('ship',{
 });
 })();
 
-/* ════ 圖D · G3 Chunky Bars（補"排名比較"這個資料形狀缺口） ════
+/* ════ 圖B · G3 Chunky Bars（補"排名比較"這個資料形狀缺口） ════
    結構照搬 glance-palm.html "Revenue by plan"：粗膠囊柱 + 柱頂大字,
    顏色按 rampAt(排名,n) 走,排第一深綠,排最後最淺。 */
 (()=>{
@@ -387,7 +279,7 @@ cReveal('c3',()=>({
 })();
 
 addEventListener('resize',()=>{
-  ['rose','ship'].forEach(id=>echarts.getInstanceByDom(document.getElementById(id))?.resize());
+  ['ship'].forEach(id=>echarts.getInstanceByDom(document.getElementById(id))?.resize());
 });
 
 </script>
